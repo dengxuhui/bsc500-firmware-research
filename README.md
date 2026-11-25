@@ -68,6 +68,7 @@ uv run --with unicorn==2.1.4 native/map_background.py verify \
 
 ## 其他研究结果
 
+- [V1.08.005 对比调查](firmware/BSC500-V1.08.005-investigation.md) 记录两版 USB 文件差异、路线颜色的设置线索，以及主程序和 Boot 版本变化。
 - [结构与地址](findings.json) 记录 RSC 容器、启动入口、字段格式化、地图主题与绘制函数。
 - [设置表](native/settings-registry.json) 记录从启动初始化数据恢复的 37 个配置键。可用 `python3 native/read_settings_registry.py "$original"` 重新生成。
 - [骑行字段字典](native/ride-field-ids.json) 记录 Android App 中的字段 ID 及其固件引用。固件引用可辅助定位 BSC500 的现有字段。
