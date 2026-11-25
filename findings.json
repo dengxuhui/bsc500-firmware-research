@@ -1,0 +1,217 @@
+{
+  "firmware_version": "1.04.003",
+  "firmware_unpacking": {
+    "container": {
+      "decoded_directory_offset": 241,
+      "entries_offset": 405,
+      "os_length": 110,
+      "sc_length": 113,
+      "period": 12430,
+      "offset_semantics": "HD marks the start of stored entry data. Each AD value is the preceding entry end relative to HD. The final entry ends at EOF.",
+      "verified_reference_packages": [
+        {
+          "source": "BSC300T-V1.24.rsc",
+          "entries": 3,
+          "rotation_period": 13334
+        },
+        {
+          "source": "BiNavi-Air-V1.09.001.rsc",
+          "entries": 59,
+          "rotation_period": 11211
+        },
+        {
+          "source": "iGS800-V1.67.rsc",
+          "entries": 17,
+          "rotation_period": 12376
+        }
+      ]
+    },
+    "application": {
+      "architecture": "little-endian ARM Thumb, consistent with Armv8-M and Cortex-M",
+      "image_base": "0x60000000",
+      "initial_stack_pointer": "0x200042c8",
+      "reset_vector": "0x6006cbd1",
+      "reset_handler": "0x6006cbd0",
+      "reset_targets": [
+        "0x60075ab8",
+        "0x600007c0"
+      ],
+      "strings": {
+        "Hello RT-Thread!": [
+          {
+            "offset": "0x235cc0",
+            "mapped_address": "0x60235cc0"
+          },
+          {
+            "offset": "0x2b713c",
+            "mapped_address": "0x602b713c"
+          }
+        ],
+        "SiFli Corporation": [
+          {
+            "offset": "0x168172",
+            "mapped_address": "0x60168172"
+          }
+        ],
+        "lcpu2hcpu_notification_callback": [
+          {
+            "offset": "0x23b674",
+            "mapped_address": "0x6023b674"
+          }
+        ],
+        "cfg_pages": [
+          {
+            "offset": "0x3fbcf7",
+            "mapped_address": "0x603fbcf7"
+          }
+        ],
+        "cfg_display": [
+          {
+            "offset": "0x3fbd97",
+            "mapped_address": "0x603fbd97"
+          }
+        ],
+        "RideDataFields": [
+          {
+            "offset": "0x3f4159",
+            "mapped_address": "0x603f4159"
+          },
+          {
+            "offset": "0x3f444e",
+            "mapped_address": "0x603f444e"
+          },
+          {
+            "offset": "0x3f44c1",
+            "mapped_address": "0x603f44c1"
+          },
+          {
+            "offset": "0x3f44d0",
+            "mapped_address": "0x603f44d0"
+          },
+          {
+            "offset": "0x3f4620",
+            "mapped_address": "0x603f4620"
+          }
+        ],
+        "DataPageConfig": [
+          {
+            "offset": "0x3edd02",
+            "mapped_address": "0x603edd02"
+          },
+          {
+            "offset": "0x3f60bb",
+            "mapped_address": "0x603f60bb"
+          },
+          {
+            "offset": "0x3f6128",
+            "mapped_address": "0x603f6128"
+          },
+          {
+            "offset": "0x3f6137",
+            "mapped_address": "0x603f6137"
+          }
+        ],
+        "RideFieldsSubview.cpp": [
+          {
+            "offset": "0x3f4641",
+            "mapped_address": "0x603f4641"
+          }
+        ],
+        "lv_engine/src/core/lv_refr.c": [
+          {
+            "offset": "0x23e7b9",
+            "mapped_address": "0x6023e7b9"
+          }
+        ],
+        "touchgfx/source/touchgfx/Screen.cpp": [
+          {
+            "offset": "0x4334ac",
+            "mapped_address": "0x604334ac"
+          }
+        ],
+        "kvlist_node_load:": [
+          {
+            "offset": "0x133034",
+            "mapped_address": "0x60133034"
+          }
+        ],
+        "kvlist_init: kvlist_path": [
+          {
+            "offset": "0x23a800",
+            "mapped_address": "0x6023a800"
+          }
+        ],
+        "V1.04.003": [
+          {
+            "offset": "0x3c58",
+            "mapped_address": "0x60003c58"
+          },
+          {
+            "offset": "0x16261c",
+            "mapped_address": "0x6016261c"
+          },
+          {
+            "offset": "0x24e2a0",
+            "mapped_address": "0x6024e2a0"
+          }
+        ]
+      }
+    },
+    "package_manifest": "firmware/BSC500-V1.04.003-manifest.json",
+    "unresolved": [
+      "Exact SiFli SoC model",
+      "Complete field ID to metric mapping",
+      "Call chain between persistent cfg_pages and live ride rendering"
+    ]
+  },
+  "ride_fields": {
+    "firmware_entrypoints": {
+      "settings_sync_cfg": "0x601517f4",
+      "page_defaults": "0x60037b94",
+      "page_defaults_callback": "0x602239b8",
+      "metric_formatter": "0x60165b4c",
+      "display_object_field_read": "0x601c7ea4",
+      "display_formatter_call": "0x601c7eac",
+      "lap_metric_dispatch": "0x60109e12"
+    },
+    "confirmed_flow": [
+      "The recovered settings registry associates cfg_pages with 10 records of 1444 bytes at 0x2004c8f8.",
+      "The default initializer copies 12 little-endian words from address 0x602a6ea0 into the first field array at offset 0x1c.",
+      "The generic metric formatter selects its first dispatch group from the high byte of the field ID.",
+      "A display path loads a u16 field ID from its object at offset 0x9c and calls the formatter."
+    ],
+    "unresolved": [
+      "Exact cfg_pages to display object caller chain",
+      "Complete BSC500 model-specific supported field roster",
+      "Interpretation of all stored record fields and alternate layouts"
+    ],
+    "dictionary": "native/ride-field-ids.json"
+  },
+  "map_background": {
+    "tool": "native/map_background.py",
+    "offline_verification": "native/map-background-verification.json",
+    "map_theme_selector": {
+      "theme_name_table_ram": "0x20005f24",
+      "theme_names_by_index": [
+        "map_classic",
+        "map_colorful"
+      ],
+      "settings_callback": "0x600b95e6",
+      "boot_setting_normalization": "0x601e643a",
+      "theme_flag_writer": "0x60254dc4",
+      "theme_flag_ram": "0x2000cc74",
+      "appearance_flag_ram": "0x20005a1c"
+    },
+    "draw_path": {
+      "map_draw_entry": "0x602584f8",
+      "background_selector_call": "0x60258528",
+      "background_selector": "0x6014d954",
+      "rgb888_to_rgb565": "0x6014ec88",
+      "fill_rectangle": "0x6014ecb0",
+      "rectangle_backend_dispatch": "0x6015a944",
+      "later_map_feature_rendering_call": "0x6025855a"
+    },
+    "verification_scope": "Executed the original Thumb code from the background selector call through the rectangle backend dispatch, using synthetic graphics RAM and intercepting the backend callback.",
+    "hardware_tested": false
+  }
+}

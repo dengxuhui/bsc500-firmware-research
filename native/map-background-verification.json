@@ -1,0 +1,73 @@
+{
+  "original_sha256": "d7363b8e9902268de124694e5f043ac49070c65ad3210cb2eb0f575e27f9a933",
+  "modified_sha256": "459cc3a5c3f6efe378f71fa7457ce561458169c2e37a17d084758f22d0d65f10",
+  "flash_address": "0x6014d960",
+  "file_offset": "0x14d960",
+  "original_bytes": "4f f2 f6 61 c0 f2 f6 01",
+  "modified_bytes": "4e f6 d4 01 c0 f2 d5 01",
+  "changed_offsets": [
+    "0x14d960",
+    "0x14d961",
+    "0x14d962",
+    "0x14d963",
+    "0x14d966"
+  ],
+  "emulated_map_fills": [
+    {
+      "theme": "classic",
+      "appearance": "light",
+      "original_rgb": "#F6F6F6",
+      "modified_rgb": "#D5E8D4",
+      "original_fill_rgb565": "0xF7BE",
+      "modified_fill_rgb565": "0xD75A",
+      "rectangle": [
+        7,
+        11,
+        326,
+        490
+      ]
+    },
+    {
+      "theme": "classic",
+      "appearance": "dark",
+      "original_rgb": "#0F0F0F",
+      "modified_rgb": "#0F0F0F",
+      "original_fill_rgb565": "0x0861",
+      "modified_fill_rgb565": "0x0861",
+      "rectangle": [
+        7,
+        11,
+        326,
+        490
+      ]
+    },
+    {
+      "theme": "colorful",
+      "appearance": "light",
+      "original_rgb": "#F5F5F5",
+      "modified_rgb": "#F5F5F5",
+      "original_fill_rgb565": "0xF7BE",
+      "modified_fill_rgb565": "0xF7BE",
+      "rectangle": [
+        7,
+        11,
+        326,
+        490
+      ]
+    },
+    {
+      "theme": "colorful",
+      "appearance": "dark",
+      "original_rgb": "#000000",
+      "modified_rgb": "#000000",
+      "original_fill_rgb565": "0x0000",
+      "modified_fill_rgb565": "0x0000",
+      "rectangle": [
+        7,
+        11,
+        326,
+        490
+      ]
+    }
+  ]
+}

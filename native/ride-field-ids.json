@@ -1,0 +1,3026 @@
+{
+  "scope": "Android companion field dictionary cross-referenced against the BSC500 V1.04.003 firmware",
+  "provenance": {
+    "android_apk_sha256": "8e2b447a1a840710b040695169bc3b6dde7a743ffae7d22b9910b8000587fae8",
+    "firmware_sha256": "d7363b8e9902268de124694e5f043ac49070c65ad3210cb2eb0f575e27f9a933",
+    "android_classes": [
+      "com.igpsport.globalapp.devicemodule.pagesetting.beans.PageField",
+      "com.igpsport.globalapp.devicemodule.pagesetting.pagebg1.utils.field.Bg1PageField"
+    ],
+    "android_labels": "APK resources.arsc via AAPT2",
+    "firmware_template_sources": [
+      {
+        "address": "0x602a6ea0",
+        "entry_count": 15,
+        "field_words_per_entry": 12
+      },
+      {
+        "address": "0x602a7008",
+        "entry_count": 21,
+        "field_words_per_entry": 11
+      }
+    ]
+  },
+  "counts": {
+    "app_field_ids": 185,
+    "cross_referenced_in_firmware_default_templates": 43,
+    "cross_referenced_in_templates_or_code": 47
+  },
+  "fields": [
+    {
+      "field_id": "0x0101",
+      "field_id_decimal": 257,
+      "android_resource_id": "0x7F130BEC",
+      "resource_name": "speed",
+      "default_label": "Speed",
+      "zh_CN": "速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ea6",
+        "0x602a6eae",
+        "0x602a6ec4",
+        "0x602a6ee0",
+        "0x602a6efc",
+        "0x602a6f16",
+        "0x602a6f20",
+        "0x602a6f24",
+        "0x602a6f3c",
+        "0x602a6f50",
+        "0x602a6f5c",
+        "0x602a6f62",
+        "0x602a6f74",
+        "0x602a6f8e",
+        "0x602a6f96",
+        "0x602a6fa6",
+        "0x602a6fbe",
+        "0x602a6fd6",
+        "0x602a6fee",
+        "0x602a7006",
+        "0x602a700a",
+        "0x602a7020",
+        "0x602a7036",
+        "0x602a704c",
+        "0x602a7062",
+        "0x602a7078",
+        "0x602a7090",
+        "0x602a70a6",
+        "0x602a70d0",
+        "0x602a70e6",
+        "0x602a70fc",
+        "0x602a7112",
+        "0x602a7128",
+        "0x602a713e",
+        "0x602a7154",
+        "0x602a716a",
+        "0x602a7180",
+        "0x602a7196",
+        "0x602a71ac",
+        "0x602a71c2"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0102",
+      "field_id_decimal": 258,
+      "android_resource_id": "0x7F130134",
+      "resource_name": "avg_speed",
+      "default_label": "Avg Speed",
+      "zh_CN": "平均速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ea8",
+        "0x602a6ece",
+        "0x602a6f06",
+        "0x602a6f2e",
+        "0x602a6f46",
+        "0x602a6f5a",
+        "0x602a6f7e",
+        "0x602a6f98",
+        "0x602a6ff6",
+        "0x602a700e",
+        "0x602a7016",
+        "0x602a702c",
+        "0x602a7042",
+        "0x602a7056",
+        "0x602a7058",
+        "0x602a706e",
+        "0x602a707c",
+        "0x602a7084",
+        "0x602a709a",
+        "0x602a70b0",
+        "0x602a70be",
+        "0x602a70c6",
+        "0x602a70dc",
+        "0x602a70f2",
+        "0x602a7100",
+        "0x602a7108",
+        "0x602a7116",
+        "0x602a711e",
+        "0x602a712c",
+        "0x602a7134",
+        "0x602a7142",
+        "0x602a714a",
+        "0x602a7158",
+        "0x602a7160",
+        "0x602a716e",
+        "0x602a7176",
+        "0x602a7184",
+        "0x602a718c",
+        "0x602a719a",
+        "0x602a71a2",
+        "0x602a71b0",
+        "0x602a71b8",
+        "0x602a71c6",
+        "0x602a71ce"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0104",
+      "field_id_decimal": 260,
+      "android_resource_id": "0x7F130742",
+      "resource_name": "max_speed1",
+      "default_label": "Max Speed",
+      "zh_CN": "最大速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eac",
+        "0x602a6f04",
+        "0x602a6f7c",
+        "0x602a6ff4",
+        "0x602a7018",
+        "0x602a702e",
+        "0x602a7044",
+        "0x602a705a",
+        "0x602a7070",
+        "0x602a707e",
+        "0x602a7086",
+        "0x602a709c",
+        "0x602a70b2",
+        "0x602a70c0",
+        "0x602a70c8",
+        "0x602a70de",
+        "0x602a70f4",
+        "0x602a7102",
+        "0x602a710a",
+        "0x602a7118",
+        "0x602a7120",
+        "0x602a712e",
+        "0x602a7136",
+        "0x602a7144",
+        "0x602a714c",
+        "0x602a715a",
+        "0x602a7162",
+        "0x602a7170",
+        "0x602a7178",
+        "0x602a7186",
+        "0x602a718e",
+        "0x602a719c",
+        "0x602a71a4",
+        "0x602a71b2",
+        "0x602a71ba",
+        "0x602a71c8",
+        "0x602a71d0"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0105",
+      "field_id_decimal": 261,
+      "android_resource_id": "0x7F1305E3",
+      "resource_name": "lap_speed",
+      "default_label": "Lap Speed",
+      "zh_CN": "本圈平均速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ebc",
+        "0x602a6f34",
+        "0x602a6fac",
+        "0x602a7080"
+      ],
+      "bsc500_code_references": [
+        "0x60109e12"
+      ]
+    },
+    {
+      "field_id": "0x0106",
+      "field_id_decimal": 262,
+      "android_resource_id": "0x7F1309A7",
+      "resource_name": "pre_lap_spd",
+      "default_label": "Pre Lap Spd",
+      "zh_CN": "前圈平均速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0107",
+      "field_id_decimal": 263,
+      "android_resource_id": "0x7F1305DF",
+      "resource_name": "lap_max_spd",
+      "default_label": "Lap Max Spd",
+      "zh_CN": "本圈最大速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0108",
+      "field_id_decimal": 264,
+      "android_resource_id": "0x7F1309A5",
+      "resource_name": "pre_lap_mx_spd",
+      "default_label": "PreLap Max Spd",
+      "zh_CN": "前圈最大速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0201",
+      "field_id_decimal": 513,
+      "android_resource_id": "0x7F1301AA",
+      "resource_name": "cadence",
+      "default_label": "Cadence",
+      "zh_CN": "踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ed8",
+        "0x602a6f1e",
+        "0x602a6fc8",
+        "0x602a701a",
+        "0x602a7022",
+        "0x602a7030",
+        "0x602a7046",
+        "0x602a704e",
+        "0x602a705c",
+        "0x602a7064",
+        "0x602a7072",
+        "0x602a707a",
+        "0x602a7088",
+        "0x602a709e",
+        "0x602a70b4",
+        "0x602a70c2",
+        "0x602a70ca",
+        "0x602a70e0",
+        "0x602a70f6",
+        "0x602a7104",
+        "0x602a710c",
+        "0x602a711a",
+        "0x602a7122",
+        "0x602a7130",
+        "0x602a7138",
+        "0x602a7146",
+        "0x602a714e",
+        "0x602a715c",
+        "0x602a7164",
+        "0x602a7172",
+        "0x602a717a",
+        "0x602a7188",
+        "0x602a7190",
+        "0x602a719e",
+        "0x602a71a6",
+        "0x602a71b4",
+        "0x602a71bc",
+        "0x602a71ca",
+        "0x602a71d2"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0202",
+      "field_id_decimal": 514,
+      "android_resource_id": "0x7F130122",
+      "resource_name": "avg_cad",
+      "default_label": "Avg Cad",
+      "zh_CN": "平均踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f0e",
+        "0x602a6f86",
+        "0x602a6f9e",
+        "0x602a6fb6",
+        "0x602a6ffe"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0203",
+      "field_id_decimal": 515,
+      "android_resource_id": "0x7F13072D",
+      "resource_name": "max_cad",
+      "default_label": "Max Cad",
+      "zh_CN": "最大踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f0c",
+        "0x602a6f84",
+        "0x602a6fb4",
+        "0x602a6ffc"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0204",
+      "field_id_decimal": 516,
+      "android_resource_id": "0x7F1305D5",
+      "resource_name": "lap_cad",
+      "default_label": "Lap Cad.",
+      "zh_CN": "本圈平均踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ec0",
+        "0x602a6f38",
+        "0x602a6fb0"
+      ],
+      "bsc500_code_references": [
+        "0x60109e1a"
+      ]
+    },
+    {
+      "field_id": "0x0205",
+      "field_id_decimal": 517,
+      "android_resource_id": "0x7F13099E",
+      "resource_name": "pre_lap_cad",
+      "default_label": "Pre Lap Cad.",
+      "zh_CN": "前圈平均踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0206",
+      "field_id_decimal": 518,
+      "android_resource_id": "0x7F1305DA",
+      "resource_name": "lap_max_cad",
+      "default_label": "Lap Max Cad.",
+      "zh_CN": "本圈最大踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0207",
+      "field_id_decimal": 519,
+      "android_resource_id": "0x7F1309A3",
+      "resource_name": "pre_lap_mx_cad",
+      "default_label": "PreLap Max Cad.",
+      "zh_CN": "前圈最大踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0208",
+      "field_id_decimal": 520,
+      "android_resource_id": "0x7F1301A6",
+      "resource_name": "cad_interval",
+      "default_label": "Cadence Zones",
+      "zh_CN": "踏频区间",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0301",
+      "field_id_decimal": 769,
+      "android_resource_id": "0x7F130508",
+      "resource_name": "heart_rate1",
+      "default_label": "Heart Rate",
+      "zh_CN": "心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eee",
+        "0x602a6f66",
+        "0x602a6fde",
+        "0x602a7010"
+      ],
+      "bsc500_code_references": [
+        "0x6000b9bc"
+      ]
+    },
+    {
+      "field_id": "0x0302",
+      "field_id_decimal": 770,
+      "android_resource_id": "0x7F130128",
+      "resource_name": "avg_hr",
+      "default_label": "Avg HR",
+      "zh_CN": "平均心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f0a",
+        "0x602a6f82",
+        "0x602a6ffa"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0303",
+      "field_id_decimal": 771,
+      "android_resource_id": "0x7F130737",
+      "resource_name": "max_hr",
+      "default_label": "Max HR",
+      "zh_CN": "最大心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f08",
+        "0x602a6f80",
+        "0x602a6ff8"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0304",
+      "field_id_decimal": 772,
+      "android_resource_id": "0x7F1305D9",
+      "resource_name": "lap_hr",
+      "default_label": "Lap HR",
+      "zh_CN": "本圈平均心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eba",
+        "0x602a6f32",
+        "0x602a6faa"
+      ],
+      "bsc500_code_references": [
+        "0x60109e20"
+      ]
+    },
+    {
+      "field_id": "0x0305",
+      "field_id_decimal": 773,
+      "android_resource_id": "0x7F1309A2",
+      "resource_name": "pre_lap_hr",
+      "default_label": "PreLap HR",
+      "zh_CN": "前圈平均心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0306",
+      "field_id_decimal": 774,
+      "android_resource_id": "0x7F1305DC",
+      "resource_name": "lap_max_hr",
+      "default_label": "Lap Max HR",
+      "zh_CN": "本圈最大心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0307",
+      "field_id_decimal": 775,
+      "android_resource_id": "0x7F1309AF",
+      "resource_name": "prelap_max_hr",
+      "default_label": "PreLap Max HR",
+      "zh_CN": "前圈最大心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0308",
+      "field_id_decimal": 776,
+      "android_resource_id": "0x7F13054A",
+      "resource_name": "hr_zone",
+      "default_label": "HR Zone",
+      "zh_CN": "心率区间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ef0",
+        "0x602a6f68",
+        "0x602a6fe0"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0309",
+      "field_id_decimal": 777,
+      "android_resource_id": "0x7F1302A8",
+      "resource_name": "cur_hr_percent",
+      "default_label": "HR %",
+      "zh_CN": "心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x030A",
+      "field_id_decimal": 778,
+      "android_resource_id": "0x7F130129",
+      "resource_name": "avg_hr_percent",
+      "default_label": "Avg HR %",
+      "zh_CN": "平均心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x030B",
+      "field_id_decimal": 779,
+      "android_resource_id": "0x7F130738",
+      "resource_name": "max_hr_percent",
+      "default_label": "Max HR %",
+      "zh_CN": "最大心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x030C",
+      "field_id_decimal": 780,
+      "android_resource_id": "0x7F1305D3",
+      "resource_name": "lap_avg_hr_percent",
+      "default_label": "Lap HR %",
+      "zh_CN": "本圈平均心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x030D",
+      "field_id_decimal": 781,
+      "android_resource_id": "0x7F1309AE",
+      "resource_name": "prelap_avg_hr_percent",
+      "default_label": "Pre Lap HR%",
+      "zh_CN": "前圈平均心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x030E",
+      "field_id_decimal": 782,
+      "android_resource_id": "0x7F1305DD",
+      "resource_name": "lap_max_hr_percent",
+      "default_label": "Lap Max HR%",
+      "zh_CN": "本圈最大心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x030F",
+      "field_id_decimal": 783,
+      "android_resource_id": "0x7F1309B0",
+      "resource_name": "prelap_max_hr_percent",
+      "default_label": "PreLap Max HR%",
+      "zh_CN": "前圈最大心率%",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0401",
+      "field_id_decimal": 1025,
+      "android_resource_id": "0x7F13098B",
+      "resource_name": "power",
+      "default_label": "Power",
+      "zh_CN": "功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": [
+        "0x6000b9e6"
+      ]
+    },
+    {
+      "field_id": "0x0402",
+      "field_id_decimal": 1026,
+      "android_resource_id": "0x7F130130",
+      "resource_name": "avg_power",
+      "default_label": "Avg Power",
+      "zh_CN": "平均功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f12",
+        "0x602a6f8a",
+        "0x602a6fa2",
+        "0x602a6fba",
+        "0x602a6fd2",
+        "0x602a7002"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0403",
+      "field_id_decimal": 1027,
+      "android_resource_id": "0x7F13073E",
+      "resource_name": "max_power",
+      "default_label": "Max Power",
+      "zh_CN": "最大功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f10",
+        "0x602a6f88",
+        "0x602a6fa0",
+        "0x602a6fb8",
+        "0x602a6fd0",
+        "0x602a7000"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0404",
+      "field_id_decimal": 1028,
+      "android_resource_id": "0x7F1305E2",
+      "resource_name": "lap_pwr",
+      "default_label": "Lap Pwr",
+      "zh_CN": "本圈平均功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ebe",
+        "0x602a6f36",
+        "0x602a6fae"
+      ],
+      "bsc500_code_references": [
+        "0x60109e26"
+      ]
+    },
+    {
+      "field_id": "0x0405",
+      "field_id_decimal": 1029,
+      "android_resource_id": "0x7F1309A6",
+      "resource_name": "pre_lap_pwr",
+      "default_label": "PreLap Pwr",
+      "zh_CN": "前圈平均功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0406",
+      "field_id_decimal": 1030,
+      "android_resource_id": "0x7F1305DE",
+      "resource_name": "lap_max_pwr",
+      "default_label": "Lap Max Pwr",
+      "zh_CN": "本圈最大功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0407",
+      "field_id_decimal": 1031,
+      "android_resource_id": "0x7F1309A4",
+      "resource_name": "pre_lap_mx_pwr",
+      "default_label": "PreLap Max Pwr",
+      "zh_CN": "前圈最大功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0408",
+      "field_id_decimal": 1032,
+      "android_resource_id": "0x7F130A29",
+      "resource_name": "pwr_zone1",
+      "default_label": "Pwr Zone",
+      "zh_CN": "功率区间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0409",
+      "field_id_decimal": 1033,
+      "android_resource_id": "0x7F130A1D",
+      "resource_name": "pwr3s",
+      "default_label": "3s Pwr",
+      "zh_CN": "3s功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ed4",
+        "0x602a6eea",
+        "0x602a6f64",
+        "0x602a6fc4",
+        "0x602a6fda",
+        "0x602a7024",
+        "0x602a7050"
+      ],
+      "bsc500_code_references": [
+        "0x60266bca"
+      ]
+    },
+    {
+      "field_id": "0x040A",
+      "field_id_decimal": 1034,
+      "android_resource_id": "0x7F130A1B",
+      "resource_name": "pwr10s",
+      "default_label": "10s Pwr",
+      "zh_CN": "10s功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x040B",
+      "field_id_decimal": 1035,
+      "android_resource_id": "0x7F130A1C",
+      "resource_name": "pwr30s",
+      "default_label": "30s Pwr",
+      "zh_CN": "30s功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x040C",
+      "field_id_decimal": 1036,
+      "android_resource_id": "0x7F130992",
+      "resource_name": "power_percent_ftp",
+      "default_label": "Pwr %FTP",
+      "zh_CN": "功率 %FTP",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x040D",
+      "field_id_decimal": 1037,
+      "android_resource_id": "0x7F130A20",
+      "resource_name": "pwr_if",
+      "default_label": "IF",
+      "zh_CN": "IF",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x040E",
+      "field_id_decimal": 1038,
+      "android_resource_id": "0x7F130A23",
+      "resource_name": "pwr_np",
+      "default_label": "NP",
+      "zh_CN": "NP",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x040F",
+      "field_id_decimal": 1039,
+      "android_resource_id": "0x7F130A27",
+      "resource_name": "pwr_tss",
+      "default_label": "TSS",
+      "zh_CN": "TSS",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eec",
+        "0x602a6fdc"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0410",
+      "field_id_decimal": 1040,
+      "android_resource_id": "0x7F130E80",
+      "resource_name": "watt_kg_bg1",
+      "default_label": "PWR",
+      "zh_CN": "功体比",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ed6",
+        "0x602a6fc6"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0411",
+      "field_id_decimal": 1041,
+      "android_resource_id": "0x7F130A21",
+      "resource_name": "pwr_kj",
+      "default_label": "Kilojoules",
+      "zh_CN": "功率 - 千焦",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0412",
+      "field_id_decimal": 1042,
+      "android_resource_id": "0x7F130A22",
+      "resource_name": "pwr_left_percent",
+      "default_label": "Pwr Left %",
+      "zh_CN": "左侧功率占比",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0413",
+      "field_id_decimal": 1043,
+      "android_resource_id": "0x7F130A24",
+      "resource_name": "pwr_right_percent",
+      "default_label": "Pwr Right %",
+      "zh_CN": "右侧功率占比",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0414",
+      "field_id_decimal": 1044,
+      "android_resource_id": "0x7F1305FD",
+      "resource_name": "left_tq_effect",
+      "default_label": "L. TQ. Effect.",
+      "zh_CN": "左侧扭矩效益",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0415",
+      "field_id_decimal": 1045,
+      "android_resource_id": "0x7F130AC7",
+      "resource_name": "right_tq_effect",
+      "default_label": "R. TQ. Effect.",
+      "zh_CN": "右侧扭矩效益",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0416",
+      "field_id_decimal": 1046,
+      "android_resource_id": "0x7F1305F9",
+      "resource_name": "left_ped_smooth",
+      "default_label": "L. Ped. Smooth.",
+      "zh_CN": "左侧踩踏平顺",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0417",
+      "field_id_decimal": 1047,
+      "android_resource_id": "0x7F130AC4",
+      "resource_name": "right_ped_smooth",
+      "default_label": "R. Ped. Smooth.",
+      "zh_CN": "右侧踩踏平顺",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0418",
+      "field_id_decimal": 1048,
+      "android_resource_id": "0x7F130A1E",
+      "resource_name": "pwr_balance",
+      "default_label": "Pwr Balance",
+      "zh_CN": "左右平衡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0419",
+      "field_id_decimal": 1049,
+      "android_resource_id": "0x7F130D3A",
+      "resource_name": "tq_effect",
+      "default_label": "Tq.Effect.",
+      "zh_CN": "扭矩效益",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x041A",
+      "field_id_decimal": 1050,
+      "android_resource_id": "0x7F1308FA",
+      "resource_name": "ped_smooth",
+      "default_label": "Ped. Smooth.",
+      "zh_CN": "踩踏平顺",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x041C",
+      "field_id_decimal": 1052,
+      "android_resource_id": "0x7F13011F",
+      "resource_name": "avg_balance",
+      "default_label": "Avg Balance",
+      "zh_CN": "平均左右平衡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x041D",
+      "field_id_decimal": 1053,
+      "android_resource_id": "0x7F1305D4",
+      "resource_name": "lap_balance",
+      "default_label": "Lap Balance",
+      "zh_CN": "本圈左右平衡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x041F",
+      "field_id_decimal": 1055,
+      "android_resource_id": "0x7F130CF3",
+      "resource_name": "three_seconds_balance",
+      "default_label": "3s Balance",
+      "zh_CN": "3s左右平衡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0420",
+      "field_id_decimal": 1056,
+      "android_resource_id": "0x7F130CA5",
+      "resource_name": "ten_seconds_balance",
+      "default_label": "10s Balance",
+      "zh_CN": "10s左右平衡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0421",
+      "field_id_decimal": 1057,
+      "android_resource_id": "0x7F130CE2",
+      "resource_name": "thirty_seconds_balance",
+      "default_label": "30s Balance",
+      "zh_CN": "30s左右平衡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0422",
+      "field_id_decimal": 1058,
+      "android_resource_id": "0x7F13013A",
+      "resource_name": "avg_watt_kg_bg1",
+      "default_label": "Avg PWR",
+      "zh_CN": "平均功体比",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0423",
+      "field_id_decimal": 1059,
+      "android_resource_id": "0x7F130007",
+      "resource_name": "_3s_watt_kg_bg1",
+      "default_label": "PWR(3S)",
+      "zh_CN": "功体比(3S)",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0424",
+      "field_id_decimal": 1060,
+      "android_resource_id": "0x7F130003",
+      "resource_name": "_10s_watt_kg_bg1",
+      "default_label": "PWR(10S)",
+      "zh_CN": "功体比(10S)",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0425",
+      "field_id_decimal": 1061,
+      "android_resource_id": "0x7F130005",
+      "resource_name": "_30s_watt_kg_bg1",
+      "default_label": "PWR(30S)",
+      "zh_CN": "功体比(30S)",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0426",
+      "field_id_decimal": 1062,
+      "android_resource_id": "0x7F1305E7",
+      "resource_name": "lap_watt_kg_bg1",
+      "default_label": "PWR (lap)",
+      "zh_CN": "功体比(本圈)",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0427",
+      "field_id_decimal": 1063,
+      "android_resource_id": "0x7F130CFA",
+      "resource_name": "time_in_power_zone1",
+      "default_label": "Time in Power Zone1",
+      "zh_CN": "功率区间1用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0428",
+      "field_id_decimal": 1064,
+      "android_resource_id": "0x7F130CFB",
+      "resource_name": "time_in_power_zone2",
+      "default_label": "Time in Power Zone2",
+      "zh_CN": "功率区间2用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0429",
+      "field_id_decimal": 1065,
+      "android_resource_id": "0x7F130CFC",
+      "resource_name": "time_in_power_zone3",
+      "default_label": "Time in Power Zone3",
+      "zh_CN": "功率区间3用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x042A",
+      "field_id_decimal": 1066,
+      "android_resource_id": "0x7F130CFD",
+      "resource_name": "time_in_power_zone4",
+      "default_label": "Time in Power Zone4",
+      "zh_CN": "功率区间4用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x042B",
+      "field_id_decimal": 1067,
+      "android_resource_id": "0x7F130CFE",
+      "resource_name": "time_in_power_zone5",
+      "default_label": "Time in Power Zone5",
+      "zh_CN": "功率区间5用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x042C",
+      "field_id_decimal": 1068,
+      "android_resource_id": "0x7F130CFF",
+      "resource_name": "time_in_power_zone6",
+      "default_label": "Time in Power Zone6",
+      "zh_CN": "功率区间6用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x042D",
+      "field_id_decimal": 1069,
+      "android_resource_id": "0x7F130D00",
+      "resource_name": "time_in_power_zone7",
+      "default_label": "Time in Power Zone7",
+      "zh_CN": "功率区间7用时",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x042E",
+      "field_id_decimal": 1070,
+      "android_resource_id": "0x7F1305E1",
+      "resource_name": "lap_power_np",
+      "default_label": "Lap NP",
+      "zh_CN": "本圈NP",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x042F",
+      "field_id_decimal": 1071,
+      "android_resource_id": "0x7F1309B1",
+      "resource_name": "prelap_power_np",
+      "default_label": "PreLap NP",
+      "zh_CN": "前圈NP",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0430",
+      "field_id_decimal": 1072,
+      "android_resource_id": "0x7F13099A",
+      "resource_name": "power_to_weight_pre_lap",
+      "default_label": "Power to Weight（Pre Lap）",
+      "zh_CN": "前圈功体比",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0501",
+      "field_id_decimal": 1281,
+      "android_resource_id": "0x7F130381",
+      "resource_name": "distance",
+      "default_label": "Distance",
+      "zh_CN": "骑行距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ea2",
+        "0x602a6eb2",
+        "0x602a6ec8",
+        "0x602a6eda",
+        "0x602a6ee4",
+        "0x602a6ef6",
+        "0x602a6f00",
+        "0x602a6f1c",
+        "0x602a6f28",
+        "0x602a6f40",
+        "0x602a6f4e",
+        "0x602a6f54",
+        "0x602a6f6e",
+        "0x602a6f78",
+        "0x602a6f92",
+        "0x602a6fca",
+        "0x602a6ff0",
+        "0x602a700c",
+        "0x602a7028",
+        "0x602a703e",
+        "0x602a7054",
+        "0x602a7066",
+        "0x602a706a",
+        "0x602a7096",
+        "0x602a70ac",
+        "0x602a70d8",
+        "0x602a70ee",
+        "0x602a70fe",
+        "0x602a7114",
+        "0x602a712a",
+        "0x602a7140",
+        "0x602a7156",
+        "0x602a716c",
+        "0x602a7182",
+        "0x602a7198",
+        "0x602a71ae",
+        "0x602a71c4"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0502",
+      "field_id_decimal": 1282,
+      "android_resource_id": "0x7F1300E2",
+      "resource_name": "ascent_dist",
+      "default_label": "Ascent Dist.",
+      "zh_CN": "上坡距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0503",
+      "field_id_decimal": 1283,
+      "android_resource_id": "0x7F130326",
+      "resource_name": "descent_dist",
+      "default_label": "Descent Dist.",
+      "zh_CN": "下坡距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0504",
+      "field_id_decimal": 1284,
+      "android_resource_id": "0x7F1305D6",
+      "resource_name": "lap_dist",
+      "default_label": "Lap Dist.",
+      "zh_CN": "本圈距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eb8",
+        "0x602a6f30",
+        "0x602a6fa8"
+      ],
+      "bsc500_code_references": [
+        "0x60109e2e"
+      ]
+    },
+    {
+      "field_id": "0x0505",
+      "field_id_decimal": 1285,
+      "android_resource_id": "0x7F13099F",
+      "resource_name": "pre_lap_dist",
+      "default_label": "Pre Lap Dist.",
+      "zh_CN": "前圈距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0506",
+      "field_id_decimal": 1286,
+      "android_resource_id": "0x7F13089C",
+      "resource_name": "odometer",
+      "default_label": "Odometer",
+      "zh_CN": "总里程",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0507",
+      "field_id_decimal": 1287,
+      "android_resource_id": "0x7F13037F",
+      "resource_name": "dist_to_go",
+      "default_label": "Dist. to Go",
+      "zh_CN": "终点距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0601",
+      "field_id_decimal": 1537,
+      "android_resource_id": "0x7F1303C5",
+      "resource_name": "elevation",
+      "default_label": "Elevation",
+      "zh_CN": "高度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ef4",
+        "0x602a6f6c",
+        "0x602a703c",
+        "0x602a7092",
+        "0x602a70a8",
+        "0x602a70d6",
+        "0x602a70ec"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0602",
+      "field_id_decimal": 1538,
+      "android_resource_id": "0x7F1304E5",
+      "resource_name": "grade",
+      "default_label": "Grade",
+      "zh_CN": "坡度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ede",
+        "0x602a6fce",
+        "0x602a7014",
+        "0x602a703a",
+        "0x602a708e",
+        "0x602a70a4",
+        "0x602a70d4",
+        "0x602a70ea"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0603",
+      "field_id_decimal": 1539,
+      "android_resource_id": "0x7F130DFB",
+      "resource_name": "vertical_spd",
+      "default_label": "VAM",
+      "zh_CN": "垂直速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a7094"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0604",
+      "field_id_decimal": 1540,
+      "android_resource_id": "0x7F130DFC",
+      "resource_name": "vertical_spd_30s",
+      "default_label": "30s VAM",
+      "zh_CN": "30s垂均速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0605",
+      "field_id_decimal": 1541,
+      "android_resource_id": "0x7F130D2A",
+      "resource_name": "total_ascent",
+      "default_label": "Total Ascent",
+      "zh_CN": "总升高度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eaa",
+        "0x602a6edc",
+        "0x602a6fcc",
+        "0x602a7038",
+        "0x602a70d2",
+        "0x602a70e8"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0606",
+      "field_id_decimal": 1542,
+      "android_resource_id": "0x7F130D2F",
+      "resource_name": "total_descent",
+      "default_label": "Total Descent",
+      "zh_CN": "总降高度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0607",
+      "field_id_decimal": 1543,
+      "android_resource_id": "0x7F130731",
+      "resource_name": "max_elevation",
+      "default_label": "Max Elevation",
+      "zh_CN": "最高海拔",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0608",
+      "field_id_decimal": 1544,
+      "android_resource_id": "0x7F13076C",
+      "resource_name": "min_elevation",
+      "default_label": "Min Elevation",
+      "zh_CN": "最低海拔",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0609",
+      "field_id_decimal": 1545,
+      "android_resource_id": "0x7F130DEC",
+      "resource_name": "vam_plus_avg",
+      "default_label": "VAM+ Avg",
+      "zh_CN": "上升垂均速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x060A",
+      "field_id_decimal": 1546,
+      "android_resource_id": "0x7F130DEA",
+      "resource_name": "vam_minus_avg",
+      "default_label": "VAM- Avg",
+      "zh_CN": "下降垂均速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x060B",
+      "field_id_decimal": 1547,
+      "android_resource_id": "0x7F130DED",
+      "resource_name": "vam_plus_max",
+      "default_label": "VAM+ Max",
+      "zh_CN": "最大升速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x060C",
+      "field_id_decimal": 1548,
+      "android_resource_id": "0x7F130DEB",
+      "resource_name": "vam_minus_max",
+      "default_label": "VAM- Max",
+      "zh_CN": "最大降速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x060D",
+      "field_id_decimal": 1549,
+      "android_resource_id": "0x7F130126",
+      "resource_name": "avg_grade_plus",
+      "default_label": "Avg Grade +",
+      "zh_CN": "平均上坡度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x060E",
+      "field_id_decimal": 1550,
+      "android_resource_id": "0x7F130125",
+      "resource_name": "avg_grade_minus",
+      "default_label": "Avg Grade -",
+      "zh_CN": "平均下坡度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x060F",
+      "field_id_decimal": 1551,
+      "android_resource_id": "0x7F130733",
+      "resource_name": "max_grade_plus",
+      "default_label": "Max Grade +",
+      "zh_CN": "最大上坡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0610",
+      "field_id_decimal": 1552,
+      "android_resource_id": "0x7F130732",
+      "resource_name": "max_grade_minus",
+      "default_label": "Max Grade -",
+      "zh_CN": "最大下坡",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0611",
+      "field_id_decimal": 1553,
+      "android_resource_id": "0x7F1305D7",
+      "resource_name": "lap_elev_plus",
+      "default_label": "Lap Elev+",
+      "zh_CN": "本圈总升",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": [
+        "0x60109e36"
+      ]
+    },
+    {
+      "field_id": "0x0612",
+      "field_id_decimal": 1554,
+      "android_resource_id": "0x7F1309A0",
+      "resource_name": "pre_lap_elev_plus",
+      "default_label": "Pre Lap Elev+",
+      "zh_CN": "前圈总升",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0613",
+      "field_id_decimal": 1555,
+      "android_resource_id": "0x7F1305E5",
+      "resource_name": "lap_vam_plus",
+      "default_label": "Lap VAM+",
+      "zh_CN": "本圈垂均速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": [
+        "0x60109e3e"
+      ]
+    },
+    {
+      "field_id": "0x0614",
+      "field_id_decimal": 1556,
+      "android_resource_id": "0x7F1309A9",
+      "resource_name": "pre_lap_vam_plus",
+      "default_label": "Pre Lap VAM+",
+      "zh_CN": "前圈垂均速",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0615",
+      "field_id_decimal": 1557,
+      "android_resource_id": "0x7F1305D8",
+      "resource_name": "lap_grade_plus",
+      "default_label": "Lap Grade+",
+      "zh_CN": "本圈平均坡度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": [
+        "0x60109e46"
+      ]
+    },
+    {
+      "field_id": "0x0616",
+      "field_id_decimal": 1558,
+      "android_resource_id": "0x7F1309A1",
+      "resource_name": "pre_lap_grade_plus",
+      "default_label": "Pre Lap Grade+",
+      "zh_CN": "前圈坡度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0701",
+      "field_id_decimal": 1793,
+      "android_resource_id": "0x7F1303C4",
+      "resource_name": "elapsed_time",
+      "default_label": "Elapsed Time",
+      "zh_CN": "总时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0702",
+      "field_id_decimal": 1794,
+      "android_resource_id": "0x7F1307A0",
+      "resource_name": "moving_time",
+      "default_label": "Moving Time",
+      "zh_CN": "骑行时间",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0703",
+      "field_id_decimal": 1795,
+      "android_resource_id": "0x7F130A61",
+      "resource_name": "record_time",
+      "default_label": "Record Time",
+      "zh_CN": "记录时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ea0",
+        "0x602a6eb0",
+        "0x602a6ec6",
+        "0x602a6ee2",
+        "0x602a6efa",
+        "0x602a6efe",
+        "0x602a6f02",
+        "0x602a6f22",
+        "0x602a6f26",
+        "0x602a6f3e",
+        "0x602a6f52",
+        "0x602a6f5e",
+        "0x602a6f72",
+        "0x602a6f76",
+        "0x602a6f7a",
+        "0x602a6f90",
+        "0x602a6ff2",
+        "0x602a7026",
+        "0x602a7052",
+        "0x602a7068"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0704",
+      "field_id_decimal": 1796,
+      "android_resource_id": "0x7F13012A",
+      "resource_name": "avg_lap_time",
+      "default_label": "Avg Lap Time",
+      "zh_CN": "圈均时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0705",
+      "field_id_decimal": 1797,
+      "android_resource_id": "0x7F1305E8",
+      "resource_name": "laps",
+      "default_label": "Laps",
+      "zh_CN": "圈数",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0706",
+      "field_id_decimal": 1798,
+      "android_resource_id": "0x7F1305E4",
+      "resource_name": "lap_time",
+      "default_label": "Lap Time",
+      "zh_CN": "本圈时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ec2",
+        "0x602a6f3a",
+        "0x602a6fb2"
+      ],
+      "bsc500_code_references": [
+        "0x60109e4e"
+      ]
+    },
+    {
+      "field_id": "0x0707",
+      "field_id_decimal": 1799,
+      "android_resource_id": "0x7F1309A8",
+      "resource_name": "pre_lap_time",
+      "default_label": "Pre Lap Time",
+      "zh_CN": "前圈时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0801",
+      "field_id_decimal": 2049,
+      "android_resource_id": "0x7F130D01",
+      "resource_name": "time_of_day",
+      "default_label": "Time of Day",
+      "zh_CN": "当前时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eb4",
+        "0x602a6eca",
+        "0x602a6ee6",
+        "0x602a6f2a",
+        "0x602a6f42",
+        "0x602a6f56",
+        "0x602a6f9c",
+        "0x602a6fd8",
+        "0x602a701c",
+        "0x602a702a",
+        "0x602a7032",
+        "0x602a7040",
+        "0x602a7048",
+        "0x602a705e",
+        "0x602a706c",
+        "0x602a7074",
+        "0x602a7082",
+        "0x602a708a",
+        "0x602a7098",
+        "0x602a70a0",
+        "0x602a70ae",
+        "0x602a70b6",
+        "0x602a70c4",
+        "0x602a70cc",
+        "0x602a70da",
+        "0x602a70e2",
+        "0x602a70f0",
+        "0x602a70f8",
+        "0x602a7106",
+        "0x602a710e",
+        "0x602a711c",
+        "0x602a7124",
+        "0x602a7132",
+        "0x602a713a",
+        "0x602a7148",
+        "0x602a7150",
+        "0x602a715e",
+        "0x602a7166",
+        "0x602a7174",
+        "0x602a717c",
+        "0x602a718a",
+        "0x602a7192",
+        "0x602a71a0",
+        "0x602a71a8",
+        "0x602a71b6",
+        "0x602a71be",
+        "0x602a71cc",
+        "0x602a71d4"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0802",
+      "field_id_decimal": 2050,
+      "android_resource_id": "0x7F130C61",
+      "resource_name": "sunrise",
+      "default_label": "Sunrise",
+      "zh_CN": "日出时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0803",
+      "field_id_decimal": 2051,
+      "android_resource_id": "0x7F130C62",
+      "resource_name": "sunset",
+      "default_label": "Sunset",
+      "zh_CN": "日落时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0804",
+      "field_id_decimal": 2052,
+      "android_resource_id": "0x7F130CA1",
+      "resource_name": "temperature",
+      "default_label": "Temperature",
+      "zh_CN": "温度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0805",
+      "field_id_decimal": 2053,
+      "android_resource_id": "0x7F1304E3",
+      "resource_name": "gps_signal_strength",
+      "default_label": "GPS",
+      "zh_CN": "GPS信号强度",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0806",
+      "field_id_decimal": 2054,
+      "android_resource_id": "0x7F1304E1",
+      "resource_name": "gps_accuracy",
+      "default_label": "Accuracy",
+      "zh_CN": "GPS精度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0807",
+      "field_id_decimal": 2055,
+      "android_resource_id": "0x7F1304F9",
+      "resource_name": "heading",
+      "default_label": "Heading",
+      "zh_CN": "航向",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0808",
+      "field_id_decimal": 2056,
+      "android_resource_id": "0x7F13014A",
+      "resource_name": "battery",
+      "default_label": "Battery",
+      "zh_CN": "电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0901",
+      "field_id_decimal": 2305,
+      "android_resource_id": "0x7F1301C3",
+      "resource_name": "calories",
+      "default_label": "Calories",
+      "zh_CN": "卡路里",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6eb6",
+        "0x602a6ecc",
+        "0x602a6ef8",
+        "0x602a6f14",
+        "0x602a6f2c",
+        "0x602a6f44",
+        "0x602a6f58",
+        "0x602a6f70",
+        "0x602a6f8c",
+        "0x602a6fa4",
+        "0x602a6fbc",
+        "0x602a6fd4",
+        "0x602a6fe8",
+        "0x602a6fec",
+        "0x602a7004"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0A01",
+      "field_id_decimal": 2561,
+      "android_resource_id": "0x7F1304C1",
+      "resource_name": "front_gear",
+      "default_label": "Front Gear",
+      "zh_CN": "前拨档位",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0A02",
+      "field_id_decimal": 2562,
+      "android_resource_id": "0x7F130A4A",
+      "resource_name": "rear_gear",
+      "default_label": "Rear Gear",
+      "zh_CN": "后拨档位",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0A03",
+      "field_id_decimal": 2563,
+      "android_resource_id": "0x7F1304CB",
+      "resource_name": "gears",
+      "default_label": "Gears",
+      "zh_CN": "变速齿轮",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0A04",
+      "field_id_decimal": 2564,
+      "android_resource_id": "0x7F1304C9",
+      "resource_name": "gear_battery",
+      "default_label": "Gear Battery",
+      "zh_CN": "变速电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0A05",
+      "field_id_decimal": 2565,
+      "android_resource_id": "0x7F1304C0",
+      "resource_name": "front_battery",
+      "default_label": "Front Battery",
+      "zh_CN": "前拨电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0A06",
+      "field_id_decimal": 2566,
+      "android_resource_id": "0x7F130A49",
+      "resource_name": "rear_battery",
+      "default_label": "Rear Battery",
+      "zh_CN": "后拨电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B01",
+      "field_id_decimal": 2817,
+      "android_resource_id": "0x7F130BEB",
+      "resource_name": "spd_text_chart",
+      "default_label": "Speed",
+      "zh_CN": "速度",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ef2",
+        "0x602a6f6a"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B02",
+      "field_id_decimal": 2818,
+      "android_resource_id": "0x7F130BEA",
+      "resource_name": "spd_ring",
+      "default_label": "Speed Ring",
+      "zh_CN": "速度环形图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ed2",
+        "0x602a6f4c",
+        "0x602a6fc2"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B03",
+      "field_id_decimal": 2819,
+      "android_resource_id": "0x7F130BE9",
+      "resource_name": "spd_curve",
+      "default_label": "Speed Curve",
+      "zh_CN": "速度曲线图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B04",
+      "field_id_decimal": 2820,
+      "android_resource_id": "0x7F1301A9",
+      "resource_name": "cad_text_chart",
+      "default_label": "Cadence",
+      "zh_CN": "踏频",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ee8",
+        "0x602a6f60"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B05",
+      "field_id_decimal": 2821,
+      "android_resource_id": "0x7F1301A7",
+      "resource_name": "cad_ring",
+      "default_label": "Cadence Ring",
+      "zh_CN": "踏频环形图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B06",
+      "field_id_decimal": 2822,
+      "android_resource_id": "0x7F1301A5",
+      "resource_name": "cad_curve",
+      "default_label": "Cadence Curve",
+      "zh_CN": "踏频曲线图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B07",
+      "field_id_decimal": 2823,
+      "android_resource_id": "0x7F130549",
+      "resource_name": "hr_text_chart",
+      "default_label": "Heart Rate",
+      "zh_CN": "心率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B08",
+      "field_id_decimal": 2824,
+      "android_resource_id": "0x7F130546",
+      "resource_name": "hr_ring",
+      "default_label": "Heart Rate Ring",
+      "zh_CN": "心率环形图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ed0",
+        "0x602a6f4a",
+        "0x602a6fc0"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B09",
+      "field_id_decimal": 2825,
+      "android_resource_id": "0x7F130511",
+      "resource_name": "heart_rate_zone",
+      "default_label": "Heart Rate Zone",
+      "zh_CN": "心率分布",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B0A",
+      "field_id_decimal": 2826,
+      "android_resource_id": "0x7F130543",
+      "resource_name": "hr_curve",
+      "default_label": "Heart Rate Curve",
+      "zh_CN": "心率曲线图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6ea4",
+        "0x602a6f18",
+        "0x602a6f94"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B0B",
+      "field_id_decimal": 2827,
+      "android_resource_id": "0x7F130A26",
+      "resource_name": "pwr_text_chart",
+      "default_label": "Power",
+      "zh_CN": "功率",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B0C",
+      "field_id_decimal": 2828,
+      "android_resource_id": "0x7F130A25",
+      "resource_name": "pwr_ring",
+      "default_label": "Power Ring",
+      "zh_CN": "功率环形图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B0D",
+      "field_id_decimal": 2829,
+      "android_resource_id": "0x7F130A28",
+      "resource_name": "pwr_zone",
+      "default_label": "Power Zone",
+      "zh_CN": "功率分布",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f48"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B0E",
+      "field_id_decimal": 2830,
+      "android_resource_id": "0x7F130A1F",
+      "resource_name": "pwr_curve",
+      "default_label": "Power Curve",
+      "zh_CN": "功率曲线图",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f1a"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B0F",
+      "field_id_decimal": 2831,
+      "android_resource_id": "0x7F1303C6",
+      "resource_name": "elevation_curve",
+      "default_label": "Elevation curve",
+      "zh_CN": "高度曲线图",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B10",
+      "field_id_decimal": 2832,
+      "android_resource_id": "0x7F130086",
+      "resource_name": "aerobic_effect",
+      "default_label": "Aerobic",
+      "zh_CN": "有氧效果",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B11",
+      "field_id_decimal": 2833,
+      "android_resource_id": "0x7F1300BD",
+      "resource_name": "anaerobic_effect",
+      "default_label": "Anaerobic",
+      "zh_CN": "无氧效果",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B12",
+      "field_id_decimal": 2834,
+      "android_resource_id": "0x7F130C21",
+      "resource_name": "stamina",
+      "default_label": "Stamina",
+      "zh_CN": "体力",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6fe2"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B13",
+      "field_id_decimal": 2835,
+      "android_resource_id": "0x7F13098F",
+      "resource_name": "power_group",
+      "default_label": "Power Group",
+      "zh_CN": "功率组合图",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B14",
+      "field_id_decimal": 2836,
+      "android_resource_id": "0x7F130990",
+      "resource_name": "power_group_zone",
+      "default_label": "Power Group Zone",
+      "zh_CN": "功率分布组合图",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0B1B",
+      "field_id_decimal": 2843,
+      "android_resource_id": "0x7F130290",
+      "resource_name": "core_graph",
+      "default_label": "Core Body Temp Graph",
+      "zh_CN": "核心体温曲线图",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0C01",
+      "field_id_decimal": 3073,
+      "android_resource_id": "0x7F1304C1",
+      "resource_name": "front_gear",
+      "default_label": "Front Gear",
+      "zh_CN": "前拨档位",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0C02",
+      "field_id_decimal": 3074,
+      "android_resource_id": "0x7F130A4A",
+      "resource_name": "rear_gear",
+      "default_label": "Rear Gear",
+      "zh_CN": "后拨档位",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0C03",
+      "field_id_decimal": 3075,
+      "android_resource_id": "0x7F1304CB",
+      "resource_name": "gears",
+      "default_label": "Gears",
+      "zh_CN": "变速齿轮",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0C04",
+      "field_id_decimal": 3076,
+      "android_resource_id": "0x7F1304C9",
+      "resource_name": "gear_battery",
+      "default_label": "Gear Battery",
+      "zh_CN": "变速电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0C05",
+      "field_id_decimal": 3077,
+      "android_resource_id": "0x7F130BA9",
+      "resource_name": "shift_mode",
+      "default_label": "Shift Mode",
+      "zh_CN": "变速模式",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0D01",
+      "field_id_decimal": 3329,
+      "android_resource_id": "0x7F130149",
+      "resource_name": "batt",
+      "default_label": "E-Bike Battery",
+      "zh_CN": "E-Bike电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0D02",
+      "field_id_decimal": 3330,
+      "android_resource_id": "0x7F130A7B",
+      "resource_name": "remeining_range",
+      "default_label": "Travel Range",
+      "zh_CN": "续航里程",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0D03",
+      "field_id_decimal": 3331,
+      "android_resource_id": "0x7F1300E7",
+      "resource_name": "assist_mode",
+      "default_label": "Assist Mode",
+      "zh_CN": "助力等级",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0D04",
+      "field_id_decimal": 3332,
+      "android_resource_id": "0x7F130A6B",
+      "resource_name": "regen_mode",
+      "default_label": "Regen Mode",
+      "zh_CN": "回充等级",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0D05",
+      "field_id_decimal": 3333,
+      "android_resource_id": "0x7F1303B2",
+      "resource_name": "e_bike_gear",
+      "default_label": "E-Bike Gear",
+      "zh_CN": "E-Bike档位",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0E01",
+      "field_id_decimal": 3585,
+      "android_resource_id": "0x7F130D05",
+      "resource_name": "time_to_dest",
+      "default_label": "Time to Dest.",
+      "zh_CN": "目的地时间",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0E02",
+      "field_id_decimal": 3586,
+      "android_resource_id": "0x7F1303F9",
+      "resource_name": "eta_to_dest",
+      "default_label": "ETA",
+      "zh_CN": "预计到达时刻",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0E03",
+      "field_id_decimal": 3587,
+      "android_resource_id": "0x7F130380",
+      "resource_name": "dist_to_next",
+      "default_label": "Dist. To Next",
+      "zh_CN": "抵达下一个航点距离",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0E04",
+      "field_id_decimal": 3588,
+      "android_resource_id": "0x7F130D06",
+      "resource_name": "time_to_next",
+      "default_label": "Time to Next",
+      "zh_CN": "下一个航点在途时间",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0E05",
+      "field_id_decimal": 3589,
+      "android_resource_id": "0x7F1303FA",
+      "resource_name": "eta_to_next",
+      "default_label": "ETA to Next",
+      "zh_CN": "到下个航点时刻",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0F01",
+      "field_id_decimal": 3841,
+      "android_resource_id": "0x7F1303C3",
+      "resource_name": "elapsed_segment_time",
+      "default_label": "Elapsed Time",
+      "zh_CN": "已过路段时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0F02",
+      "field_id_decimal": 3842,
+      "android_resource_id": "0x7F13009B",
+      "resource_name": "ahead_time",
+      "default_label": "Ahead Time",
+      "zh_CN": "领先时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0F03",
+      "field_id_decimal": 3843,
+      "android_resource_id": "0x7F130151",
+      "resource_name": "behind_time",
+      "default_label": "Behind Time",
+      "zh_CN": "落后时间",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a70bc"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x0F04",
+      "field_id_decimal": 3844,
+      "android_resource_id": "0x7F13037E",
+      "resource_name": "dist_ramain",
+      "default_label": "Remaining distance",
+      "zh_CN": "剩余距离",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a70ba"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1001",
+      "field_id_decimal": 4097,
+      "android_resource_id": "0x7F130086",
+      "resource_name": "aerobic_effect",
+      "default_label": "Aerobic",
+      "zh_CN": "有氧效果",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6fe4"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1002",
+      "field_id_decimal": 4098,
+      "android_resource_id": "0x7F1300BD",
+      "resource_name": "anaerobic_effect",
+      "default_label": "Anaerobic",
+      "zh_CN": "无氧效果",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6fe6"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1003",
+      "field_id_decimal": 4099,
+      "android_resource_id": "0x7F130D49",
+      "resource_name": "training_load",
+      "default_label": "Training Load",
+      "zh_CN": "训练负荷",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6fea"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1004",
+      "field_id_decimal": 4100,
+      "android_resource_id": "0x7F130C21",
+      "resource_name": "stamina",
+      "default_label": "Stamina",
+      "zh_CN": "体力",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [
+        "0x602a6f9a"
+      ],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1101",
+      "field_id_decimal": 4353,
+      "android_resource_id": "0x7F130613",
+      "resource_name": "light_battery",
+      "default_label": "Light Battery",
+      "zh_CN": "车灯电量",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1102",
+      "field_id_decimal": 4354,
+      "android_resource_id": "0x7F130A78",
+      "resource_name": "remaining_time",
+      "default_label": "Light Runtime",
+      "zh_CN": "车灯续航",
+      "app_classes": [
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1104",
+      "field_id_decimal": 4356,
+      "android_resource_id": "0x7F13049F",
+      "resource_name": "fl_battery",
+      "default_label": "Front Light Battery",
+      "zh_CN": "前灯电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1105",
+      "field_id_decimal": 4357,
+      "android_resource_id": "0x7F1304A0",
+      "resource_name": "fl_remaining_time",
+      "default_label": "Front Light Runtime",
+      "zh_CN": "前灯续航",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1106",
+      "field_id_decimal": 4358,
+      "android_resource_id": "0x7F130D10",
+      "resource_name": "tl_battery",
+      "default_label": "Taillight Battery",
+      "zh_CN": "尾灯电量",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1107",
+      "field_id_decimal": 4359,
+      "android_resource_id": "0x7F130D11",
+      "resource_name": "tl_remaining_time",
+      "default_label": "Taillight Runtime",
+      "zh_CN": "尾灯续航",
+      "app_classes": [
+        "Bg1PageField",
+        "PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A01",
+      "field_id_decimal": 6657,
+      "android_resource_id": "0x7F130291",
+      "resource_name": "core_temp",
+      "default_label": "CORE Temp",
+      "zh_CN": "核心体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A02",
+      "field_id_decimal": 6658,
+      "android_resource_id": "0x7F130B74",
+      "resource_name": "session_avg_core",
+      "default_label": "Avg Core Temp",
+      "zh_CN": "平均体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A03",
+      "field_id_decimal": 6659,
+      "android_resource_id": "0x7F130B75",
+      "resource_name": "session_max_core",
+      "default_label": "Highest body temperature",
+      "zh_CN": "最高体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A04",
+      "field_id_decimal": 6660,
+      "android_resource_id": "0x7F130B76",
+      "resource_name": "session_min_core",
+      "default_label": "Min Core Temp",
+      "zh_CN": "最低体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A05",
+      "field_id_decimal": 6661,
+      "android_resource_id": "0x7F1305D2",
+      "resource_name": "lap_avg_core",
+      "default_label": "lap_avg_core",
+      "zh_CN": "单圈平均体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A06",
+      "field_id_decimal": 6662,
+      "android_resource_id": "0x7F1305DB",
+      "resource_name": "lap_max_core",
+      "default_label": "Lap Max Core Temp",
+      "zh_CN": "单圈最高体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0x1A07",
+      "field_id_decimal": 6663,
+      "android_resource_id": "0x7F1305E0",
+      "resource_name": "lap_min_core",
+      "default_label": "Lap Min Core Temp",
+      "zh_CN": "单圈最低体温",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    },
+    {
+      "field_id": "0xFFFF",
+      "field_id_decimal": 65535,
+      "android_resource_id": "0x7F13016F",
+      "resource_name": "blank_data",
+      "default_label": "Blank Data",
+      "zh_CN": "空白数据",
+      "app_classes": [
+        "Bg1PageField"
+      ],
+      "bsc500_default_template_references": [],
+      "bsc500_code_references": []
+    }
+  ]
+}

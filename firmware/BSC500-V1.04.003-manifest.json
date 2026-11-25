@@ -1,0 +1,53 @@
+{
+  "source": "BSC500-V1.04.003.rsc",
+  "sha256": "bfbf186494487f71d501ba6f0bafeba54fc9758879e43ad74d4c2f14203d7a0c",
+  "checksum": 585868521,
+  "os_length": 110,
+  "sc_length": 113,
+  "directory_offset": 241,
+  "entries_offset": 405,
+  "files": [
+    {
+      "name": "anatel_image.bin",
+      "offset": 405,
+      "end_exclusive": 5973,
+      "size": 5568,
+      "sha256": "91a368a7a6127b36ff4d59f7d1accfb058508a4d40cf5002b16b706f58e9f7a4"
+    },
+    {
+      "name": "asset_version.cfg",
+      "offset": 5973,
+      "end_exclusive": 5991,
+      "size": 18,
+      "sha256": "cb843789505713b7123d1d7bd9f00f9363041df6596554e10e58944e0f3d1833"
+    },
+    {
+      "name": "BSC500_APP.bin",
+      "offset": 5991,
+      "end_exclusive": 4488751,
+      "size": 4482760,
+      "sha256": "d7363b8e9902268de124694e5f043ac49070c65ad3210cb2eb0f575e27f9a933"
+    },
+    {
+      "name": "im_about_auth_icon.bin",
+      "offset": 4488751,
+      "end_exclusive": 4512647,
+      "size": 23896,
+      "sha256": "7b541f87cde4505b39c2597d8e34b2623ea359030ce02c4425c5ae6126380194"
+    },
+    {
+      "name": "patch_list.cfg",
+      "offset": 4512647,
+      "end_exclusive": 4514596,
+      "size": 1949,
+      "sha256": "f41288be49e93a3ba2a9283105a21bbc068955c4a024ff5eb3feca4485d4cfbb"
+    },
+    {
+      "name": "road_book_cfg.cfg",
+      "offset": 4514596,
+      "end_exclusive": 4514804,
+      "size": 208,
+      "sha256": "46b653f9bca3280da77aa0d1313f112a0742298f2ac22321c5095200c31ca743"
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "scatter_source": "0x604445c0",
+  "scatter_source_end": "0x604466ac",
+  "scatter_destination": "0x200042e0",
+  "scatter_decoded_size": 17632,
+  "key_table": "0x20007dc8",
+  "record_table": "0x20008114",
+  "settings": [
+    {
+      "key": "cfg_reset",
+      "id": 1,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004bb98",
+      "name_address": "0x603fbd31"
+    },
+    {
+      "key": "cfg_devinfo",
+      "id": 2,
+      "record_count": 1,
+      "record_size": 92,
+      "total_bytes": 92,
+      "ram_address": "0x2004bb9c",
+      "name_address": "0x603fbcd2"
+    },
+    {
+      "key": "cfg_firmware_update",
+      "id": 3,
+      "record_count": 1,
+      "record_size": 16,
+      "total_bytes": 16,
+      "ram_address": "0x2004bbf8",
+      "name_address": "0x603fbc47"
+    },
+    {
+      "key": "cfg_user_info",
+      "id": 4,
+      "record_count": 1,
+      "record_size": 52,
+      "total_bytes": 52,
+      "ram_address": "0x2004bc08",
+      "name_address": "0x603fbcc4"
+    },
+    {
+      "key": "cfg_bike_info",
+      "id": 5,
+      "record_count": 1,
+      "record_size": 52,
+      "total_bytes": 52,
+      "ram_address": "0x2004bc3c",
+      "name_address": "0x603fbcb6"
+    },
+    {
+      "key": "cfg_physic",
+      "id": 6,
+      "record_count": 1,
+      "record_size": 10,
+      "total_bytes": 10,
+      "ram_address": "0x2004bc70",
+      "name_address": "0x603fbc01"
+    },
+    {
+      "key": "cfg_zones",
+      "id": 7,
+      "record_count": 1,
+      "record_size": 54,
+      "total_bytes": 54,
+      "ram_address": "0x2004bc7a",
+      "name_address": "0x603fbd01"
+    },
+    {
+      "key": "cfg_ant_ble_dev",
+      "id": 8,
+      "record_count": 1,
+      "record_size": 2304,
+      "total_bytes": 2304,
+      "ram_address": "0x2004bcb0",
+      "name_address": "0x603fbd87"
+    },
+    {
+      "key": "cfg_display",
+      "id": 9,
+      "record_count": 1,
+      "record_size": 76,
+      "total_bytes": 76,
+      "ram_address": "0x2004c5b0",
+      "name_address": "0x603fbd97"
+    },
+    {
+      "key": "cfg_sound",
+      "id": 10,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x2004c5fc",
+      "name_address": "0x603fbc0c"
+    },
+    {
+      "key": "cfg_language",
+      "id": 11,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x2004c604",
+      "name_address": "0x603fbc29"
+    },
+    {
+      "key": "cfg_time",
+      "id": 12,
+      "record_count": 1,
+      "record_size": 20,
+      "total_bytes": 20,
+      "ram_address": "0x2004c60c",
+      "name_address": "0x603fbc3e"
+    },
+    {
+      "key": "cfg_unit",
+      "id": 13,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004c620",
+      "name_address": "0x603fbd4a"
+    },
+    {
+      "key": "cfg_data_priority",
+      "id": 14,
+      "record_count": 1,
+      "record_size": 24,
+      "total_bytes": 24,
+      "ram_address": "0x2004c624",
+      "name_address": "0x603fbda3"
+    },
+    {
+      "key": "cfg_calib",
+      "id": 15,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004c63c",
+      "name_address": "0x603fbbf7"
+    },
+    {
+      "key": "cfg_statistics",
+      "id": 16,
+      "record_count": 1,
+      "record_size": 144,
+      "total_bytes": 144,
+      "ram_address": "0x2004c640",
+      "name_address": "0x603fbce8"
+    },
+    {
+      "key": "cfg_navi",
+      "id": 17,
+      "record_count": 1,
+      "record_size": 16,
+      "total_bytes": 16,
+      "ram_address": "0x2004c6d0",
+      "name_address": "0x603fbc9e"
+    },
+    {
+      "key": "cfg_sms",
+      "id": 18,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004c6e0",
+      "name_address": "0x603fbd0b"
+    },
+    {
+      "key": "cfg_live_track",
+      "id": 19,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004c6e4",
+      "name_address": "0x603fbca7"
+    },
+    {
+      "key": "cfg_anti_theft",
+      "id": 20,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004c6e8",
+      "name_address": "0x603fbd3b"
+    },
+    {
+      "key": "cfg_accident",
+      "id": 21,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x2004c6ec",
+      "name_address": "0x603fbd53"
+    },
+    {
+      "key": "cfg_gps",
+      "id": 22,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x2004c6f0",
+      "name_address": "0x603fbd13"
+    },
+    {
+      "key": "cfg_agps",
+      "id": 23,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x2004c6f8",
+      "name_address": "0x603fbd1b"
+    },
+    {
+      "key": "cfg_ble",
+      "id": 24,
+      "record_count": 1,
+      "record_size": 44,
+      "total_bytes": 44,
+      "ram_address": "0x2004c700",
+      "name_address": "0x603fbc36"
+    },
+    {
+      "key": "cfg_wifi",
+      "id": 25,
+      "record_count": 1,
+      "record_size": 16,
+      "total_bytes": 16,
+      "ram_address": "0x2004c72c",
+      "name_address": "0x603fbc95"
+    },
+    {
+      "key": "cfg_power",
+      "id": 26,
+      "record_count": 1,
+      "record_size": 1,
+      "total_bytes": 1,
+      "ram_address": "0x2004c73c",
+      "name_address": "0x603fbcde"
+    },
+    {
+      "key": "cfg_mode",
+      "id": 27,
+      "record_count": 10,
+      "record_size": 44,
+      "total_bytes": 440,
+      "ram_address": "0x2004c740",
+      "name_address": "0x603fbc20"
+    },
+    {
+      "key": "cfg_pages",
+      "id": 28,
+      "record_count": 10,
+      "record_size": 1444,
+      "total_bytes": 14440,
+      "ram_address": "0x2004c8f8",
+      "name_address": "0x603fbcf7"
+    },
+    {
+      "key": "cfg_save",
+      "id": 29,
+      "record_count": 10,
+      "record_size": 20,
+      "total_bytes": 200,
+      "ram_address": "0x20050160",
+      "name_address": "0x603fbc5b"
+    },
+    {
+      "key": "cfg_alert",
+      "id": 30,
+      "record_count": 10,
+      "record_size": 56,
+      "total_bytes": 560,
+      "ram_address": "0x20050228",
+      "name_address": "0x603fbd60"
+    },
+    {
+      "key": "cfg_segments",
+      "id": 31,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x20050458",
+      "name_address": "0x603fbd24"
+    },
+    {
+      "key": "cfg_motion_alert",
+      "id": 32,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x20050460",
+      "name_address": "0x603fbd6a"
+    },
+    {
+      "key": "cfg_guide",
+      "id": 33,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x20050464",
+      "name_address": "0x603fbc16"
+    },
+    {
+      "key": "cfg_touch",
+      "id": 34,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x2005046c",
+      "name_address": "0x603fbc8b"
+    },
+    {
+      "key": "cfg_workout",
+      "id": 35,
+      "record_count": 1,
+      "record_size": 8,
+      "total_bytes": 8,
+      "ram_address": "0x20050474",
+      "name_address": "0x603fbd7b"
+    },
+    {
+      "key": "cfg_inner_training",
+      "id": 36,
+      "record_count": 1,
+      "record_size": 120,
+      "total_bytes": 120,
+      "ram_address": "0x2005047c",
+      "name_address": "0x603fbc64"
+    },
+    {
+      "key": "cfg_general_setting",
+      "id": 37,
+      "record_count": 1,
+      "record_size": 4,
+      "total_bytes": 4,
+      "ram_address": "0x200504f4",
+      "name_address": "0x603fbc77"
+    }
+  ]
+}

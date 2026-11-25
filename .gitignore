@@ -1,0 +1,34 @@
+# Local inputs, device data, and raw evidence
+.local/
+usb-copy/
+usb-copy.sha256
+download.headers
+official-metadata.json
+rea-*.json
+rea-*.asm.txt
+*.bin
+*.rsc
+*.apk
+*.fit
+*.fitbp
+*.gpx
+*.tcx
+*.map
+*.rtd
+*.log
+*.pcap
+*.pcapng
+
+# Local configuration and credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Local tooling
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
