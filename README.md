@@ -23,7 +23,7 @@
 
 [厂商说明书镜像](https://device.report/m/2e3c0800a266d01d5e6c5724e7b538c66d06cb2d9677344efbd20e5f66c1ebb2) · [BSC500 产品页](https://www.igpsport.cn/product/bsc500) · [官方地图更新说明](https://www.igpsport.com/support/product/map?id=1076&name=BSC500)
 
-固件中恢复了 37 个配置键。本机 USB 副本中的设置库有 32 个键能匹配固件记录长度，其中 `cfg_pages` 是 10 条 1,444 字节的记录，`cfg_display` 是 76 字节。设备日志也记录了数据页、显示和导航配置的保存。这些证据适合用来对比通过官方入口做单项修改前后的快照。直接编辑设置库所需的字段布局、写回校验和加载行为仍待验证。App 的 185 个字段 ID 中有 47 个在 BSC500 模板或代码中出现，完整支持清单仍待确认。[设置表](native/settings-registry.json) · [骑行字段字典](native/ride-field-ids.json)
+固件中恢复了 37 个配置键。两版 USB 快照中各有 32 个键的声明长度与注册表匹配，其中 31 个完整值可以重组并通过 CRC 校验。`cfg_pages` 是 10 条 1,444 字节的记录，两版快照的逻辑值相同。`cfg_display` 是 76 字节，其中一个值字节在两版快照间发生变化。后续可使用官方设置入口做单项修改，再对比重组后的值。字段的完整语义和写回行为仍待验证。App 的 185 个字段 ID 中有 47 个在 BSC500 模板或代码中出现，完整支持清单仍待确认。[设置表](native/settings-registry.json) · [骑行字段字典](native/ride-field-ids.json)
 
 背光初始化会尝试读取 `0:level.txt` 和 `0:light.txt`。离线执行固件的 CSV 读取和分列逻辑，确认前者接收「滑块位置、亮度」，后者接收「照度、白天亮度、夜间亮度」。模拟中任一文件载入有效数据即可开启 CSV 模式。现有真机启动日志显示两个文件均未打开，CSV 模式关闭。仿真使用模拟文件读写和十进制转换，真机文件位置、有效取值和实际显示效果仍待验证。[证据与地址](findings.json)
 
@@ -68,9 +68,11 @@ uv run --with unicorn==2.1.4 native/map_background.py verify \
 
 ## 其他研究结果
 
+- [离线反编译档案](firmware/BSC500-offline-analysis-archive.md) 说明如何查阅项目 `analysis/` 中的固件伪代码、静态调用边和 Android 反编译文本。
+- [固件研究与开发交接](firmware/BSC500-development-reference.md) 汇总 REA 覆盖范围、RSC 与设置库的字节格式、骑行页结构、地图和背光调用地址，以及后续开发的验证条件。
 - [V1.08.005 对比调查](firmware/BSC500-V1.08.005-investigation.md) 记录两版 USB 文件差异、路线颜色的设置线索，以及主程序和 Boot 版本变化。
 - [结构与地址](findings.json) 记录 RSC 容器、启动入口、字段格式化、地图主题与绘制函数。
 - [设置表](native/settings-registry.json) 记录从启动初始化数据恢复的 37 个配置键。可用 `python3 native/read_settings_registry.py "$original"` 重新生成。
 - [骑行字段字典](native/ride-field-ids.json) 记录 Android App 中的字段 ID 及其固件引用。固件引用可辅助定位 BSC500 的现有字段。
 
-把厂商固件、APK、设备导出、原始日志和分析工具的原始输出放在 `.local/`。该目录由 Git 忽略。项目代码及文档使用 [MIT 许可证](LICENSE)。
+厂商固件、APK、设备导出和分析运行日志保存在 Git 忽略的 `.local/`。研究归档在 [analysis/](analysis/README.md)，包括反编译产物及其索引。本项目原创工具与文档使用 [MIT 许可证](LICENSE)。

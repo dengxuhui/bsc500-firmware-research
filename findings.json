@@ -7,7 +7,7 @@
       "os_length": 110,
       "sc_length": 113,
       "period": 12430,
-      "offset_semantics": "HD marks the start of stored entry data. Each AD value is the preceding entry end relative to HD. The final entry ends at EOF.",
+      "offset_semantics": "The HD value marks the start of stored entry data. Each AD value is that entry's end offset relative to the HD value. The final entry ends at EOF.",
       "verified_reference_packages": [
         {
           "source": "BSC300T-V1.24.rsc",
@@ -192,6 +192,13 @@
     "settings_snapshot": {
       "registered_keys": 37,
       "usb_snapshot_matching_record_sizes": 32,
+      "usb_snapshot_validated_complete_keys_per_version": 31,
+      "usb_snapshot_versions": ["1.04.003", "1.08.005"],
+      "kv_block_size": 512,
+      "kv_value_checksum": "CRC-8/MAXIM-DOW",
+      "changed_complete_keys": ["cfg_display", "cfg_navi", "cfg_sound"],
+      "cfg_pages_value_sha256_in_both_snapshots": "d22f432bdae884efe814e6167e3fb24940f0ddd09c5d9f1ca644bf4da1047f2c",
+      "development_reference": "firmware/BSC500-development-reference.md",
       "device_log_flush_ok_counts": {
         "cfg_display": 7,
         "cfg_navi": 15,

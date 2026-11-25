@@ -1,0 +1,4 @@
+# Preserve byte-identical exports and empty final TSV fields.
+* -text
+*.tsv whitespace=-blank-at-eol
+*.java -whitespace

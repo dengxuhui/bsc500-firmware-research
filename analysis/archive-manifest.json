@@ -1,0 +1,102 @@
+{
+  "native-full": {
+    "rows": 15463,
+    "status": {
+      "decompiled": 15463
+    }
+  },
+  "native-mcp-bulk": {
+    "rows": 13045,
+    "status": {
+      "decompiled": 13045
+    }
+  },
+  "native-candidates": {
+    "rows": 15187,
+    "status": {
+      "decompiled": 15176,
+      "failed": 11
+    }
+  },
+  "distinct_addresses": 18814,
+  "addresses_with_pseudocode": 18804,
+  "candidate_seeds": {
+    "created": 15084,
+    "undecodable": 37,
+    "existing": 25,
+    "overlap": 167
+  },
+  "call_edges": {
+    "native-full": 65805,
+    "native-candidates": 39606
+  },
+  "artifact_sha256": {
+    "BSC500_APP.bin": "d7363b8e9902268de124694e5f043ac49070c65ad3210cb2eb0f575e27f9a933",
+    "iGPSPORT-global-V8.06.28.apk": "8e2b447a1a840710b040695169bc3b6dde7a743ffae7d22b9910b8000587fae8"
+  },
+  "android_java_files": 38064,
+  "archive_sha256": {
+    "BSC500-V1.04.003/function-index.tsv": "e3e204529f079e7824492b949cd179c01bd822217fe9a3aeb2d429453d4963fa",
+    "BSC500-V1.04.003/ghidra-seeds.tsv": "7124d231ca58f7066bc168c0043e3744fcad9b0f567b3e0c4a58c99d3fe3e3b8",
+    "BSC500-V1.04.003/native-candidates/calls.tsv": "cda1e8e86b5b31653df19e6fcea87b6ba2ea846de7986dbf5272d0738ffdf43f",
+    "BSC500-V1.04.003/native-candidates/functions.tsv": "1b9b50a154355dbf78f889ebb10fe1906fbc8703e692e18871bd7c8735047a67",
+    "BSC500-V1.04.003/native-candidates/pseudocode.tar.gz": "9d0b4e470125ab8dce95dac4f496b957237e82b2517cd14de5bdee280435161f",
+    "BSC500-V1.04.003/native-candidates/seeds.tsv": "460c3da594e365ec0020da48ab095f48d0188244fdbbd7deb77d78d56efc16d7",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x600007c0.json": "8f0e49f381433761e6a0c3c9c6339ba6d89ffb92ade58a2865c66aca30ba0c2d",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x60004124.json": "e16740f5a716e3a077e368aae57a690d4af82334076f3221cfd4fe227191ee40",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x60037b94.json": "7187d11c46e1559b78baa0c16f2212d10b82e1bc885459260305b4f28ace21c3",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x6006cb34.json": "71c420429c97eec17e0c0ae5c0ba0a6b8d219d00db7a946dfaf4fd689c7a5743",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x6006cbd0.json": "a854207fa377ebef23bd01919c7c616cbe48588fafedf700a6f050c97bcab9d5",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x60075ab8.json": "55e3036796025d1f04b84e7c4813d4f340937d2bf61ce9a0bbf2c1170cfd542d",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x600b95e6.json": "8b8fe0496148380ba0148740d5c03a4f5f7342c77271fb70a7a992683e75b46e",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x600c5638.json": "01f5774c01df150d4cee413435ae9e87fa39ec3dd079db68e3b32418949c35fd",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x600cc1a0.json": "761e9f6603089c3f13b11c1a0ada763b7a9c7e25237f08b16896da84c639d06b",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x600f8568.json": "9eec08eff2aeebe380a135ed6efc360a01b086774131bbc2281d40a1743d1f9b",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x60109e12.json": "b0a9b70d8f24c6d7d15613965e56f9cda9f2ff66c5fb78cda2702e88dcdb99fe",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x6014d954.json": "74277a2675bb842873172dfcbc4f9ae22b76175468afed1967b6f9a439ee9b42",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x6014ec88.json": "5e1e82f84d8ed3e94644b724486d201be6ee6400f91cb0fdec17372d9ba35310",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x6014ecb0.json": "d9162600bd4be3304d2cbcf07035840540e7ebc9849263b500e81278936d4c2c",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x601517f4.json": "7143f1562d56c34399473f8bcde9188a254d53f5c8faa85aed3e8a18505b9d57",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x6015a944.json": "b557c53c7b03e233b6925f30e317c47a8c0aaaa8258ca1be177b2f462cf4c56a",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x60165b4c.json": "5c7a14d2c3c5855fab8270b3922f51e45a99a1ddfdcc032fe79dfb5e6f5107b5",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x601e643a.json": "6bb0aadcba934af1738605892f93418129481a20baee77076c529dd553261d11",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x602239b8.json": "f54090e487adac902a64acf7a8c5f3e45fc37876b26cf5d7f8edb542f4b5e16a",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x60254dc4.json": "c236b3b169d6963c169ce7630e2e56d2eaa4a94e9da44e6ab948bbd4cc47f57d",
+    "BSC500-V1.04.003/native-entrypoints/functions/0x602584f8.json": "35176c7c0b6a25bb23d0452332a2b7b2a43c68c403ca3a6c07e147fed6bf2faa",
+    "BSC500-V1.04.003/native-entrypoints/procedures.json": "b6d393d2b8f8f21135c83fd634d17b4c3a54c5238f2500fd58a96b7210a27261",
+    "BSC500-V1.04.003/native-entrypoints/segments.json": "b0fdbf4d212199de123e985d4ffe0b68aa6cd70e71272114ee35b88cbad8fce7",
+    "BSC500-V1.04.003/native-full/calls.tsv": "055f66f40c4d7a4a2e8808b0f51a00f2d324b0fe76e7dc3bb656e949d91cb987",
+    "BSC500-V1.04.003/native-full/functions.tsv": "0a1ffae12bd5eee4dcb8d402abfa1dd31f11790ce5dddb72820e46428020ac0b",
+    "BSC500-V1.04.003/native-full/pseudocode.tar.gz": "c174cde1b35d7b4a5ff468d459ce585ec462194f787b9e1b0eac5c01c30633c7",
+    "BSC500-V1.04.003/native-mcp-bulk/functions.tsv": "658f9092ba52c130b1f099962dc73eafa1228bb598fd8456aba04fe1d0c0bef4",
+    "BSC500-V1.04.003/native-mcp-bulk/pseudocode.tar.gz": "6d5a47c395224c5e85422d7ad399cb79874ff0e53cc40749e77209da04d135b8",
+    "BSC500-V1.04.003/resources/anatel_image-on-dark.png": "b1d3ebe9c96aa1c177be795dd6d0c258f7c70bf9dfb009f98faf1ebdbd893f03",
+    "BSC500-V1.04.003/resources/anatel_image.png": "29f463ba4e2bbdae3684fb22c1e1f5bfe346d7bec671370c400a4640ed83137c",
+    "BSC500-V1.04.003/resources/im_about_auth_icon-on-dark.png": "71e8e6c931222d4ff7913e754e716fa70949284bd91172978f319081fd58414f",
+    "BSC500-V1.04.003/resources/im_about_auth_icon.png": "637433e80ae0c6730a89c6a3a894ff272ce39fd5ae86909c9412798ce370fe57",
+    "BSC500-V1.04.003/rizin-thumb-candidates.tsv": "30a3e6c9220113bf508d614e895a0fb0ab08ae1a9a773db12f012d67c1a641f1",
+    "android-V8.06.28/evidence/classes-BSC500.json": "fb99a7b2c47f1e891b5ee88c5baac2e6e18d588bc0ad79cef783da08022e0e1d",
+    "android-V8.06.28/evidence/classes-Firmware.json": "2696731309162c677b365704bd6e387c4c7edf6dec0dfbe362324f73c6d68c48",
+    "android-V8.06.28/evidence/classes-com.igpsport.globalapp.devicemodule.pagesetting.json": "3f448994bbeaf7cadb253104e5f2b9b4fa5cee34d1770e9d88033be3512cff99",
+    "android-V8.06.28/evidence/com.igpsport.blelib.IGPDeviceManager.class.json": "3dc0418260c43f810f600e22eaa272b4cc33f7d247e3be85d9ed791aab99c32c",
+    "android-V8.06.28/evidence/com.igpsport.blelib.bean.Config$page_msg.class.json": "8c6f1ae54b3c893d28c129fb45fb17d9d55133ec7154af13fe7342ae8b8e6dfe",
+    "android-V8.06.28/evidence/com.igpsport.blelib.devicemanager.FirmwareUpdateDelegate.class.json": "6f6df82e2902d0a732d5fd14de2ca919b5b2328c9d6e5bebe7e88f44a48f583d",
+    "android-V8.06.28/evidence/com.igpsport.blelib.devicemanager.FirmwareUpdateDelegate.readFirmwareVersion.0.json": "f9720c8c2607543bd0f032808353dd0df043a77f88c7d813c8887e3ccf00ea4c",
+    "android-V8.06.28/evidence/com.igpsport.blelib.devicemanager.FirmwareUpdateDelegate.sendFirmwareFileToDevice.0.json": "48bfd6b1ccc2fa3302ce9c2a7cb5f52e32fd19e883ad8a9c419a10884a3bc970",
+    "android-V8.06.28/evidence/com.igpsport.blelib.devicemanager.FirmwareUpdateDelegate.sendFirmwareFileToDevice.1.json": "7e24d5880531721529511d1071166600b138853d45bf078fe3568f941797391d",
+    "android-V8.06.28/evidence/com.igpsport.blelib.devicemanager.FirmwareUpdateDelegate.updateFirmware.0.json": "d483fc448ba255a65e93e1d1d3d43c21163fc3c4c44f8a201373a0d5cb852c02",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.beans.PageField.class.json": "2066d6ce3f873ef522665f3fa0a39e162633f22967cb2808876c11416a9d16d5",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.model.GenericPageSettingViewModel.class.json": "ddb68bf1c0038b72a29fc9e7744d93d7ed2664b200a3dbcf047b054cbe7ad030",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.model.GenericPageSettingViewModel.requestPageList.0.json": "a9baa9ae2009517145205ff71cc82663b3b6482a0a3d9654f5dade2eb721b3e1",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.model.GenericPageSettingViewModel.requestWritePageList.0.json": "b7d14ffd555898b99b47348d63294ef83f8211914e9afc27da5aeda65e801c32",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.pagebg1.utils.field.Bg1PageField.class.json": "85151ff64e79b87966a7db7890e3f4a9588a9c5633199f80e83ab96031894f55",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.util.PageConfigUtil.class.json": "098f4832f4314a9234d1486bbe0510ad5893cd1a72e5b76f7b86e93e785d3872",
+    "android-V8.06.28/evidence/com.igpsport.globalapp.devicemodule.pagesetting.util.PageConfigUtil.getGraphicalDataReplacedTextData.0.json": "6a036f2218e5c877d20e5b3d63fc4350a97f700fa0af7cf24bbbb0e56a286647",
+    "android-V8.06.28/evidence/package.json": "e1790fb8512bafebdc5336c62598e765d63ff7e2e7046349f2b503b0ba850404",
+    "android-V8.06.28/members.tsv": "ce2ae85b992a14a619acaeebb5dae8b9b15fd07d6edf21e19003be17881a31d5",
+    "android-V8.06.28/simple/ConfigurationDelegate.java": "7b71a1b6a15e5ad0b71b0fc8bdd40ec95c6c4de3a6d84701fd0f795c2c08a232",
+    "android-V8.06.28/simple/FirmwareUpdateDelegate.java": "d3b90345f3668b45dd8e2f4ee28ebbb3393dd5017e388908531e9144d77bef60",
+    "android-V8.06.28/simple/IGPDeviceManager.java": "b2eb81706bcfdac6fc000b33a67fc7b8a33d9d014e80973b7141e8ad2e5b8253",
+    "android-V8.06.28/sources.tar.gz": "ccb7539e2e66f22283d790116109d69ec34ff32b44a7354842e12994405cb68c"
+  }
+}
