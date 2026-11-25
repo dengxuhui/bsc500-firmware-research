@@ -187,6 +187,56 @@
     ],
     "dictionary": "native/ride-field-ids.json"
   },
+  "settings_and_update": {
+    "verified_on": "2026-11-25",
+    "settings_snapshot": {
+      "registered_keys": 37,
+      "usb_snapshot_matching_record_sizes": 32,
+      "device_log_flush_ok_counts": {
+        "cfg_display": 7,
+        "cfg_navi": 15,
+        "cfg_pages": 7
+      }
+    },
+    "backlight_csv": {
+      "initializer": "0x60004124",
+      "slider_file": "0:level.txt",
+      "slider_file_open_call": "0x60004144",
+      "slider_columns": ["position", "brightness"],
+      "ambient_light_sensor_file": "0:light.txt",
+      "ambient_light_sensor_file_open_call": "0x60004168",
+      "ambient_light_sensor_columns": ["lux", "day", "night"],
+      "csv_field_splitter": "0x600f8568",
+      "device_log_observation": "Both files failed to open and CSV mode was disabled in the recorded boot sequence.",
+      "offline_verification": {
+        "emulator": "Unicorn 2.1.4 executing the original Thumb initializer and field splitter",
+        "hooked_dependencies": ["file open", "file read", "file close", "decimal conversion", "logging"],
+        "cases": [
+          {"files": {}, "csv_enabled": false},
+          {"files": {"0:level.txt": "30,40\n"}, "logged_slider": [30, 40], "csv_enabled": true},
+          {"files": {"0:light.txt": "20,15,8\n"}, "logged_ambient_light_sensor": [20, 15, 8], "csv_enabled": true},
+          {"files": {"0:level.txt": "30,40\n", "0:light.txt": "20,15,8\n"}, "logged_slider": [30, 40], "logged_ambient_light_sensor": [20, 15, 8], "csv_enabled": true}
+        ]
+      },
+      "unresolved": ["USB volume mapping for configuration files", "Accepted value ranges", "Hardware behavior with CSV enabled"]
+    },
+    "stock_update": {
+      "vendor_metadata": "https://prod.en.igpsport.com/service/sportg/device4j/soft-version/deviceFirmwareDetails?language=en&softTypeId=1076",
+      "metadata_release_date": "2026-06-15",
+      "download_sha256_matches_manifest": true,
+      "manual_documented_transport": "iGPSPORT App over Bluetooth",
+      "cleanup_function": "0x60227ebc",
+      "cleanup_firmware_file_exceptions": [
+        {"literal": "0:/BSC500.rsc", "comparison_call": "0x60227f6e"},
+        {"literal": "BSC500.rsc", "comparison_call": "0x60227fde"}
+      ],
+      "unresolved": [
+        "Whether and when a file placed on the USB volume is installed",
+        "Device-side package acceptance checks",
+        "Same-version reinstall, downgrade, and recovery without a bootable application"
+      ]
+    }
+  },
   "map_background": {
     "tool": "native/map_background.py",
     "offline_verification": "native/map-background-verification.json",
