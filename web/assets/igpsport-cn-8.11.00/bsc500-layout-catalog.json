@@ -1,0 +1,1207 @@
+{
+  "device": "BSC500",
+  "apk_package": "com.igpsport.igpsportandroid",
+  "apk_version": "8.11.00",
+  "apk_sha256": "4cc5cd29a7e3a48f2e17db885beaa96fad5af7b64558cceb08e8ccf06d396c3d",
+  "scope": "Built-in presets selected by the BSC500 model branches in Bg3PageConfigUtil and Bg3PageStyleConfig.",
+  "sections": [
+    {
+      "name": "普通数据页",
+      "layouts": [
+        {
+          "name": "1 项",
+          "variant": 1,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 6,
+          "apk_style_list": "bg1PageStyleForGrids1",
+          "preview": null
+        },
+        {
+          "name": "2 项",
+          "variant": 1,
+          "field_count": 2,
+          "page_mode": 9,
+          "line_width": 27,
+          "apk_style_list": "bg1PageStyleForGrids2",
+          "preview": null
+        },
+        {
+          "name": "3 项",
+          "variant": 1,
+          "field_count": 3,
+          "page_mode": 73,
+          "line_width": 146,
+          "apk_style_list": "bg1PageStyleForGrids3",
+          "preview": {
+            "file": "ic_bg1_3a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_3_a",
+            "selector_id": "0x7f080138",
+            "image_id": "0x7f1000ce",
+            "apk_entry": "res/Wx5.png",
+            "sha256": "d61b479e229d05d8e37192d43830ea1083ae4602926332c4536c1b5134bff62c"
+          }
+        },
+        {
+          "name": "3 项",
+          "variant": 2,
+          "field_count": 3,
+          "page_mode": 73,
+          "line_width": 83,
+          "apk_style_list": "bg1PageStyleForGrids3",
+          "preview": {
+            "file": "ic_bg1_3b_normal.png",
+            "selector": "bg_icon_bg1_page_mode_3_b",
+            "selector_id": "0x7f080139",
+            "image_id": "0x7f1000d0",
+            "apk_entry": "res/Isp.png",
+            "sha256": "b4ac7b639dc9cfe1448e2560d5b989b487f12a6aeb7464ea829eb3900e0824d5"
+          }
+        },
+        {
+          "name": "4 项",
+          "variant": 1,
+          "field_count": 4,
+          "page_mode": 585,
+          "line_width": 594,
+          "apk_style_list": "bg1PageStyleForGrids4",
+          "preview": {
+            "file": "ic_bg1_4a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_4_a",
+            "selector_id": "0x7f08013a",
+            "image_id": "0x7f1000d2",
+            "apk_entry": "res/o2e.png",
+            "sha256": "bed1d970b9083d0b92df727de50a03193b5ed09dd02f8814da4240c64e2570ea"
+          }
+        },
+        {
+          "name": "4 项",
+          "variant": 2,
+          "field_count": 4,
+          "page_mode": 74,
+          "line_width": 146,
+          "apk_style_list": "bg1PageStyleForGrids4",
+          "preview": {
+            "file": "ic_bg1_4b_normal.png",
+            "selector": "bg_icon_bg1_page_mode_4_b",
+            "selector_id": "0x7f08013b",
+            "image_id": "0x7f1000d4",
+            "apk_entry": "res/UNm.png",
+            "sha256": "8568e9e61eefcd0abb85754f30a1d7557f63797fa72857ad06a2cc4df77cceff"
+          }
+        },
+        {
+          "name": "4 项",
+          "variant": 3,
+          "field_count": 4,
+          "page_mode": 81,
+          "line_width": 83,
+          "apk_style_list": "bg1PageStyleForGrids4",
+          "preview": {
+            "file": "ic_bg1_4c_normal.png",
+            "selector": "bg_icon_bg1_page_mode_4_c",
+            "selector_id": "0x7f08013c",
+            "image_id": "0x7f1000d6",
+            "apk_entry": "res/wjl.png",
+            "sha256": "e252ab7f7ed701eaed0d9bb79bb1fee055b874d84330fb949da04609f455134e"
+          }
+        },
+        {
+          "name": "5 项",
+          "variant": 1,
+          "field_count": 5,
+          "page_mode": 4681,
+          "line_width": 4745,
+          "apk_style_list": "bg2PageStyleForGrids5",
+          "preview": {
+            "file": "ic_bg1_5a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_5_a",
+            "selector_id": "0x7f08013d",
+            "image_id": "0x7f1000d8",
+            "apk_entry": "res/Ndz.png",
+            "sha256": "fa847929fae362121ac85d45c8f39769a5561cc2629c8304da8cd78fb067e750"
+          }
+        },
+        {
+          "name": "5 项",
+          "variant": 2,
+          "field_count": 5,
+          "page_mode": 145,
+          "line_width": 146,
+          "apk_style_list": "bg2PageStyleForGrids5",
+          "preview": {
+            "file": "ic_bg2_5b_normal.png",
+            "selector": "bg_icon_bg2_page_mode_5_b",
+            "selector_id": "0x7f080148",
+            "image_id": "0x7f100124",
+            "apk_entry": "res/ias.png",
+            "sha256": "ae997c7ea4cf71eb9aed4bc6aab67a79350a40a278e6468af17669bf61d110e2"
+          }
+        },
+        {
+          "name": "6 项",
+          "variant": 1,
+          "field_count": 6,
+          "page_mode": 37449,
+          "line_width": 37449,
+          "apk_style_list": "bg1PageStyleForGrids6",
+          "preview": {
+            "file": "ic_bg1_6a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_6_a",
+            "selector_id": "0x7f08013f",
+            "image_id": "0x7f1000dc",
+            "apk_entry": "res/rp_.png",
+            "sha256": "bd340aa7cc151817fcea7172e5ccdc1c8322a74a767af5528c9eba6e89763dd9"
+          }
+        },
+        {
+          "name": "6 项",
+          "variant": 2,
+          "field_count": 6,
+          "page_mode": 8777,
+          "line_width": 4745,
+          "apk_style_list": "bg1PageStyleForGrids6",
+          "preview": {
+            "file": "ic_bg1_6b_normal.png",
+            "selector": "bg_icon_bg1_page_mode_6_b",
+            "selector_id": "0x7f080140",
+            "image_id": "0x7f1000de",
+            "apk_entry": "res/9BV.png",
+            "sha256": "4abd6e8be4344e8a7bf62a918878a9b8691dc687131263a48b2e16e275ed2162"
+          }
+        },
+        {
+          "name": "6 项",
+          "variant": 3,
+          "field_count": 6,
+          "page_mode": 1161,
+          "line_width": 594,
+          "apk_style_list": "bg1PageStyleForGrids6",
+          "preview": {
+            "file": "ic_bg1_6c_normal.png",
+            "selector": "bg_icon_bg1_page_mode_6_c",
+            "selector_id": "0x7f080141",
+            "image_id": "0x7f1000e0",
+            "apk_entry": "res/aEC.png",
+            "sha256": "f916d775635053fe9bf4f92d7884a552e575ed1e9f83118985d0756a0b90d357"
+          }
+        },
+        {
+          "name": "7 项",
+          "variant": 1,
+          "field_count": 7,
+          "page_mode": 9289,
+          "line_width": 4745,
+          "apk_style_list": "bg2PageStyleForGrids7",
+          "preview": {
+            "file": "ic_bg1_7a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_7_a",
+            "selector_id": "0x7f080142",
+            "image_id": "0x7f1000e2",
+            "apk_entry": "res/8bL.png",
+            "sha256": "f655c1d257ef69d38ae0b0e88657d5e54fb18a1db6e87b04b1f3913bd46eaa03"
+          }
+        },
+        {
+          "name": "7 项",
+          "variant": 2,
+          "field_count": 7,
+          "page_mode": 1169,
+          "line_width": 594,
+          "apk_style_list": "bg2PageStyleForGrids7",
+          "preview": {
+            "file": "ic_bg2_7b_normal.png",
+            "selector": "bg_icon_bg2_page_mode_7_b",
+            "selector_id": "0x7f080149",
+            "image_id": "0x7f100126",
+            "apk_entry": "res/ekt.png",
+            "sha256": "2c613f0bf34ee813edc409a207f5ac64fd4a68e1a7f47719b388b7901c68c271"
+          }
+        },
+        {
+          "name": "8 项",
+          "variant": 1,
+          "field_count": 8,
+          "page_mode": 9297,
+          "line_width": 4745,
+          "apk_style_list": "bg1PageStyleForGrids8",
+          "preview": {
+            "file": "ic_bg1_8a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_8_a",
+            "selector_id": "0x7f080144",
+            "image_id": "0x7f1000e6",
+            "apk_entry": "res/dhP.png",
+            "sha256": "2c456645914e12976aa9e366714bb7afbcebfcf31ec6da480d79aed5743bbe5c"
+          }
+        },
+        {
+          "name": "8 项",
+          "variant": 2,
+          "field_count": 8,
+          "page_mode": 1170,
+          "line_width": 594,
+          "apk_style_list": "bg1PageStyleForGrids8",
+          "preview": {
+            "file": "ic_bg1_8b_normal.png",
+            "selector": "bg_icon_bg1_page_mode_8_b",
+            "selector_id": "0x7f080145",
+            "image_id": "0x7f1000e8",
+            "apk_entry": "res/oHR.png",
+            "sha256": "2381932980b065bf39cf0d396de5e133ff369f3e726986864ac780fb95045a9a"
+          }
+        },
+        {
+          "name": "9 项",
+          "variant": 1,
+          "field_count": 9,
+          "page_mode": 9361,
+          "line_width": 4682,
+          "apk_style_list": "bg2PageStyleForGrids9",
+          "preview": {
+            "file": "ic_bg2_9a_normal.png",
+            "selector": "bg_icon_bg2_page_mode_9_a",
+            "selector_id": "0x7f08014a",
+            "image_id": "0x7f100128",
+            "apk_entry": "res/Ieq.png",
+            "sha256": "f34936046d6602eb275df679d15c9264fd9c55fae31879192a0da27f5f8fd9e0"
+          }
+        },
+        {
+          "name": "9 项",
+          "variant": 2,
+          "field_count": 9,
+          "page_mode": 9298,
+          "line_width": 4682,
+          "apk_style_list": "bg2PageStyleForGrids9",
+          "preview": {
+            "file": "ic_bg1_9b_normal.png",
+            "selector": "bg_icon_bg1_page_mode_9_b",
+            "selector_id": "0x7f080147",
+            "image_id": "0x7f1000ec",
+            "apk_entry": "res/GcP.png",
+            "sha256": "e5edaa7c2cebe22edd616dc740ab4b9c20b9f367bd50377a08e16c5afe7f2dd1"
+          }
+        },
+        {
+          "name": "10 项",
+          "variant": 1,
+          "field_count": 10,
+          "page_mode": 74385,
+          "line_width": 37449,
+          "apk_style_list": "bg1PageStyleForGrids10",
+          "preview": {
+            "file": "ic_bg1_10a_normal.png",
+            "selector": "bg_icon_bg1_page_mode_10_a",
+            "selector_id": "0x7f080136",
+            "image_id": "0x7f1000ca",
+            "apk_entry": "res/Ecm.png",
+            "sha256": "cc43689b7da2cfa4f1232fc1d3af0e0f972960aab68a96d5e8e81abbf23f78db"
+          }
+        },
+        {
+          "name": "10 项",
+          "variant": 2,
+          "field_count": 10,
+          "page_mode": 9362,
+          "line_width": 4745,
+          "apk_style_list": "bg1PageStyleForGrids10",
+          "preview": {
+            "file": "ic_bg1_10b_normal.png",
+            "selector": "bg_icon_bg1_page_mode_10_b",
+            "selector_id": "0x7f080137",
+            "image_id": "0x7f1000cc",
+            "apk_entry": "res/qrZ.png",
+            "sha256": "db6177a3b646ece922d2755b15d00900f974e04a9337445a5354177ca98691d5"
+          }
+        },
+        {
+          "name": "11 项",
+          "variant": 1,
+          "field_count": 11,
+          "page_mode": 74897,
+          "line_width": 37449,
+          "apk_style_list": "bg1PageStyleForGrids11",
+          "preview": null
+        },
+        {
+          "name": "12 项",
+          "variant": 1,
+          "field_count": 12,
+          "page_mode": 74898,
+          "line_width": 37449,
+          "apk_style_list": "bg1PageStyleForGrids12",
+          "preview": null
+        }
+      ]
+    },
+    {
+      "name": "专项页",
+      "layouts": [
+        {
+          "name": "海拔",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg1PicturePageStyleForAltitudeMeter",
+          "preview": {
+            "file": "ic_bg1_altitude_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_a",
+            "selector_id": "0x7f08009e",
+            "image_id": "0x7f1000ee",
+            "apk_entry": "res/OpG.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "海拔",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForAltitudeMeter",
+          "preview": {
+            "file": "ic_bg1_altitude_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_b",
+            "selector_id": "0x7f08009f",
+            "image_id": "0x7f1000f0",
+            "apk_entry": "res/aNS.png",
+            "sha256": "8e358550fee876f37619bbc8786432803ada5de56ff503985b6f688cbe236ebb"
+          }
+        },
+        {
+          "name": "海拔",
+          "variant": 3,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 2,
+          "apk_style_list": "bg1PicturePageStyleForAltitudeMeter",
+          "preview": {
+            "file": "ic_bg1_altitude_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_c",
+            "selector_id": "0x7f0800a0",
+            "image_id": "0x7f1000f2",
+            "apk_entry": "res/k32.png",
+            "sha256": "ec3b016cc7a376f09ebaa8b290692fc6e06676bd13e9028f24ef11773ff4ec05"
+          }
+        },
+        {
+          "name": "海拔",
+          "variant": 4,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForAltitudeMeter",
+          "preview": {
+            "file": "ic_bg1_altitude_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_d",
+            "selector_id": "0x7f0800a1",
+            "image_id": "0x7f1000f4",
+            "apk_entry": "res/EjQ.png",
+            "sha256": "a274006e3ad7efc0a79d931e9f3bf71131dfff56e8e92edaff96b0c2dcb3a448"
+          }
+        },
+        {
+          "name": "海拔",
+          "variant": 5,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForAltitudeMeter",
+          "preview": {
+            "file": "ic_bg1_altitude_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_e",
+            "selector_id": "0x7f0800a2",
+            "image_id": "0x7f1000f6",
+            "apk_entry": "res/m_Q.png",
+            "sha256": "e7219251e5af18081033711ee4847dddb04e61fb6fcf88eb2e707ba936ad2258"
+          }
+        },
+        {
+          "name": "海拔",
+          "variant": 6,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForAltitudeMeter",
+          "preview": {
+            "file": "ic_bg1_altitude_f_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_f",
+            "selector_id": "0x7f0800a3",
+            "image_id": "0x7f1000f8",
+            "apk_entry": "res/r8X.png",
+            "sha256": "e5f16dbbd0ce075458020326c2b3d5246bc931d794d61da9ea31ff0f4166a094"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_altitude_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_a",
+            "selector_id": "0x7f08009e",
+            "image_id": "0x7f1000ee",
+            "apk_entry": "res/OpG.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_altitude_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_b",
+            "selector_id": "0x7f08009f",
+            "image_id": "0x7f1000f0",
+            "apk_entry": "res/aNS.png",
+            "sha256": "8e358550fee876f37619bbc8786432803ada5de56ff503985b6f688cbe236ebb"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 3,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 2,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_altitude_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_c",
+            "selector_id": "0x7f0800a0",
+            "image_id": "0x7f1000f2",
+            "apk_entry": "res/k32.png",
+            "sha256": "ec3b016cc7a376f09ebaa8b290692fc6e06676bd13e9028f24ef11773ff4ec05"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 4,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_altitude_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_d",
+            "selector_id": "0x7f0800a1",
+            "image_id": "0x7f1000f4",
+            "apk_entry": "res/EjQ.png",
+            "sha256": "a274006e3ad7efc0a79d931e9f3bf71131dfff56e8e92edaff96b0c2dcb3a448"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 5,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_altitude_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_e",
+            "selector_id": "0x7f0800a2",
+            "image_id": "0x7f1000f6",
+            "apk_entry": "res/m_Q.png",
+            "sha256": "e7219251e5af18081033711ee4847dddb04e61fb6fcf88eb2e707ba936ad2258"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 6,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_altitude_f_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_f",
+            "selector_id": "0x7f0800a3",
+            "image_id": "0x7f1000f8",
+            "apk_entry": "res/r8X.png",
+            "sha256": "e5f16dbbd0ce075458020326c2b3d5246bc931d794d61da9ea31ff0f4166a094"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 7,
+          "field_count": 5,
+          "page_mode": 145,
+          "line_width": 73,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_fec_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_d",
+            "selector_id": "0x7f0800a9",
+            "image_id": "0x7f100104",
+            "apk_entry": "res/VAK.png",
+            "sha256": "322cf85492c7fb7dcbaa1a44b1c27f5dd3c3744c02a9b859d4679fa1e32db972"
+          }
+        },
+        {
+          "name": "地图",
+          "variant": 8,
+          "field_count": 6,
+          "page_mode": 146,
+          "line_width": 73,
+          "apk_style_list": "bg2PicturePageStyleForMap",
+          "preview": {
+            "file": "ic_bg1_fec_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_e",
+            "selector_id": "0x7f0800aa",
+            "image_id": "0x7f100106",
+            "apk_entry": "res/G4I.png",
+            "sha256": "cfcfea6cc9429a6f434e7af4f22ab8b8a2d823ead93cc1df093a064ab7f9f593"
+          }
+        },
+        {
+          "name": "爬坡",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg1PicturePageStyleForClimb",
+          "preview": {
+            "file": "ic_bg1_lap_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_a",
+            "selector_id": "0x7f0800ab",
+            "image_id": "0x7f100108",
+            "apk_entry": "res/QeF.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "爬坡",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForClimb",
+          "preview": {
+            "file": "ic_bg1_climb_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_climb_a",
+            "selector_id": "0x7f0800a4",
+            "image_id": "0x7f1000fa",
+            "apk_entry": "res/bT6.png",
+            "sha256": "8e358550fee876f37619bbc8786432803ada5de56ff503985b6f688cbe236ebb"
+          }
+        },
+        {
+          "name": "爬坡",
+          "variant": 3,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForClimb",
+          "preview": {
+            "file": "ic_bg1_climb_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_climb_b",
+            "selector_id": "0x7f0800a5",
+            "image_id": "0x7f1000fc",
+            "apk_entry": "res/zC8.png",
+            "sha256": "a274006e3ad7efc0a79d931e9f3bf71131dfff56e8e92edaff96b0c2dcb3a448"
+          }
+        },
+        {
+          "name": "爬坡",
+          "variant": 4,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForClimb",
+          "preview": {
+            "file": "ic_bg1_altitude_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_e",
+            "selector_id": "0x7f0800a2",
+            "image_id": "0x7f1000f6",
+            "apk_entry": "res/m_Q.png",
+            "sha256": "e7219251e5af18081033711ee4847dddb04e61fb6fcf88eb2e707ba936ad2258"
+          }
+        },
+        {
+          "name": "爬坡",
+          "variant": 5,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForClimb",
+          "preview": {
+            "file": "ic_bg1_altitude_f_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_f",
+            "selector_id": "0x7f0800a3",
+            "image_id": "0x7f1000f8",
+            "apk_entry": "res/r8X.png",
+            "sha256": "e5f16dbbd0ce075458020326c2b3d5246bc931d794d61da9ea31ff0f4166a094"
+          }
+        },
+        {
+          "name": "爬坡地图",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg1PicturePageStyleForClimbMap",
+          "preview": {
+            "file": "ic_bg1_lap_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_a",
+            "selector_id": "0x7f0800ab",
+            "image_id": "0x7f100108",
+            "apk_entry": "res/QeF.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "爬坡地图",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForClimbMap",
+          "preview": {
+            "file": "ic_bg1_segment_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_a",
+            "selector_id": "0x7f0800b1",
+            "image_id": "0x7f100114",
+            "apk_entry": "res/MvP.png",
+            "sha256": "692414ac01039d7e9bcf4bf57649d6b043d07c02a0ba14a445e7f6248c7770d0"
+          }
+        },
+        {
+          "name": "爬坡地图",
+          "variant": 3,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForClimbMap",
+          "preview": {
+            "file": "ic_bg1_segment_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_c",
+            "selector_id": "0x7f0800b3",
+            "image_id": "0x7f100118",
+            "apk_entry": "res/-_C.png",
+            "sha256": "284526543be0765c7620ffc1acfe6b3f421b4ff7155a992608c19ffd518d0d4a"
+          }
+        },
+        {
+          "name": "爬坡地图",
+          "variant": 4,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForClimbMap",
+          "preview": {
+            "file": "ic_bg1_segment_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_d",
+            "selector_id": "0x7f0800b4",
+            "image_id": "0x7f10011a",
+            "apk_entry": "res/zwU.png",
+            "sha256": "989d8a890aed3fe7f02d2be01dea31b7f7e1d0eaf0e1c920b319ad9dde17baab"
+          }
+        },
+        {
+          "name": "爬坡地图",
+          "variant": 5,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForClimbMap",
+          "preview": {
+            "file": "ic_bg1_segment_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_e",
+            "selector_id": "0x7f0800b5",
+            "image_id": "0x7f10011c",
+            "apk_entry": "res/EYe.png",
+            "sha256": "b948206431a0e317a0dde2fa4dd7e436a9eb2d9eee136b1ed8b57aba2b7fff30"
+          }
+        },
+        {
+          "name": "指南针",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg1PicturePageStyleForCompass",
+          "preview": {
+            "file": "ic_bg1_altitude_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_a",
+            "selector_id": "0x7f08009e",
+            "image_id": "0x7f1000ee",
+            "apk_entry": "res/OpG.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "指南针",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForCompass",
+          "preview": {
+            "file": "ic_bg1_altitude_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_b",
+            "selector_id": "0x7f08009f",
+            "image_id": "0x7f1000f0",
+            "apk_entry": "res/aNS.png",
+            "sha256": "8e358550fee876f37619bbc8786432803ada5de56ff503985b6f688cbe236ebb"
+          }
+        },
+        {
+          "name": "指南针",
+          "variant": 3,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 2,
+          "apk_style_list": "bg1PicturePageStyleForCompass",
+          "preview": {
+            "file": "ic_bg1_altitude_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_c",
+            "selector_id": "0x7f0800a0",
+            "image_id": "0x7f1000f2",
+            "apk_entry": "res/k32.png",
+            "sha256": "ec3b016cc7a376f09ebaa8b290692fc6e06676bd13e9028f24ef11773ff4ec05"
+          }
+        },
+        {
+          "name": "指南针",
+          "variant": 4,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForCompass",
+          "preview": {
+            "file": "ic_bg1_altitude_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_d",
+            "selector_id": "0x7f0800a1",
+            "image_id": "0x7f1000f4",
+            "apk_entry": "res/EjQ.png",
+            "sha256": "a274006e3ad7efc0a79d931e9f3bf71131dfff56e8e92edaff96b0c2dcb3a448"
+          }
+        },
+        {
+          "name": "指南针",
+          "variant": 5,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForCompass",
+          "preview": {
+            "file": "ic_bg1_altitude_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_e",
+            "selector_id": "0x7f0800a2",
+            "image_id": "0x7f1000f6",
+            "apk_entry": "res/m_Q.png",
+            "sha256": "e7219251e5af18081033711ee4847dddb04e61fb6fcf88eb2e707ba936ad2258"
+          }
+        },
+        {
+          "name": "指南针",
+          "variant": 6,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForCompass",
+          "preview": {
+            "file": "ic_bg1_altitude_f_normal.png",
+            "selector": "bg_bg1_picture_page_style_altitude_f",
+            "selector_id": "0x7f0800a3",
+            "image_id": "0x7f1000f8",
+            "apk_entry": "res/r8X.png",
+            "sha256": "e5f16dbbd0ce075458020326c2b3d5246bc931d794d61da9ea31ff0f4166a094"
+          }
+        },
+        {
+          "name": "计圈",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg1PicturePageStyleForLap",
+          "preview": {
+            "file": "ic_bg1_lap_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_a",
+            "selector_id": "0x7f0800ab",
+            "image_id": "0x7f100108",
+            "apk_entry": "res/QeF.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "计圈",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForLap",
+          "preview": {
+            "file": "ic_bg1_lap_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_b",
+            "selector_id": "0x7f0800ac",
+            "image_id": "0x7f10010a",
+            "apk_entry": "res/eN4.png",
+            "sha256": "1791b15371eb7bbefd3f82daec9183a89d5a1978c0d00cc223588df954d9eaaf"
+          }
+        },
+        {
+          "name": "计圈",
+          "variant": 3,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 2,
+          "apk_style_list": "bg1PicturePageStyleForLap",
+          "preview": {
+            "file": "ic_bg1_lap_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_c",
+            "selector_id": "0x7f0800ad",
+            "image_id": "0x7f10010c",
+            "apk_entry": "res/pH1.png",
+            "sha256": "3d8ae6ab52086c863882781e50c9ba526ca55153d6d80d8602d439053fb7c828"
+          }
+        },
+        {
+          "name": "计圈",
+          "variant": 4,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForLap",
+          "preview": {
+            "file": "ic_bg1_lap_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_d",
+            "selector_id": "0x7f0800ae",
+            "image_id": "0x7f10010e",
+            "apk_entry": "res/by5.png",
+            "sha256": "47b0bd8cc715f9c96029351f9a32b4614ba0049cd837747cfe69993aad957e19"
+          }
+        },
+        {
+          "name": "计圈",
+          "variant": 5,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForLap",
+          "preview": {
+            "file": "ic_bg1_lap_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_e",
+            "selector_id": "0x7f0800af",
+            "image_id": "0x7f100110",
+            "apk_entry": "res/vlz.png",
+            "sha256": "44b163b89cbf75d5ba57b46d2370f1586935b6c7a1a14d7ed548a4f191110dfb"
+          }
+        },
+        {
+          "name": "计圈",
+          "variant": 6,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForLap",
+          "preview": {
+            "file": "ic_bg1_lap_f_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_f",
+            "selector_id": "0x7f0800b0",
+            "image_id": "0x7f100112",
+            "apk_entry": "res/O_7.png",
+            "sha256": "d7cdd8fc58d5b8a18e2195181974c72db9c32a7d9dda26f00c0394f927550e37"
+          }
+        },
+        {
+          "name": "骑行台",
+          "variant": 1,
+          "field_count": 3,
+          "page_mode": 73,
+          "line_width": 73,
+          "apk_style_list": "bg1PicturePageStyleForRidingPlatform",
+          "preview": {
+            "file": "ic_bg1_fec_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_a",
+            "selector_id": "0x7f0800a6",
+            "image_id": "0x7f1000fe",
+            "apk_entry": "res/_Tt.png",
+            "sha256": "f930a28d27a93a5d1dcdce6a30ce751b4ecee921b0d1139dc77f8d4d21c9e8a0"
+          }
+        },
+        {
+          "name": "骑行台",
+          "variant": 2,
+          "field_count": 4,
+          "page_mode": 137,
+          "line_width": 73,
+          "apk_style_list": "bg1PicturePageStyleForRidingPlatform",
+          "preview": {
+            "file": "ic_bg1_fec_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_b",
+            "selector_id": "0x7f0800a7",
+            "image_id": "0x7f100100",
+            "apk_entry": "res/-1s.png",
+            "sha256": "f2c85286b431e0554fd580f083a53e4b66d0195fec785270f32fe840094b7b5d"
+          }
+        },
+        {
+          "name": "骑行台",
+          "variant": 3,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 10,
+          "apk_style_list": "bg1PicturePageStyleForRidingPlatform",
+          "preview": {
+            "file": "ic_bg1_fec_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_c",
+            "selector_id": "0x7f0800a8",
+            "image_id": "0x7f100102",
+            "apk_entry": "res/obC.png",
+            "sha256": "b150a92c8af7b8fe22e1e8390a46968ecee9a8a2fa6e8223601aec88408672c3"
+          }
+        },
+        {
+          "name": "骑行台",
+          "variant": 4,
+          "field_count": 5,
+          "page_mode": 145,
+          "line_width": 73,
+          "apk_style_list": "bg1PicturePageStyleForRidingPlatform",
+          "preview": {
+            "file": "ic_bg1_fec_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_d",
+            "selector_id": "0x7f0800a9",
+            "image_id": "0x7f100104",
+            "apk_entry": "res/VAK.png",
+            "sha256": "322cf85492c7fb7dcbaa1a44b1c27f5dd3c3744c02a9b859d4679fa1e32db972"
+          }
+        },
+        {
+          "name": "骑行台",
+          "variant": 5,
+          "field_count": 6,
+          "page_mode": 146,
+          "line_width": 73,
+          "apk_style_list": "bg1PicturePageStyleForRidingPlatform",
+          "preview": {
+            "file": "ic_bg1_fec_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_fec_e",
+            "selector_id": "0x7f0800aa",
+            "image_id": "0x7f100106",
+            "apk_entry": "res/G4I.png",
+            "sha256": "cfcfea6cc9429a6f434e7af4f22ab8b8a2d823ead93cc1df093a064ab7f9f593"
+          }
+        },
+        {
+          "name": "赛段",
+          "variant": 1,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForSegment",
+          "preview": {
+            "file": "ic_bg1_segment_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_a",
+            "selector_id": "0x7f0800b1",
+            "image_id": "0x7f100114",
+            "apk_entry": "res/MvP.png",
+            "sha256": "692414ac01039d7e9bcf4bf57649d6b043d07c02a0ba14a445e7f6248c7770d0"
+          }
+        },
+        {
+          "name": "赛段",
+          "variant": 2,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 2,
+          "apk_style_list": "bg1PicturePageStyleForSegment",
+          "preview": {
+            "file": "ic_bg1_segment_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_b",
+            "selector_id": "0x7f0800b2",
+            "image_id": "0x7f100116",
+            "apk_entry": "res/onR.png",
+            "sha256": "ec3b016cc7a376f09ebaa8b290692fc6e06676bd13e9028f24ef11773ff4ec05"
+          }
+        },
+        {
+          "name": "赛段",
+          "variant": 3,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForSegment",
+          "preview": {
+            "file": "ic_bg1_segment_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_c",
+            "selector_id": "0x7f0800b3",
+            "image_id": "0x7f100118",
+            "apk_entry": "res/-_C.png",
+            "sha256": "284526543be0765c7620ffc1acfe6b3f421b4ff7155a992608c19ffd518d0d4a"
+          }
+        },
+        {
+          "name": "赛段",
+          "variant": 4,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForSegment",
+          "preview": {
+            "file": "ic_bg1_segment_d_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_d",
+            "selector_id": "0x7f0800b4",
+            "image_id": "0x7f10011a",
+            "apk_entry": "res/zwU.png",
+            "sha256": "989d8a890aed3fe7f02d2be01dea31b7f7e1d0eaf0e1c920b319ad9dde17baab"
+          }
+        },
+        {
+          "name": "赛段",
+          "variant": 5,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForSegment",
+          "preview": {
+            "file": "ic_bg1_segment_e_normal.png",
+            "selector": "bg_bg1_picture_page_style_segment_e",
+            "selector_id": "0x7f0800b5",
+            "image_id": "0x7f10011c",
+            "apk_entry": "res/EYe.png",
+            "sha256": "b948206431a0e317a0dde2fa4dd7e436a9eb2d9eee136b1ed8b57aba2b7fff30"
+          }
+        },
+        {
+          "name": "训练课程",
+          "variant": 1,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 2,
+          "apk_style_list": "bg1PicturePageStyleForTrainingCourses",
+          "preview": {
+            "file": "ic_bg1_training_courses_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_training_courses_a",
+            "selector_id": "0x7f0800b6",
+            "image_id": "0x7f10011e",
+            "apk_entry": "res/2wG.png",
+            "sha256": "ec3b016cc7a376f09ebaa8b290692fc6e06676bd13e9028f24ef11773ff4ec05"
+          }
+        },
+        {
+          "name": "训练课程",
+          "variant": 2,
+          "field_count": 3,
+          "page_mode": 17,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForTrainingCourses",
+          "preview": {
+            "file": "ic_bg1_training_courses_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_training_courses_b",
+            "selector_id": "0x7f0800b7",
+            "image_id": "0x7f100120",
+            "apk_entry": "res/3HH.png",
+            "sha256": "e7219251e5af18081033711ee4847dddb04e61fb6fcf88eb2e707ba936ad2258"
+          }
+        },
+        {
+          "name": "训练课程",
+          "variant": 3,
+          "field_count": 4,
+          "page_mode": 18,
+          "line_width": 9,
+          "apk_style_list": "bg1PicturePageStyleForTrainingCourses",
+          "preview": {
+            "file": "ic_bg1_training_courses_c_normal.png",
+            "selector": "bg_bg1_picture_page_style_training_courses_c",
+            "selector_id": "0x7f0800b8",
+            "image_id": "0x7f100122",
+            "apk_entry": "res/UtU.png",
+            "sha256": "e5f16dbbd0ce075458020326c2b3d5246bc931d794d61da9ea31ff0f4166a094"
+          }
+        },
+        {
+          "name": "训练效果",
+          "variant": 1,
+          "field_count": 1,
+          "page_mode": 1,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForTrainingEffect",
+          "preview": {
+            "file": "ic_bg1_climb_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_climb_a",
+            "selector_id": "0x7f0800a4",
+            "image_id": "0x7f1000fa",
+            "apk_entry": "res/bT6.png",
+            "sha256": "8e358550fee876f37619bbc8786432803ada5de56ff503985b6f688cbe236ebb"
+          }
+        },
+        {
+          "name": "训练效果",
+          "variant": 2,
+          "field_count": 2,
+          "page_mode": 2,
+          "line_width": 1,
+          "apk_style_list": "bg1PicturePageStyleForTrainingEffect",
+          "preview": {
+            "file": "ic_bg1_climb_b_normal.png",
+            "selector": "bg_bg1_picture_page_style_climb_b",
+            "selector_id": "0x7f0800a5",
+            "image_id": "0x7f1000fc",
+            "apk_entry": "res/zC8.png",
+            "sha256": "a274006e3ad7efc0a79d931e9f3bf71131dfff56e8e92edaff96b0c2dcb3a448"
+          }
+        },
+        {
+          "name": "组队骑行",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg2PicturePageStyleForTeamRiding",
+          "preview": {
+            "file": "ic_bg1_lap_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_a",
+            "selector_id": "0x7f0800ab",
+            "image_id": "0x7f100108",
+            "apk_entry": "res/QeF.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "音乐控制",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg2PicturePageStyleForMusicControl",
+          "preview": {
+            "file": "ic_bg1_lap_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_a",
+            "selector_id": "0x7f0800ab",
+            "image_id": "0x7f100108",
+            "apk_entry": "res/QeF.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        },
+        {
+          "name": "运动相机",
+          "variant": 1,
+          "field_count": 0,
+          "page_mode": 0,
+          "line_width": 0,
+          "apk_style_list": "bg1PicturePageStyleForSportCamera",
+          "preview": {
+            "file": "ic_bg1_lap_a_normal.png",
+            "selector": "bg_bg1_picture_page_style_lap_a",
+            "selector_id": "0x7f0800ab",
+            "image_id": "0x7f100108",
+            "apk_entry": "res/QeF.png",
+            "sha256": "6a07e2b14f96f89ca588352b8f4f8abec53c3b0e0fe01a905b9a79f4695b82d3"
+          }
+        }
+      ]
+    }
+  ]
+}

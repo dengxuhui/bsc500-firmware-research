@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>BSC500 设置工作台</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=81100">
   <script src="tools.js" defer></script>
-  <script src="app.js" defer></script>
-  <script src="designer.js" defer></script>
+  <script src="app.js?v=81100" defer></script>
+  <script src="ride-map.js" defer></script>
+  <script src="designer.js?v=81100" defer></script>
+  <script src="reference.js" defer></script>
 </head>
 <body>
   <header class="top"><div class="shell top-inner"><a class="brand" href="#designer"><span class="mark" aria-hidden="true">B</span><span>BSC500 <small>设置工作台</small></span></a><span class="local"><i></i> 本机离线 · 文件留在浏览器</span></div></header>
@@ -16,6 +18,7 @@
     <div class="intro"><h1>码表设置</h1><p>编辑方案、预览数据页，并保存需要的文件。</p></div>
     <nav class="tabs" aria-label="工具">
       <a href="#designer" aria-current="page">数据页设计器</a>
+      <a href="#reference">原厂预览图</a>
       <a href="#settings">骑行设置</a>
       <a href="#route">导航路线</a>
       <a href="#backlight">背光曲线</a>
@@ -28,13 +31,14 @@
         <div class="card">
           <div class="card-head"><div><h2 id="designer-title">骑行数据页设计器</h2><p>从预设开始，或把参考数据页上的字段名称粘贴进来。</p></div></div>
           <div class="presets" aria-label="原创预设">
+            <button class="secondary" type="button" data-preset="navigation">导航仪表盘</button>
             <button class="secondary" type="button" data-preset="road">公路巡航</button>
             <button class="secondary" type="button" data-preset="training">功率训练</button>
             <button class="secondary" type="button" data-preset="climb">爬坡观察</button>
           </div>
           <fieldset><legend>页面样式</legend><div class="row">
             <label>页面名称<input id="design-name" maxlength="45"></label>
-            <label><span id="design-layout-label">布局</span><select id="design-layout" aria-labelledby="design-layout-label"><option value="hero">首项突出</option><option value="grid">双栏网格</option><option value="list">逐行排列</option></select></label>
+            <label><span id="design-layout-label">布局</span><select id="design-layout" aria-labelledby="design-layout-label"><option value="navigation">导航仪表盘</option><option value="hero">首项突出</option><option value="grid">双栏网格</option><option value="list">逐行排列</option></select></label>
             <label><span id="design-palette-label">配色</span><select id="design-palette" aria-labelledby="design-palette-label"><option value="forest">森绿</option><option value="night">夜航</option><option value="indigo">靛蓝</option></select></label>
           </div></fieldset>
           <fieldset><legend>字段与顺序</legend>
@@ -52,12 +56,40 @@
             <label class="button secondary file-button">打开设计<input id="design-import" type="file" accept=".json,application/json"></label>
           </div>
         </div>
-        <aside class="card">
-          <h2>BSC500 画布预览</h2>
-          <p class="muted">320 × 480 比例 · 示例数据</p>
-          <div class="design-device"><div id="design-canvas" class="design-canvas"><header id="design-preview-title"></header><div id="design-cards" class="design-cards"></div></div></div>
+        <aside class="card designer-preview">
+          <h2>骑行仪表盘预览</h2>
+          <p class="muted">320 × 480 比例 · 示例地图与读数</p>
+          <a class="source" href="#reference">浏览原厂预览图</a>
+          <div class="design-device">
+            <div id="design-canvas" class="design-canvas">
+              <header id="design-preview-title"></header>
+              <section id="design-navigation" class="design-navigation" aria-label="导航示例" hidden>
+                <canvas id="design-map" width="640" height="560" aria-hidden="true"></canvas>
+                <div class="design-turn"><span aria-hidden="true">↱</span><div><strong>180 m</strong><small>右转进入沿河路</small></div></div>
+                <div class="design-route-info"><span>剩余 6.2 km</span><span class="design-map-scale">100 m</span></div>
+              </section>
+              <div id="design-cards" class="design-cards"></div>
+            </div>
+          </div>
           <div class="how design-export"><h3>移植到 BSC500</h3><p id="design-compat"></p><p>布局、配色和自定义绘制只在网页预览。可匹配的字段会按顺序填入骑行设置，再在 iGPSPORT App 设置并同步。</p></div>
         </aside>
+      </div>
+    </section>
+
+    <section class="panel" id="reference" aria-labelledby="reference-title" hidden>
+      <div class="card">
+        <div class="reference-head">
+          <div>
+            <h2 id="reference-title">BSC500 原厂布局预览图</h2>
+            <p class="muted">来自 iGPSPORT Android 国内版 8.11.00 中 BSC500 使用的内置模板。</p>
+          </div>
+          <a class="source" href="assets/igpsport-cn-8.11.00/bsc500-layout-catalog.json" download>下载布局参数</a>
+        </div>
+        <div class="reference-controls">
+          <label>页面类型<select id="reference-series"><option value="">全部类型</option></select></label>
+          <output id="reference-count" aria-live="polite"></output>
+        </div>
+        <div id="reference-gallery" class="reference-gallery"></div>
       </div>
     </section>
 

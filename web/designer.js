@@ -30,11 +30,12 @@
   const catalog = new Map(descriptors.map(([id, label, sample, unit, ...aliases]) => [id, { label, sample, unit, aliases }]));
   const customBar = { label: "强度条", sample: "68", unit: "%", aliases: ["Intensity Bar"] };
   const presets = {
+    navigation: { name: "导航仪表盘", layout: "navigation", palette: "indigo", fields: ["0x0101", "0x0301", "0x0401", "0x0501"] },
     road: { name: "公路巡航", layout: "hero", palette: "forest", fields: ["0x0101", "0x0501", "0x0301", "0x0201", "0x0703"] },
     training: { name: "功率训练", layout: "hero", palette: "night", fields: ["0x0409", "0x0404", "0x0706", "0x0301", "0x0201", "intensity"] },
     climb: { name: "爬坡观察", layout: "grid", palette: "indigo", fields: ["0x0602", "0x0601", "0x0605", "0x0603", "0x0409", "0x0301"] },
   };
-  const layouts = ["hero", "grid", "list"];
+  const layouts = ["navigation", "hero", "grid", "list"];
   const palettes = ["forest", "night", "indigo"];
   const nameInput = document.querySelector("#design-name");
   const layoutInput = document.querySelector("#design-layout");
@@ -43,6 +44,7 @@
   const fieldsList = document.querySelector("#design-fields");
   const cards = document.querySelector("#design-cards");
   const canvas = document.querySelector("#design-canvas");
+  const navigation = document.querySelector("#design-navigation");
   const compatible = document.querySelector("#design-compat");
   const add = document.querySelector("#design-add");
   const apply = document.querySelector("#design-apply");
@@ -84,6 +86,9 @@
     canvas.dataset.layout = layoutInput.value;
     canvas.dataset.palette = paletteInput.value;
     canvas.dataset.compact = String(activeFields.length > 8);
+    canvas.style.setProperty("--metric-rows", String(Math.max(1, Math.ceil(activeFields.length / 2))));
+    navigation.hidden = layoutInput.value !== "navigation";
+    cards.hidden = !navigation.hidden && activeFields.length === 0;
     document.querySelector("#design-preview-title").textContent = nameInput.value.trim() || "骑行数据页";
     cards.replaceChildren();
     activeFields.forEach((field) => {
@@ -263,5 +268,5 @@
     return "已打开数据页设计。";
   });
 
-  loadPreset("road");
+  loadPreset("navigation");
 })();

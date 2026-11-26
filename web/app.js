@@ -19,7 +19,7 @@ function selectPanel() {
   showStatus("");
 }
 
-for (const link of [...links, document.querySelector(".brand")]) {
+for (const link of [...links, document.querySelector(".brand"), document.querySelector("#designer a[href='#reference']")]) {
   link.addEventListener("click", (event) => {
     if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
     event.preventDefault();

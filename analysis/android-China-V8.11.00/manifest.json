@@ -1,0 +1,52 @@
+{
+  "package": "com.igpsport.igpsportandroid",
+  "version_name": "8.11.00",
+  "version_code": 28110000,
+  "apk_sha256": "4cc5cd29a7e3a48f2e17db885beaa96fad5af7b64558cceb08e8ccf06d396c3d",
+  "dex_sha256": {
+    "classes11.dex": "835e313cb68fb0985f750f3bc1da4d4972ee6a32888f2a1ecf12aafa60993d08",
+    "classes12.dex": "d445e77a7585b3fb262a935f1cd92ff3366be9938698dbc397fdf6c3ba07946f"
+  },
+  "exporters": {
+    "java": "JADX Java API bundled with jadx-headless-mcp 0.7.1",
+    "dex": "Android SDK build-tools 35.0.0 dexdump -d"
+  },
+  "artifacts": [
+    {
+      "path": "analysis/android-China-V8.11.00/sources/Bg3PageConfigUtil.java",
+      "sha256": "579d12d482c846080365cb33bdf18c2fd1134fe12d9402193a9143eb695da3ed"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/sources/Bg3PageStyleConfig.java",
+      "sha256": "b0d0d5201a4818f435769af16cf386bd5d255928be6577f5cb97763932dc20f2"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/sources/Bg3PageShowTypeBean.java",
+      "sha256": "5a238a5a8aa5d61dd1e2fcb8ad676ece27c6ee7aa8c86d4a0d55e1819c0f98d0"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/sources/Bg3PageSettingViewModel.java",
+      "sha256": "7c620959df053645475da47061a092a521c09d54e057ef99e824ff3ac7526b79"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/sources/Bg3PageField.java",
+      "sha256": "93d4f6594addba2473a157db54786c33df037ac52d1221b53fb02938012ae19c"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/sources/ConfigurationDelegate.java",
+      "sha256": "f2135c404adcf5526a22fc3c6cc8241981d210e31cd7f6fe58fe23cee14a9409"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/sources/Config.java",
+      "sha256": "dd6ff7d071edea2f928dfb59874a72f8c704ca0c01e9554b783d8186380d3e27"
+    },
+    {
+      "path": "analysis/android-China-V8.11.00/dex/page-style-dexdump.txt",
+      "sha256": "e60ea22fe336c97a883252ba1189a5fb44b63f4cbd4c579462c539bc71517a5e"
+    },
+    {
+      "path": "web/assets/igpsport-cn-8.11.00/bsc500-layout-catalog.json",
+      "sha256": "c5f5525a321f9f38a971ab13e41fbae71c7f36fe4c9b03ad1eb4af798c0e65dc"
+    }
+  ]
+}

@@ -7,6 +7,8 @@
 用浏览器打开 [web/index.html](web/index.html) 即可使用。页面无安装依赖，所选文件在浏览器本地处理。若浏览器限制本地文件的 SHA-256 校验，可在项目根目录运行 `python3 -m http.server 8765 --bind 127.0.0.1 --directory web`，然后打开 [本机网页](http://127.0.0.1:8765/)。
 
 - **数据页设计器**提供原创预设、320 × 480 比例实时预览、字段排序、配色和版式。可粘贴参考数据页的中英文字段名，下载或重新打开设计 JSON。点「填入骑行设置」可按顺序带入有固件引用的候选字段，再通过官方 App 手动设置并同步。未识别的字段和示例强度条保留在设计文件中。网页布局与绘制样式保留在设计器中，当前尚无 BSC500 真机加载入口。
+- **原厂预览图**展示 Android 国内版 8.11.00 的 BSC500 内置普通页和专项页，可下载布局参数。 [新版 APK 布局研究](analysis/android-China-V8.11.00/README.md)
+- **导航仪表盘预设**在上半屏显示示例地图、路线、转向和剩余距离，下半屏显示可编辑的骑行字段。地图和读数用于设计预览。
 - **骑行设置**支持配置一张骑行数据页并实时预览，也可保存显示、骑行和导航选项。JSON 可再次打开编辑，应用到码表时按方案在官方 App 和设备菜单中设置。
 - **导航路线**支持编辑坐标、载入一条连续的 GPX 并导出新 GPX。把 GPX 导入 iGPSPORT App 后由 App 发送至码表。导出保留坐标及海拔。
 - **背光曲线**导出 `level.txt` 和 `light.txt` 供离线验证，实际 USB 导入位置与有效取值仍待确认。
@@ -70,6 +72,7 @@ uv run --with unicorn==2.1.4 native/map_background.py verify \
 
 - [离线反编译档案](firmware/BSC500-offline-analysis-archive.md) 说明如何查阅项目 `analysis/` 中的固件伪代码、静态调用边和 Android 反编译文本。
 - [固件研究与开发交接](firmware/BSC500-development-reference.md) 汇总 REA 覆盖范围、RSC 与设置库的字节格式、骑行页结构、地图和背光调用地址，以及后续开发的验证条件。
+- [iPhone 蓝牙同步实测](firmware/BSC500-development-reference.md#iphone-蓝牙同步实测) 记录 V1.08.005 的骑行页读取、两次字段写入、设备回执和图形显示参数。
 - [V1.08.005 对比调查](firmware/BSC500-V1.08.005-investigation.md) 记录两版 USB 文件差异、路线颜色的设置线索，以及主程序和 Boot 版本变化。
 - [结构与地址](findings.json) 记录 RSC 容器、启动入口、字段格式化、地图主题与绘制函数。
 - [设置表](native/settings-registry.json) 记录从启动初始化数据恢复的 37 个配置键。可用 `python3 native/read_settings_registry.py "$original"` 重新生成。
