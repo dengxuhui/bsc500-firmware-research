@@ -43,6 +43,8 @@
   const picker = document.querySelector("#design-picker");
   const fieldsList = document.querySelector("#design-fields");
   const cards = document.querySelector("#design-cards");
+  const replaceDialog = document.querySelector("#design-replace");
+  const replacement = document.querySelector("#design-replacement");
   const canvas = document.querySelector("#design-canvas");
   const navigation = document.querySelector("#design-navigation");
   const compatible = document.querySelector("#design-compat");
@@ -52,12 +54,14 @@
   const normalize = (label) => label.normalize("NFKC").toLowerCase().replace(/[\s()._-]/g, "");
   const aliases = new Map();
   let activeFields = [];
+  let replacementIndex = 0;
 
   for (const [id, item] of catalog) {
     picker.add(new Option(item.label, id));
     for (const alias of [item.label, ...item.aliases]) aliases.set(normalize(alias), id);
   }
   picker.add(new Option("强度条（网页示例）", "intensity"));
+  replacement.replaceChildren(...Array.from(picker.options, (option) => option.cloneNode(true)));
   for (const alias of [customBar.label, ...customBar.aliases]) aliases.set(normalize(alias), "intensity");
 
   function describe(field) {
@@ -85,19 +89,23 @@
   function renderCanvas() {
     canvas.dataset.layout = layoutInput.value;
     canvas.dataset.palette = paletteInput.value;
-    canvas.dataset.compact = String(activeFields.length > 8);
+    canvas.dataset.compact = String(activeFields.length > (layoutInput.value === "navigation" ? 6 : 8));
     canvas.style.setProperty("--metric-rows", String(Math.max(1, Math.ceil(activeFields.length / 2))));
     navigation.hidden = layoutInput.value !== "navigation";
     cards.hidden = !navigation.hidden && activeFields.length === 0;
     document.querySelector("#design-preview-title").textContent = nameInput.value.trim() || "骑行数据页";
     cards.replaceChildren();
-    activeFields.forEach((field) => {
+    activeFields.forEach((field, index) => {
       const item = describe(field);
-      const card = document.createElement("div");
+      const card = document.createElement("button");
+      card.type = "button";
       card.className = "design-metric";
+      card.dataset.index = index;
+      card.setAttribute("aria-label", `更换第 ${index + 1} 格 · ${item.label}`);
       const title = document.createElement("span");
       title.textContent = item.label;
-      const metric = document.createElement("div");
+      const metric = document.createElement("span");
+      metric.className = "design-reading";
       const value = document.createElement("strong");
       value.textContent = item.sample;
       const unit = document.createElement("small");
@@ -165,6 +173,27 @@
     clearPresetHighlight();
     renderFields();
   }
+
+  cards.addEventListener("click", (event) => {
+    const cell = event.target.closest(".design-metric");
+    if (!cell) return;
+    replacementIndex = Number(cell.dataset.index);
+    const field = activeFields[replacementIndex];
+    document.querySelector("#design-replace-title").textContent =
+      `更换第 ${replacementIndex + 1} 格 · ${describe(field).label}`;
+    replacement.value = field.id ?? (field.kind === "intensity" ? "intensity" : picker.value);
+    replaceDialog.returnValue = "";
+    replaceDialog.showModal();
+    replacement.focus();
+  });
+
+  replaceDialog.addEventListener("close", () => {
+    if (replaceDialog.returnValue === "replace") {
+      activeFields[replacementIndex] = fromKey(replacement.value);
+      refreshFields();
+    }
+    cards.children[replacementIndex]?.focus({ preventScroll: true });
+  });
 
   for (const button of document.querySelectorAll("[data-preset]")) {
     button.addEventListener("click", () => {

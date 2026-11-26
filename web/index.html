@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>BSC500 设置工作台</title>
-  <link rel="stylesheet" href="style.css?v=81100">
+  <link rel="stylesheet" href="style.css?v=2">
   <script src="tools.js" defer></script>
   <script src="app.js?v=81100" defer></script>
   <script src="ride-map.js" defer></script>
-  <script src="designer.js?v=81100" defer></script>
+  <script src="designer.js?v=2" defer></script>
   <script src="reference.js" defer></script>
 </head>
 <body>
@@ -57,20 +57,36 @@
           </div>
         </div>
         <aside class="card designer-preview">
-          <h2>骑行仪表盘预览</h2>
-          <p class="muted">320 × 480 比例 · 示例地图与读数</p>
-          <a class="source" href="#reference">浏览原厂预览图</a>
-          <div class="design-device">
-            <div id="design-canvas" class="design-canvas">
-              <header id="design-preview-title"></header>
-              <section id="design-navigation" class="design-navigation" aria-label="导航示例" hidden>
-                <canvas id="design-map" width="640" height="560" aria-hidden="true"></canvas>
-                <div class="design-turn"><span aria-hidden="true">↱</span><div><strong>180 m</strong><small>右转进入沿河路</small></div></div>
-                <div class="design-route-info"><span>剩余 6.2 km</span><span class="design-map-scale">100 m</span></div>
-              </section>
-              <div id="design-cards" class="design-cards"></div>
-            </div>
+          <div class="design-preview-head">
+            <div><h2>码表预览</h2><p class="muted" id="design-preview-tip">点击屏幕上的数据格，直接更换字段。</p></div>
+            <a class="source" href="#reference">原厂预览图</a>
           </div>
+          <div class="design-stage">
+            <div class="design-device" aria-describedby="design-preview-tip">
+              <div class="design-side-keys" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div id="design-canvas" class="design-canvas">
+                <header id="design-preview-title"></header>
+                <section id="design-navigation" class="design-navigation" aria-label="导航示例" hidden>
+                  <canvas id="design-map" width="640" height="560" aria-hidden="true"></canvas>
+                  <div class="design-turn"><span aria-hidden="true">↱</span><div><strong>180 m</strong><small>右转进入沿河路</small></div></div>
+                  <div class="design-route-info"><span>剩余 6.2 km</span><span class="design-map-scale">100 m</span></div>
+                </section>
+                <div id="design-cards" class="design-cards"></div>
+              </div>
+              <div class="design-device-label" aria-hidden="true">BSC500</div>
+            </div>
+            <p>示例地图与读数</p>
+          </div>
+          <dialog id="design-replace" aria-labelledby="design-replace-title">
+            <form method="dialog">
+              <h3 id="design-replace-title">更换字段</h3>
+              <label>显示字段<select id="design-replacement"></select></label>
+              <div class="actions">
+                <button class="secondary" value="cancel">取消</button>
+                <button value="replace">应用到预览</button>
+              </div>
+            </form>
+          </dialog>
           <div class="how design-export"><h3>移植到 BSC500</h3><p id="design-compat"></p><p>布局、配色和自定义绘制只在网页预览。可匹配的字段会按顺序填入骑行设置，再在 iGPSPORT App 设置并同步。</p></div>
         </aside>
       </div>
