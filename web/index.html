@@ -1,198 +1,569 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <title>BSC500 设置工作台</title>
-  <link rel="stylesheet" href="style.css?v=2">
-  <script src="tools.js" defer></script>
-  <script src="app.js?v=81100" defer></script>
-  <script src="ride-map.js" defer></script>
-  <script src="designer.js?v=2" defer></script>
-  <script src="reference.js" defer></script>
-</head>
-<body>
-  <header class="top"><div class="shell top-inner"><a class="brand" href="#designer"><span class="mark" aria-hidden="true">B</span><span>BSC500 <small>设置工作台</small></span></a><span class="local"><i></i> 本机离线 · 文件留在浏览器</span></div></header>
-  <main class="shell">
-    <div class="intro"><h1>码表设置</h1><p>编辑方案、预览数据页，并保存需要的文件。</p></div>
-    <nav class="tabs" aria-label="工具">
-      <a href="#designer" aria-current="page">数据页设计器</a>
-      <a href="#reference">原厂预览图</a>
-      <a href="#settings">骑行设置</a>
-      <a href="#route">导航路线</a>
-      <a href="#backlight">背光曲线</a>
-      <a href="#map">地图底色</a>
-    </nav>
-    <div role="status" id="status" class="status" hidden></div>
-
-    <section class="panel" id="designer" aria-labelledby="designer-title">
-      <div class="layout designer-layout">
-        <div class="card">
-          <div class="card-head"><div><h2 id="designer-title">骑行数据页设计器</h2><p>从预设开始，或把参考数据页上的字段名称粘贴进来。</p></div></div>
-          <div class="presets" aria-label="原创预设">
-            <button class="secondary" type="button" data-preset="navigation">导航仪表盘</button>
-            <button class="secondary" type="button" data-preset="road">公路巡航</button>
-            <button class="secondary" type="button" data-preset="training">功率训练</button>
-            <button class="secondary" type="button" data-preset="climb">爬坡观察</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ff4f23" />
+    <title>BSC500 数据页配置 · 骑行工作台</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4f23'/%3E%3Cpath d='M9 9h14v5H9zm0 9h6v5H9zm10 0h4v5h-4z' fill='white'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="editor.css?v=field-graphics-v1" />
+    <script src="protocol.js" defer></script>
+    <script src="bluetooth.js?v=ble-notify-init-v5" defer></script>
+    <script src="editor-data.js" defer></script>
+    <script src="editor-model.js?v=field-graphics-v1" defer></script>
+    <script src="editor.js?v=field-graphics-v1" defer></script>
+  </head>
+  <body>
+    <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="i-grid" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+        </symbol>
+        <symbol id="i-device" viewBox="0 0 24 24">
+          <rect x="5" y="2" width="14" height="20" rx="4" />
+          <path d="M8 6h8v11H8zM10 20h4" />
+        </symbol>
+        <symbol id="i-bluetooth" viewBox="0 0 24 24">
+          <path d="m7 7 10 10-5 4V3l5 4L7 17" />
+        </symbol>
+        <symbol id="i-sync" viewBox="0 0 24 24">
+          <path
+            d="M20 8A8 8 0 0 0 6 5L3 8m0-5v5h5M4 16a8 8 0 0 0 14 3l3-3m0 5v-5h-5"
+          />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="m9 5 7 7-7 7" />
+        </symbol>
+        <symbol id="i-upload" viewBox="0 0 24 24">
+          <path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5" />
+        </symbol>
+        <symbol id="i-download" viewBox="0 0 24 24">
+          <path d="M12 3v13m-5-5 5 5 5-5M4 16v5h16v-5" />
+        </symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+        <symbol id="i-info" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11v6m0-10v1" />
+        </symbol>
+        <symbol id="i-undo" viewBox="0 0 24 24">
+          <path d="M4 10h10a6 6 0 0 1 0 12M9 5l-5 5 5 5" />
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 24 24">
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path d="m16 16 5 5" />
+        </symbol>
+        <symbol id="i-grip" viewBox="0 0 24 24">
+          <path d="M8 5v1m8-1v1M8 11v1m8-1v1M8 17v1m8-1v1" />
+        </symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24">
+          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12Z" />
+          <circle cx="12" cy="12" r="3" />
+        </symbol>
+        <symbol id="i-home" viewBox="0 0 24 24">
+          <path d="m3 10 9-7 9 7M5 9v12h14V9m-10 12v-8h6v8" />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24">
+          <path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z" />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"
+          />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
+          <path d="m8 12 3 3 5-6" />
+        </symbol>
+        <symbol id="i-up" viewBox="0 0 24 24">
+          <path d="m6 14 6-6 6 6" />
+        </symbol>
+        <symbol id="i-down" viewBox="0 0 24 24">
+          <path d="m6 10 6 6 6-6" />
+        </symbol>
+      </defs>
+    </svg>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="BSC500 骑行工作台首页"
+        ><span class="brand-mark"
+          ><svg><use href="#i-grid" /></svg></span
+        ><span class="wordmark">iGPSPORT</span
+        ><span class="brand-divider"></span
+        ><span class="brand-caption">骑行工作台</span></a
+      >
+      <nav class="main-nav" aria-label="主导航">
+        <a href="./" aria-current="page">设备配置</a
+        ><a href="tools.html#reference">原厂版式</a
+        ><a href="tools.html">研究工具</a>
+      </nav>
+      <div class="header-note">
+        <svg class="icon"><use href="#i-shield" /></svg
+        ><span>本地编辑 · 非官方工具</span>
+      </div>
+    </header>
+    <main class="app-shell">
+      <div class="workspace-heading">
+        <div>
+          <div class="breadcrumb">
+            我的设备 <span>/</span> BSC500 <span>/</span> 数据页配置
           </div>
-          <fieldset><legend>页面样式</legend><div class="row">
-            <label>页面名称<input id="design-name" maxlength="45"></label>
-            <label><span id="design-layout-label">布局</span><select id="design-layout" aria-labelledby="design-layout-label"><option value="navigation">导航仪表盘</option><option value="hero">首项突出</option><option value="grid">双栏网格</option><option value="list">逐行排列</option></select></label>
-            <label><span id="design-palette-label">配色</span><select id="design-palette" aria-labelledby="design-palette-label"><option value="forest">森绿</option><option value="night">夜航</option><option value="indigo">靛蓝</option></select></label>
-          </div></fieldset>
-          <fieldset><legend>字段与顺序</legend>
-            <ol id="design-fields" class="design-fields"></ol>
-            <div class="actions design-add"><label><span id="design-picker-label">添加字段</span><select id="design-picker" aria-labelledby="design-picker-label"></select></label><button id="design-add" class="secondary" type="button">添加</button></div>
-            <details class="paste-fields">
-              <summary>粘贴参考页字段</summary>
-              <label>字段名称 <span class="hint">按参考页顺序，每行一个。支持常见中英文名。</span><textarea id="design-paste" rows="4" placeholder="Speed&#10;3s Power&#10;Heart Rate"></textarea></label>
-              <button id="design-match" class="secondary" type="button">匹配并替换字段</button>
-            </details>
-          </fieldset>
-          <div class="actions">
-            <button id="design-apply" type="button">填入骑行设置</button>
-            <button id="design-save" class="secondary" type="button">下载数据页设计</button>
-            <label class="button secondary file-button">打开设计<input id="design-import" type="file" accept=".json,application/json"></label>
+          <div class="heading-line">
+            <h1>数据页配置</h1>
+            <span class="draft-badge" id="draft-badge">本地示例</span>
           </div>
+          <p>在大屏上安排每一项数据，让骑行时的每一眼都刚刚好。</p>
         </div>
-        <aside class="card designer-preview">
-          <div class="design-preview-head">
-            <div><h2>码表预览</h2><p class="muted" id="design-preview-tip">点击屏幕上的数据格，直接更换字段。</p></div>
-            <a class="source" href="#reference">原厂预览图</a>
+        <div class="workspace-actions">
+          <div class="history-buttons">
+            <button
+              class="icon-button"
+              id="undo"
+              title="撤销（⌘ / Ctrl Z）"
+              aria-label="撤销"
+              disabled
+            >
+              <svg class="icon"><use href="#i-undo" /></svg></button
+            ><button
+              class="icon-button"
+              id="redo"
+              title="重做（⌘ / Ctrl Shift Z）"
+              aria-label="重做"
+              disabled
+            >
+              <svg class="icon flip"><use href="#i-undo" /></svg>
+            </button>
           </div>
-          <div class="design-stage">
-            <div class="design-device" aria-describedby="design-preview-tip">
-              <div class="design-side-keys" aria-hidden="true"><i></i><i></i><i></i></div>
-              <div id="design-canvas" class="design-canvas">
-                <header id="design-preview-title"></header>
-                <section id="design-navigation" class="design-navigation" aria-label="导航示例" hidden>
-                  <canvas id="design-map" width="640" height="560" aria-hidden="true"></canvas>
-                  <div class="design-turn"><span aria-hidden="true">↱</span><div><strong>180 m</strong><small>右转进入沿河路</small></div></div>
-                  <div class="design-route-info"><span>剩余 6.2 km</span><span class="design-map-scale">100 m</span></div>
-                </section>
-                <div id="design-cards" class="design-cards"></div>
-              </div>
-              <div class="design-device-label" aria-hidden="true">BSC500</div>
+          <button class="button" id="import-plan">
+            <svg class="icon"><use href="#i-upload" /></svg>导入方案</button
+          ><input
+            type="file"
+            id="import-file"
+            accept="application/json,.json"
+            hidden
+          /><button class="button" id="export-plan">
+            <svg class="icon"><use href="#i-download" /></svg>导出方案</button
+          ><button class="button primary" id="open-sync">
+            <svg class="icon"><use href="#i-sync" /></svg>同步到码表
+          </button>
+        </div>
+      </div>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <div class="workspace">
+        <aside class="page-sidebar surface" aria-label="码表与数据页">
+          <div class="device-summary">
+            <div class="mini-device" aria-hidden="true"><span></span></div>
+            <div>
+              <strong>BSC500</strong
+              ><span id="connection-status" class="connection-status"
+                ><i></i>未连接</span
+              >
             </div>
-            <p>示例地图与读数</p>
+            <button
+              class="icon-button"
+              id="connect"
+              aria-label="连接蓝牙码表"
+              title="连接蓝牙码表"
+            >
+              <svg class="icon"><use href="#i-bluetooth" /></svg>
+            </button>
           </div>
-          <dialog id="design-replace" aria-labelledby="design-replace-title">
-            <form method="dialog">
-              <h3 id="design-replace-title">更换字段</h3>
-              <label>显示字段<select id="design-replacement"></select></label>
-              <div class="actions">
-                <button class="secondary" value="cancel">取消</button>
-                <button value="replace">应用到预览</button>
-              </div>
-            </form>
-          </dialog>
-          <div class="how design-export"><h3>移植到 BSC500</h3><p id="design-compat"></p><p>布局、配色和自定义绘制只在网页预览。可匹配的字段会按顺序填入骑行设置，再在 iGPSPORT App 设置并同步。</p></div>
+          <div class="mode-picker">
+            <label for="ride-mode">骑行模式</label
+            ><select id="ride-mode">
+              <option value="0">模式 0 · 默认骑行</option>
+              <option value="1">模式 1</option>
+              <option value="2">模式 2</option>
+              <option value="3">模式 3</option>
+              <option value="4">模式 4</option>
+              <option value="5">模式 5</option>
+              <option value="6">模式 6</option>
+              <option value="7">模式 7</option>
+              <option value="8">模式 8</option>
+              <option value="9">模式 9</option></select
+            ><button class="read-button" id="read-device">
+              <svg class="icon"><use href="#i-sync" /></svg>读取码表当前配置
+            </button>
+          </div>
+          <div class="sidebar-section-heading">
+            <h2>我的页面 <span id="page-count"></span></h2>
+            <span class="subtle">拖动排序</span>
+          </div>
+          <div id="page-list" class="page-list" aria-label="页面列表"></div>
+          <button class="add-page" id="add-page">
+            <svg class="icon"><use href="#i-plus" /></svg>启用更多页面
+          </button>
+          <div class="sidebar-foot">
+            <svg class="icon"><use href="#i-info" /></svg>
+            <p>先读取，再编辑、同步。<br />草稿自动保存在当前浏览器。</p>
+          </div>
+        </aside>
+        <section
+          class="preview-panel surface"
+          aria-labelledby="preview-heading"
+        >
+          <div class="preview-heading">
+            <div>
+              <span class="eyebrow">LIVE PREVIEW</span>
+              <h2 id="preview-heading">骑行总览</h2>
+            </div>
+            <div
+              class="preview-themes"
+              role="group"
+              aria-label="预览外观（不写入设备）"
+            >
+              <button
+                class="icon-button selected"
+                id="theme-light"
+                aria-pressed="true"
+                title="浅色预览"
+              >
+                <svg class="icon"><use href="#i-sun" /></svg></button
+              ><button
+                class="icon-button"
+                id="theme-dark"
+                aria-pressed="false"
+                title="深色预览"
+              >
+                <svg class="icon"><use href="#i-moon" /></svg>
+              </button>
+            </div>
+          </div>
+          <div class="preview-stage">
+            <span class="resolution-label"
+              >320 × 480 <span>·</span> 等比预览</span
+            >
+            <div class="device-body">
+              <span class="device-sensor" aria-hidden="true"></span
+              ><span class="device-side-key" aria-hidden="true"></span>
+              <div
+                id="device-screen"
+                class="device-screen"
+                aria-label="码表页面预览"
+              ></div>
+              <span class="device-logo" aria-hidden="true">iGPSPORT</span
+              ><span class="device-bottom-keys" aria-hidden="true"></span>
+            </div>
+            <div class="preview-caption">
+              <i></i>读数与图形均为固定示例，非实时数据
+            </div>
+          </div>
+          <div class="preview-pagination">
+            <button
+              class="icon-button previous"
+              id="prev-page"
+              aria-label="上一页"
+            >
+              <svg class="icon"><use href="#i-arrow" /></svg>
+            </button>
+            <div
+              id="page-dots"
+              class="page-dots"
+              aria-label="快速切换页面"
+            ></div>
+            <button class="icon-button" id="next-page" aria-label="下一页">
+              <svg class="icon"><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <div class="preview-help">
+            <svg class="icon"><use href="#i-eye" /></svg
+            ><span>点击屏幕上的数据格修改项目，拖动可交换位置</span>
+          </div>
+        </section>
+        <aside class="inspector surface" aria-label="页面编辑">
+          <div class="inspector-heading">
+            <h2>页面设置</h2>
+            <span id="page-index" class="subtle">PAGE 01</span>
+          </div>
+          <div class="page-options">
+            <label class="input-label" for="page-name"
+              >页面名称 <span>仅用于本地方案</span></label
+            ><input
+              id="page-name"
+              type="text"
+              maxlength="30"
+              autocomplete="off"
+            />
+            <div class="option-row">
+              <span>在码表上显示</span
+              ><button
+                id="page-enabled"
+                class="switch"
+                role="switch"
+                aria-checked="true"
+                aria-label="在码表上显示此页"
+              >
+                <span></span>
+              </button>
+            </div>
+            <div class="option-row main-option">
+              <span>设为主页</span
+              ><button id="page-main" class="text-button">设为主页</button>
+            </div>
+          </div>
+          <div class="layout-section">
+            <div class="section-heading">
+              <h3>布局样式</h3>
+              <label class="count-select"
+                ><select id="field-count" aria-label="数据项数量"></select
+                ><span>项数据</span></label
+              >
+            </div>
+            <div
+              id="layout-options"
+              class="layout-options"
+              aria-label="原厂布局样式"
+            ></div>
+            <p class="layout-hint" id="layout-hint">
+              原厂支持版式 · 同步保留协议参数
+            </p>
+          </div>
+          <div class="fields-section">
+            <div class="section-heading">
+              <h3>数据项目 <span id="field-total" class="subtle"></span></h3>
+              <span class="subtle">拖动交换</span>
+            </div>
+            <div id="field-list" class="field-list"></div>
+            <p id="no-fields" class="empty-fields" hidden>
+              此布局使用码表原生的整页内容，无可编辑数据格。
+            </p>
+          </div>
+          <div class="inspector-footer">
+            <svg class="icon"><use href="#i-check" /></svg
+            ><span id="save-status">已保存到本机</span
+            ><button class="text-button" id="show-details">协议详情</button>
+          </div>
         </aside>
       </div>
-    </section>
-
-    <section class="panel" id="reference" aria-labelledby="reference-title" hidden>
-      <div class="card">
-        <div class="reference-head">
+      <footer class="workspace-footer">
+        <span
+          ><svg class="icon"><use href="#i-shield" /></svg>不上传文件，不需要
+          iGPSPORT 账号</span
+        ><span
+          >Chrome / Edge · Web Bluetooth <span class="footer-dot">·</span>
+          <button class="text-button" id="open-help">
+            连接与同步说明
+          </button></span
+        >
+      </footer>
+    </main>
+    <dialog id="field-dialog" class="field-dialog">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">DATA FIELDS</span>
+          <h2>选择数据项目</h2>
+          <p id="field-dialog-label">替换第 1 项数据</p>
+        </div>
+        <button
+          class="icon-button"
+          data-close="field-dialog"
+          aria-label="关闭项目选择"
+        >
+          <svg class="icon"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="field-search">
+        <svg class="icon"><use href="#i-search" /></svg
+        ><input
+          type="search"
+          id="field-search"
+          placeholder="搜索项目名称、英文或字段 ID"
+          aria-label="搜索数据项目"
+        />
+      </div>
+      <div
+        id="field-categories"
+        class="field-categories"
+        aria-label="数据项目分类"
+      ></div>
+      <div class="library-summary">
+        <span id="library-count"></span
+        ><label
+          ><input type="checkbox" id="show-all-fields" />包含待验证项目</label
+        >
+      </div>
+      <div id="field-library" class="field-library"></div>
+      <div class="library-note">
+        <svg class="icon"><use href="#i-info" /></svg
+        ><span
+          >“固件引用”来自静态证据，并非逐项实机验证。待验证项目可能无法显示。</span
+        >
+      </div>
+    </dialog>
+    <dialog id="sync-dialog" class="modal">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">DEVICE SYNC</span>
+          <h2>同步到 BSC500</h2>
+          <p id="sync-subtitle">只修改当前骑行模式的数据页配置</p>
+        </div>
+        <button
+          class="icon-button"
+          data-close="sync-dialog"
+          aria-label="关闭同步窗口"
+        >
+          <svg class="icon"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div id="sync-connection-hint" class="sync-connection-hint" hidden></div>
+      <ol class="sync-steps">
+        <li id="step-read">
+          <span class="step-number">1</span>
           <div>
-            <h2 id="reference-title">BSC500 原厂布局预览图</h2>
-            <p class="muted">来自 iGPSPORT Android 国内版 8.11.00 中 BSC500 使用的内置模板。</p>
+            <strong>读取并检查设备</strong>
+            <p>检查是否有来自手机 App 的新修改</p>
           </div>
-          <a class="source" href="assets/igpsport-cn-8.11.00/bsc500-layout-catalog.json" download>下载布局参数</a>
-        </div>
-        <div class="reference-controls">
-          <label>页面类型<select id="reference-series"><option value="">全部类型</option></select></label>
-          <output id="reference-count" aria-live="polite"></output>
-        </div>
-        <div id="reference-gallery" class="reference-gallery"></div>
-      </div>
-    </section>
-
-    <section class="panel" id="settings" aria-labelledby="settings-title" hidden>
-      <div class="layout">
-        <form id="settings-form" class="card">
-          <div class="card-head"><div><h2 id="settings-title">骑行设置方案</h2><p>保存后按方案在 iGPSPORT App 或码表设置。</p></div><span class="tag">手动同步</span></div>
-          <fieldset><legend>数据页</legend>
-            <div class="row">
-              <label>骑行模式名称<input name="mode" value="户外骑行" maxlength="45" required></label>
-              <label>页面名称<input name="page" value="主数据页" maxlength="45" required></label>
-              <label>显示字段数<select name="fieldCount" id="field-count"></select></label>
-            </div>
-            <div id="field-editors" class="field-grid"></div>
-            <datalist id="field-suggestions">
-              <option>速度</option><option>平均速度</option><option>最大速度</option><option>骑行距离</option><option>骑行时间</option><option>累计爬升</option><option>海拔</option><option>坡度</option><option>心率</option><option>平均心率</option><option>踏频</option><option>功率</option><option>3 秒功率</option><option>本圈时间</option><option>本圈平均功率</option>
-            </datalist>
-          </fieldset>
-          <fieldset><legend>显示和骑行</legend><div class="row">
-            <label>显示模式<select name="appearance"><option value="">沿用码表</option><option>自动</option><option>浅色</option><option>深色</option></select></label>
-            <label>单位<select name="units"><option value="">沿用码表</option><option>公制</option><option>英制</option></select></label>
-            <label>亮度方式<select name="brightness"><option value="">沿用码表</option><option>自动亮度</option><option>手动亮度</option></select></label>
-            <label>自动熄屏<select name="screenOff"><option value="">沿用码表</option><option>开启</option><option>仅非活动</option><option>关闭</option></select></label>
-            <label>自动暂停<select name="pause"><option value="">沿用码表</option><option>开启</option><option>关闭</option></select></label>
-            <label>自动计圈<select name="lap"><option value="">沿用码表</option><option>关闭</option><option>按距离</option><option>按位置</option><option>按时间</option></select></label>
-          </div></fieldset>
-          <fieldset><legend>地图与导航</legend><div class="row">
-            <label>地图北向上<select name="north"><option value="">沿用码表</option><option>开启</option><option>关闭</option></select></label>
-            <label>地图自动缩放<select name="zoom"><option value="">沿用码表</option><option>开启</option><option>关闭</option></select></label>
-            <label>显示道路名称<select name="roads"><option value="">沿用码表</option><option>开启</option><option>关闭</option></select></label>
-            <label>偏航重算<select name="reroute"><option value="">沿用码表</option><option>开启</option><option>关闭</option></select></label>
-          </div></fieldset>
-          <div class="actions"><button type="submit">下载设置方案 JSON</button><label class="button secondary file-button">打开已有方案<input id="settings-import" type="file" accept=".json,application/json"></label></div>
-        </form>
-        <aside class="card preview-card">
-          <h2>数据页预览</h2>
-          <div class="device"><div class="screen" id="screen"><div class="screen-header"><span id="preview-mode"></span><span>GPS</span></div><div class="screen-content"><h3 id="preview-title"></h3><div id="preview-fields" class="preview-fields"></div></div><div class="screen-footer"><span></span></div></div></div>
-          <p class="muted">示意预览。字段是否可选及具体布局以 App 为准。</p>
-          <div class="how"><h3>同步到码表</h3><ol><li>配对 BSC500，在 App 里打开设备的页面配置。</li><li>按方案填写字段并保存同步。系统与地图选项可在码表菜单中调整。</li></ol><p>JSON 用于在这个网页保存和重新打开方案。</p></div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="panel" id="route" aria-labelledby="route-title" hidden>
-      <div class="layout">
-        <form id="route-form" class="card">
-          <div class="card-head"><div><h2 id="route-title">导航路线</h2><p>填写坐标，或载入单条连续的 GPX 路线或轨迹。</p></div><span class="tag ready">App 可导入</span></div>
-          <label>路线名称<input name="title" required maxlength="80" placeholder="周末骑行"></label>
-          <label>路线坐标 <span class="hint">每行一组 纬度,经度[,海拔米]</span><textarea name="points" rows="9" required placeholder="31.23040,121.47370&#10;31.23200,121.47900"></textarea></label>
-          <div class="actions"><button type="submit">下载 GPX</button><label class="button secondary file-button">载入 GPX<input id="route-import" type="file" accept=".gpx,application/gpx+xml"></label></div>
-        </form>
-        <aside class="card guide"><h2>同步到码表</h2><ol><li>将导出的 GPX 传到手机，在 iGPSPORT App 导入路线。</li><li>在 App 中把路线发送给 BSC500。</li><li>在码表「导航 → 路线导航」中打开路线。</li></ol><p>导出保留坐标与海拔。导入的时间戳、心率等活动信息会省略。</p><a class="source" href="https://device.report/m/2e3c0800a266d01d5e6c5724e7b538c66d06cb2d9677344efbd20e5f66c1ebb2" target="_blank" rel="noopener">BSC500 说明书</a></aside>
-      </div>
-    </section>
-
-    <section class="panel" id="backlight" aria-labelledby="backlight-title" hidden>
-      <div class="layout">
-        <form id="backlight-form" class="card" novalidate>
-          <div class="card-head"><div><h2 id="backlight-title">背光曲线</h2><p>编辑固件读取的两种 CSV，按原文件名保存。</p></div><span class="tag lab">离线验证</span></div>
-          <fieldset><legend>手动亮度</legend>
-            <label>滑块位置,亮度<textarea name="slider" rows="5" placeholder="每行填写一组数值，例如 30,40"></textarea></label>
-            <div class="actions"><button name="slider" value="slider" type="submit">下载 level.txt</button><label class="button secondary file-button">载入文件<input id="slider-import" type="file" accept=".txt,.csv,text/plain"></label></div>
-          </fieldset>
-          <fieldset><legend>自动亮度</legend>
-            <label>照度,白天亮度,夜间亮度<textarea name="ambient" rows="5" placeholder="每行填写一组数值，例如 20,15,8"></textarea></label>
-            <div class="actions"><button name="ambient" value="ambient" type="submit">下载 light.txt</button><label class="button secondary file-button">载入文件<input id="ambient-import" type="file" accept=".txt,.csv,text/plain"></label></div>
-          </fieldset>
-        </form>
-        <aside class="card guide"><h2>验证范围</h2><p>已在模拟环境确认 BSC500 V1.04.003 能读入对应列。占位示例用于展示格式。</p><p>完整实机取值范围、USB 写入位置和显示效果仍待确认。导出的文件留作验证样本。</p></aside>
-      </div>
-    </section>
-
-    <section class="panel" id="map" aria-labelledby="map-title" hidden>
-      <div class="layout">
-        <form id="map-form" class="card">
-          <div class="card-head"><div><h2 id="map-title">地图画布底色</h2><p>从原厂固件生成用于离线验证的应用镜像。</p></div><span class="tag lab">离线镜像</span></div>
-          <label>V1.04.003 原厂包或原始应用镜像<input name="original" type="file" accept=".rsc,.bin" required></label>
-          <div class="row">
-            <label>地图显示状态<select name="variant"><option value="classic-light">经典地图 · 浅色</option><option value="classic-dark">经典地图 · 深色</option><option value="colorful-light">彩色地图 · 浅色</option></select></label>
-            <label>画布颜色<input name="color" type="color" value="#d5e8d4"></label>
+        </li>
+        <li id="step-backup">
+          <span class="step-number">2</span>
+          <div>
+            <strong>保存原始配置备份</strong>
+            <p>下载备份，并在本机留存一份</p>
           </div>
-          <div class="actions"><button type="submit">下载离线镜像</button></div>
-        </form>
-        <aside class="card guide"><h2>配色预览</h2><div id="map-swatch" class="swatch"><output id="map-color">#D5E8D4</output></div><p>仅支持 SHA-256 匹配的原厂 V1.04.003。生成的 <code>.local.bin</code> 是供本机验证的应用镜像，真机安装与恢复流程仍待验证。</p></aside>
+        </li>
+        <li id="step-write">
+          <span class="step-number">3</span>
+          <div>
+            <strong>写入页面配置</strong>
+            <p>等待码表返回操作回执</p>
+          </div>
+        </li>
+        <li id="step-verify">
+          <span class="step-number">4</span>
+          <div>
+            <strong>读回核对</strong>
+            <p>核对字段、版式、启用状态与页面顺序</p>
+          </div>
+        </li>
+      </ol>
+      <div id="sync-changes" class="sync-changes"></div>
+      <label class="sync-consent"
+        ><input type="checkbox" id="sync-consent" /><span id="sync-consent-text"
+          >我已保存骑行记录，确认将本次修改写入码表。</span
+        ></label
+      >
+      <div id="sync-result" class="sync-result" role="status" hidden></div>
+      <div class="dialog-actions">
+        <button class="button" data-close="sync-dialog">暂不同步</button
+        ><button class="button primary" id="sync-confirm" disabled>
+          <svg class="icon"><use href="#i-sync" /></svg>备份并同步
+        </button>
       </div>
-    </section>
-    <footer>BSC500 <span>V1.04.003 实验功能</span></footer>
-  </main>
-</body>
+    </dialog>
+    <dialog id="pages-dialog" class="modal">
+      <div class="dialog-heading">
+        <div>
+          <h2>启用更多页面</h2>
+          <p>使用码表已有页面槽位，不新建未知页类型。</p>
+        </div>
+        <button
+          class="icon-button"
+          data-close="pages-dialog"
+          aria-label="关闭页面选择"
+        >
+          <svg class="icon"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div id="available-pages" class="available-pages"></div>
+    </dialog>
+    <dialog id="details-dialog" class="modal">
+      <div class="dialog-heading">
+        <div>
+          <h2>协议与连接说明</h2>
+          <p>真实能力、参数与验证边界</p>
+        </div>
+        <button
+          class="icon-button"
+          data-close="details-dialog"
+          aria-label="关闭说明"
+        >
+          <svg class="icon"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="details-content">
+        <h3>如何同步</h3>
+        <ol>
+          <li>使用 Chrome 或 Edge，通过 localhost 或 HTTPS 打开本页。</li>
+          <li>先断开手机 App 与码表的蓝牙连接，保持码表开机、蓝牙开启。</li>
+          <li>
+            点击连接，选择 BSC500，再读取目标骑行模式。首次读取会替换示例方案。
+          </li>
+          <li>
+            调整数据页，点击同步，检查修改并确认。同步会先备份，再写入，最后重新读取核对。
+          </li>
+        </ol>
+        <p>
+          读取优先使用 ATT
+          有响应写入，以获取底层确认或权限错误。若出现系统蓝牙配对提示，请在电脑和码表上确认正常配对，不需要解除手机
+          App 的账号绑定。系统确认阶段最多等候 45 秒，随后另等候 12
+          秒页面回复。工具无法直接报告当前链路是否加密。
+        </p>
+        <p>
+          连接时按官方 App 初始化 9e、8e、7e、6e
+          四个已知通知通道。页面命令仍仅使用
+          9e，其他通道只旁路记录通知，不发送命令，也不混入页面解析。可选通道缺失或订阅失败会记录原因。
+        </p>
+        <p>
+          心率分布、速度仪表、功率等图形字段使用 APK
+          内置预览图片，并按格子尺寸选择素材、等比显示。图片保留原色，不随深浅色主题反色；手机新版下发的素材和真机画面可能不同。图形与读数均为固定示例，不代表实时数据。普通数据页按设备的
+          graphic_display 位决定哪一格画图（真机 16
+          页与官方两次写入报文均已核对），字段或版式变化时网页会重算该位；专项页保留设备原值。
+        </p>
+        <h3>目前确认到了哪一步</h3>
+        <p>
+          官方 iPhone App 与 V1.08.005 真机抓包已确认页面读写、字段 ID
+          与成功回执。本网页实现了相同的消息头、CRC、Protobuf
+          与分片通道；浏览器直连仍需真机验证，若设备要求官方会话握手，不会尝试猜测或绕过。
+        </p>
+        <p>
+          仅使用 APK
+          提供的原厂版式。不支持自定义字体、任意坐标或把网页绘制效果安装到固件。深浅色切换仅用于预览。模式编号
+          0–9 来自协议范围，设备是否启用某一模式以读取结果为准。
+        </p>
+        <h3>同步失败怎么办</h3>
+        <p>
+          设备回执成功不等于页面已正确保存。若读回不同、超时或断连，请先重新读取并核对设备屏幕，不要连续重试写入。可导入自动下载的备份，在重新读取设备后确认恢复。
+        </p>
+        <h3>本机配置备份</h3>
+        <div id="backup-list"></div>
+        <h3>当前页面参数</h3>
+        <pre id="protocol-details"></pre>
+        <details id="ble-log-details" open>
+          <summary>蓝牙诊断日志</summary>
+          <p class="subtle" id="diagnostic-log-status">仅保存在当前浏览器</p>
+          <div class="diagnostic-actions">
+            <button class="button" id="export-ble-log" type="button">
+              导出诊断日志
+            </button>
+            <button class="text-button" id="clear-ble-log" type="button">
+              清空日志
+            </button>
+          </div>
+          <pre id="session-log">尚无蓝牙操作</pre>
+          <p class="subtle">
+            记录特征
+            UUID、浏览器分片写入结果、原始通知、帧匹配及超时统计。浏览器写入完成不等于设备已经接受配置。导出的日志可能含页面配置，请仅分享给可信的调试人员。
+          </p>
+        </details>
+        <p class="subtle">
+          页面布局及字段参考：Android 国内版 8.11.00 / 仓库字段字典。本站不是
+          iGPSPORT 官方服务。
+        </p>
+      </div>
+    </dialog>
+  </body>
 </html>
