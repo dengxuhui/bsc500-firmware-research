@@ -268,16 +268,12 @@ async function mockBluetooth(page) {
     await page.locator("#sync-confirm").click();
   }
   try {
-    await scenario("项目品牌、研究工具入口与返回导航", async (page) => {
+    await scenario("项目品牌与设备配置导航", async (page) => {
       assert.equal(await page.title(), "BSC500 数据页配置 · iGPSPORT Web Studio");
       assert.equal(await page.locator(".wordmark").textContent(), "iGPSPORT Web Studio");
       assert.equal(await page.locator(".brand-caption").textContent(), "码表定制工坊");
-      await page.locator(".main-nav").getByRole("link", { name: "研究工具", exact: true }).click();
-      assert.equal(await page.title(), "研究工具 · iGPSPORT Web Studio");
-      assert.match(await page.locator(".brand").textContent(), /iGPSPORT Web Studio/);
-      await page.getByRole("link", { name: "返回设备配置", exact: true }).click();
+      await page.getByRole("link", { name: "设备配置", exact: true }).click();
       await page.waitForFunction(() => document.title === "BSC500 数据页配置 · iGPSPORT Web Studio");
-      assert.equal(await page.title(), "BSC500 数据页配置 · iGPSPORT Web Studio");
     });
     await scenario("多机型切换、独立草稿、模式隔离与刷新恢复", async (page) => {
       await page.locator("#page-name").fill("BSC500 独立草稿");
@@ -1328,16 +1324,15 @@ async function mockBluetooth(page) {
       },
       true,
     );
-    await scenario("原有离线工作台与原厂图库入口保持可用", async (page) => {
-      await page.goto(`${url}/tools.html#reference`);
-      assert.equal(
-        await page.locator("#reference-gallery .reference-item").count(),
-        72,
-      );
-      await page
-        .getByRole("link", { name: "数据页设计器", exact: true })
-        .click();
-      assert.equal(await page.locator("#designer").isVisible(), true);
+    await scenario("正式工作台仅保留设备配置和调试信息入口", async (page) => {
+      await page.goto(url);
+      assert.deepEqual(await page.locator(".main-nav a").allTextContents(), ["设备配置"]);
+      assert.equal(await page.locator('a[href*="tools.html"]').count(), 0);
+      await page.getByRole("button", { name: "调试信息", exact: true }).click();
+      assert.equal(await page.locator("#details-dialog").isVisible(), true);
+      assert.equal(await page.locator("#export-ble-log").isVisible(), true);
+      const removed = await page.request.get(`${url}/tools.html`);
+      assert.equal(removed.status(), 404);
     });
     assert.deepEqual(errors, [], `浏览器未捕获错误：${errors.join("\n")}`);
     if (failures.length) throw new Error(failures.join("\n\n"));

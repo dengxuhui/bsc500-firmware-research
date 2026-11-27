@@ -267,7 +267,7 @@
       input.version !== 1
     )
       throw new Error(
-        "请选择本编辑器导出的页面方案或配置备份。旧版原创设计 JSON 请在研究工具中打开。",
+        "请选择本编辑器导出的页面方案或配置备份。旧版设计文件不支持导入。",
       );
     const sourceDevice =
       input.device ?? (input.format === "bsc500-page-plan" ? "BSC500" : null);

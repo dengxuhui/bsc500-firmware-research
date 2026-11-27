@@ -324,7 +324,7 @@
             );
             pending.reject(
               new Error(
-                `${stage === "ATT有响应写入" ? "ATT 有响应写入等待超时；若系统弹出蓝牙配对提示，请确认正常配对。" : "等待码表回复超时。"}（浏览器写入完成 ${pending.completedBytes}/${pending.totalBytes} 字节，收到 ${pending.notifications} 次通知/${pending.receivedBytes} 字节）。详细记录见「协议详情 → 蓝牙诊断日志」，Web Bluetooth 无法直接报告链路加密状态。`,
+                `${stage === "ATT有响应写入" ? "ATT 有响应写入等待超时；若系统弹出蓝牙配对提示，请确认正常配对。" : "等待码表回复超时。"}（浏览器写入完成 ${pending.completedBytes}/${pending.totalBytes} 字节，收到 ${pending.notifications} 次通知/${pending.receivedBytes} 字节）。详细记录见「调试信息 → 蓝牙诊断日志」，Web Bluetooth 无法直接报告链路加密状态。`,
               ),
             );
             this.disconnect("请求超时，关闭以隔离迟到回复");
