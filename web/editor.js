@@ -688,7 +688,7 @@
     $("show-all-fields").disabled = !p.bluetooth;
     if (!p.bluetooth) $("show-all-fields").checked = true;
     $("breadcrumb-device").textContent = device;
-    document.title = `${device} 数据页配置 · 骑行工作台`;
+    document.title = `${device} 数据页配置 · iGPSPORT Web Studio`;
     $("device-capability").textContent =
       (p.bluetooth
         ? "BSC500 · 实验性蓝牙同步；写入仍待真机验证。"

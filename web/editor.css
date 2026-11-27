@@ -1947,14 +1947,19 @@ dialog::backdrop {
 }
 @media (max-width: 480px) {
   .site-header {
-    gap: 15px;
-    padding: 0 14px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px 0;
   }
   .main-nav {
-    gap: 14px;
+    width: 100%;
+    gap: 24px;
   }
   .main-nav a {
-    font-size: 10px;
+    font-size: 12px;
+    padding-block: 10px;
+    white-space: nowrap;
   }
   .brand {
     gap: 7px;

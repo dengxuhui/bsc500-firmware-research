@@ -20,7 +20,7 @@ button, input, select, textarea { font: inherit; }
 .top-inner, .brand, .local { display: flex; align-items: center; gap: 12px; }
 .top-inner { justify-content: space-between; min-height: 65px; }
 .brand { text-decoration: none; color: inherit; font-weight: 800; white-space: nowrap; }
-.brand small { font-size: 14px; margin-left: 5px; font-weight: 500; color: var(--muted); }
+.brand small { display: block; font-size: 14px; font-weight: 500; color: var(--muted); }
 .mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--accent); color: #fff; }
 .local { gap: 7px; color: var(--muted); font-size: 13px; }
 .local i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
@@ -90,6 +90,7 @@ footer span { margin-left: 8px; }
 @media (max-width: 790px) { .layout { grid-template-columns: 1fr; } }
 @media (max-width: 480px) {
   .shell { width: calc(100% - 24px); }
+  .top-inner { flex-wrap: wrap; padding-block: 12px; }
   .local { font-size: 0; gap: 0; }
   .tabs a { padding-inline: 8px; font-size: 14px; }
   .card { padding: 16px; }

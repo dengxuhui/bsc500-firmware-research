@@ -91,7 +91,7 @@ const BscTools = (() => {
     const add = (parent, elementName) => parent.appendChild(xml.createElementNS(gpxNamespace, elementName));
     const root = xml.documentElement;
     root.setAttribute("version", "1.1");
-    root.setAttribute("creator", "BSC500 Settings Workbench");
+    root.setAttribute("creator", "iGPSPORT Web Studio");
     const track = add(root, "trk");
     add(track, "name").textContent = title;
     const segment = add(track, "trkseg");

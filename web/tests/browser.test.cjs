@@ -268,6 +268,17 @@ async function mockBluetooth(page) {
     await page.locator("#sync-confirm").click();
   }
   try {
+    await scenario("项目品牌、研究工具入口与返回导航", async (page) => {
+      assert.equal(await page.title(), "BSC500 数据页配置 · iGPSPORT Web Studio");
+      assert.equal(await page.locator(".wordmark").textContent(), "iGPSPORT Web Studio");
+      assert.equal(await page.locator(".brand-caption").textContent(), "码表定制工坊");
+      await page.locator(".main-nav").getByRole("link", { name: "研究工具", exact: true }).click();
+      assert.equal(await page.title(), "研究工具 · iGPSPORT Web Studio");
+      assert.match(await page.locator(".brand").textContent(), /iGPSPORT Web Studio/);
+      await page.getByRole("link", { name: "返回设备配置", exact: true }).click();
+      await page.waitForFunction(() => document.title === "BSC500 数据页配置 · iGPSPORT Web Studio");
+      assert.equal(await page.title(), "BSC500 数据页配置 · iGPSPORT Web Studio");
+    });
     await scenario("多机型切换、独立草稿、模式隔离与刷新恢复", async (page) => {
       await page.locator("#page-name").fill("BSC500 独立草稿");
       for (const device of [
