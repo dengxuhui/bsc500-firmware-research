@@ -185,7 +185,39 @@
       "Complete BSC500 model-specific supported field roster",
       "Interpretation of all stored record fields and alternate layouts"
     ],
-    "dictionary": "native/ride-field-ids.json"
+    "dictionary": "native/ride-field-ids.json",
+    "native_layout_verification": {
+      "verified_on": "2026-11-27",
+      "firmware": "BSC500 V1.04.003",
+      "tool": "native/probe_layouts.py",
+      "table": "0x602a75e4",
+      "template_count": 22,
+      "template_bytes": 28,
+      "matching_function": "0x60161014",
+      "render_configuration_function": "0x6024a2e0",
+      "apk_catalog": "web/assets/igpsport-cn-8.11.00/bsc500-layout-catalog.json",
+      "same_parameter_pairs_as_apk": true,
+      "emulated_stock_matches": 22,
+      "emulated_non_catalog_cases": [
+        {"page_mode": 18, "line_width": 27, "selected_index": 5},
+        {"page_mode": 9, "line_width": 41, "selected_index": 5}
+      ],
+      "fallback_rows": [{"columns": 2, "weight": 2}, {"columns": 1, "weight": 2}, {"columns": 1, "weight": 2}],
+      "scope": "原始匹配与渲染配置提取函数的局部仿真；仅注入模式 0、物理普通页槽 0，不含协议接收、持久化或实际绘制。",
+      "hardware_tested": false
+    },
+    "unlisted_component_candidates": {
+      "firmware": "BSC500 V1.04.003",
+      "evidence_level": "静态组件工厂分支与构造实现，不代表 App 未使用或用户可安装",
+      "factory": "0x60089608",
+      "components": [
+        {"id": "0x0b1d", "constructor": "0x601c9b24", "vtable": "0x60296204"},
+        {"id": "0x0b1e", "constructor": "0x601c1428", "vtable": "0x602955c8"}
+      ],
+      "source": "analysis/BSC500-V1.04.003/native-full/pseudocode.tar.gz",
+      "unresolved": ["组件的实际用途与数据源", "是否由官方专项页使用", "允许的页面类型与尺寸", "V1.08.005 是否保留实现"],
+      "hardware_tested": false
+    }
   },
   "settings_and_update": {
     "verified_on": "2026-11-25",
@@ -225,7 +257,32 @@
           {"files": {"0:level.txt": "30,40\n", "0:light.txt": "20,15,8\n"}, "logged_slider": [30, 40], "logged_ambient_light_sensor": [20, 15, 8], "csv_enabled": true}
         ]
       },
-      "unresolved": ["USB volume mapping for configuration files", "Accepted value ranges", "Hardware behavior with CSV enabled"]
+      "runtime_verification": {
+        "verified_on": "2026-11-27",
+        "firmware": "BSC500 V1.04.003",
+        "tool": "native/backlight.py",
+        "emulator": "Unicorn 2.1.4 / Cortex-M33",
+        "executed_functions": {
+          "initializer": "0x60004124",
+          "splitter": "0x600f8568",
+          "decimal_conversion": "0x6016811c",
+          "slider_lookup": "0x6021c0c0",
+          "ambient_interpolation": "0x60008aac"
+        },
+        "substituted_dependencies": ["文件打开／读取／关闭", "日志输出", "线程 errno 地址"],
+        "libc_locale": "调用原始 0x6004fe60 取得字符表，按原启动逻辑填入 locale 指针。",
+        "verification_checks": 2002,
+        "slider_rule": "按 round_half_away_from_zero(position * (row_count - 1) / 254) 选行，第一列只存储、不参与查找。调用方的最大位置 254 来自 0x6017ba9c。",
+        "ambient_rule": "昼／夜两列独立进行 32 位无符号整数插值；零照度取首行，达到末行照度后取末行。",
+        "parser_limits": {"slider_rows": 20, "ambient_rows": 50, "line_bytes": 63},
+        "hazards": [
+          {"input": "0,100,50\n100,10,5\n", "lux": 50, "firmware_day_u32": 42949727, "cause": "下降亮度导致无符号插值溢出"},
+          {"input": "10,10,5\n100,50,25\n", "lux": 1, "firmware_day_u32": 47721864, "cause": "首行照度大于零，低照度外推下溢"}
+        ],
+        "tool_policy": "拒绝下降亮度曲线、非零照度起点、乘积溢出、超行数及不规范十进制输入；亮度限制为字节范围，不代表硬件安全范围。",
+        "hardware_tested": false
+      },
+      "unresolved": ["配置文件的 USB 卷映射", "硬件安全亮度范围与单位", "CSV 模式的真机效果", "V1.08.005 是否保留相同行为"]
     },
     "stock_update": {
       "vendor_metadata": "https://prod.en.igpsport.com/service/sportg/device4j/soft-version/deviceFirmwareDetails?language=en&softTypeId=1076",
