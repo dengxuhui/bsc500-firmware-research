@@ -3,13 +3,18 @@
 (() => {
   const P = window.BSCProtocol,
     M = window.BSCEditorModel,
-    D = window.BSCEditorData;
+    D = window.BSCEditorData,
+    G = window.BSCDeviceProfiles;
   const $ = (id) => document.getElementById(id),
     clone = (value) => structuredClone(value);
   const fieldMap = new Map(D.fields.map((field) => [field.id, field]));
   const bluetooth = new window.BSCBluetooth();
-  const storageKey = "bsc500-layout-workspace-v1",
-    backupKey = "bsc500-layout-backups-v1",
+  let device = "BSC500";
+  const storageKey = () =>
+    device === "BSC500"
+      ? "bsc500-layout-workspace-v1"
+      : `igpsport-layout-workspace-v1:${device}`;
+  const backupKey = "bsc500-layout-backups-v1",
     logStorageKey = "bsc500-ble-diagnostics-v2";
   const samples = {
     257: "28.6",
@@ -69,7 +74,7 @@
     15: "其他",
   };
   let mode = 0,
-    pages = M.sample(),
+    pages = M.sample(device),
     selectedKey = pages[0].key,
     activeField = 0,
     baseline = null;
@@ -181,12 +186,9 @@
       }[id >> 8] || "—"
     );
   }
+  const profile = () => G.get(device);
   function layoutsFor(page) {
-    return D.layouts.filter((l) =>
-      page.type === 1
-        ? l.section === "普通数据页"
-        : l.section === "专项页" && l.name === M.typeNames[page.type],
-    );
+    return G.layoutsFor(device, page.type, M.typeNames[page.type]);
   }
   function matchingLayout(page) {
     return layoutsFor(page).find(
@@ -203,19 +205,22 @@
     return Boolean(baseline && P.differences(baseline.pages, pages).length);
   }
   function isDifferentBeforeRead() {
-    return JSON.stringify(pages) !== JSON.stringify(M.sample()) && !lastSynced;
+    return (
+      JSON.stringify(pages) !== JSON.stringify(M.sample(device)) && !lastSynced
+    );
   }
   function persist() {
     savedModes[mode] = {
-      format: "bsc500-page-plan",
+      format: device === "BSC500" ? "bsc500-page-plan" : "igpsport-page-plan",
       version: 1,
+      device,
       mode,
       pages,
       selectedKey,
     };
     try {
       localStorage.setItem(
-        storageKey,
+        storageKey(),
         JSON.stringify({ modes: savedModes, mode }),
       );
     } catch {
@@ -227,7 +232,7 @@
   }
   function restoreDraft() {
     try {
-      const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
+      const saved = JSON.parse(localStorage.getItem(storageKey()) || "null");
       if (
         saved?.modes &&
         Number.isInteger(saved.mode) &&
@@ -236,14 +241,16 @@
       ) {
         savedModes = saved.modes;
         mode = saved.mode;
-        const plan = M.validatePlan(savedModes[mode]);
+        const plan = M.validatePlan(savedModes[mode], device);
         pages = plan.pages;
         selectedKey = pages.some((p) => p.key === savedModes[mode].selectedKey)
           ? savedModes[mode].selectedKey
           : pages[0].key;
         $("ride-mode").value = String(mode);
         notice(
-          "已恢复本机草稿。要写入码表，请先导出方案，读取设备当前配置后再导入；不会自动发送保存的草稿。",
+          profile().bluetooth
+            ? "已恢复本机草稿。要写入码表，请先导出方案，读取设备当前配置后再导入；不会自动发送保存的草稿。"
+            : `已恢复 ${device} 本机草稿；仅离线预览，未连接设备。`,
         );
       }
     } catch {
@@ -294,7 +301,7 @@
       ? rows
       : page.fields.map(() => ({
           count: 1,
-          weight: Math.max(1, 6 / page.fields.length),
+          weight: Math.max(1, profile().rows / page.fields.length),
         }));
   }
   function miniature(page) {
@@ -304,7 +311,7 @@
       total = rows.reduce((sum, row) => sum + row.weight, 0);
     if (page.type !== 1) {
       const special = element("span", "mini-layout-special");
-      special.style.flex = String(Math.max(1, 6 - total));
+      special.style.flex = String(Math.max(1, profile().rows - total));
       miniature.append(special);
     }
     for (const row of rows) {
@@ -478,7 +485,8 @@
     $("preview-heading").textContent = M.title(p);
     const rows = normalisedRows(p),
       total = rows.reduce((sum, r) => sum + r.weight, 0);
-    if (p.type !== 1) screen.append(specialPreview(p, Math.max(1, 6 - total)));
+    if (p.type !== 1)
+      screen.append(specialPreview(p, Math.max(1, profile().rows - total)));
     let index = 0;
     for (const row of rows) {
       const line = element(
@@ -623,7 +631,9 @@
     if (!choices.length || !matchingLayout(p))
       options.append(element("span", "layout-hint", "保留设备当前布局"));
     $("layout-hint").textContent = matchingLayout(p)
-      ? "原厂支持版式 · 同步实际布局参数"
+      ? profile().bluetooth
+        ? "APK 内置版式 · 同步实际布局参数"
+        : "APK 内置版式 · 仅离线预览，未验证真机"
       : "此布局未收录于目录，保留原参数；可替换已有字段";
     $("field-total").textContent = ` / ${p.fields.length}`;
     const list = $("field-list");
@@ -671,6 +681,41 @@
     });
     $("no-fields").hidden = Boolean(p.fields.length);
   }
+  function renderDevice() {
+    const p = profile();
+    $("device-model").value = device;
+    $("device-model").disabled = busy;
+    $("show-all-fields").disabled = !p.bluetooth;
+    if (!p.bluetooth) $("show-all-fields").checked = true;
+    $("breadcrumb-device").textContent = device;
+    document.title = `${device} 数据页配置 · 骑行工作台`;
+    $("device-capability").textContent =
+      (p.bluetooth
+        ? "BSC500 · 实验性蓝牙同步；写入仍待真机验证。"
+        : `${p.rows} 行 / 最多 ${p.maxFields} 项 · APK 内置版式，仅离线展示，未验证真机。图形借用公共素材。`) +
+      "外壳为官方设备目录的机型专属图片，已缓存到本地；目录后续可能更新。";
+    const body = $("device-body"),
+      frame = p.frame;
+    for (const [name, value] of Object.entries({
+      "--device-width": `${frame.width}px`,
+      "--device-ratio": `${frame.width} / ${frame.height}`,
+      "--screen-left": `${(100 * frame.left) / frame.width}%`,
+      "--screen-top": `${(100 * frame.top) / frame.height}%`,
+      "--screen-width": `${(100 * p.screen[0]) / frame.width}%`,
+      "--screen-height": `${(100 * p.screen[1]) / frame.height}%`,
+    }))
+      body.style.setProperty(name, value);
+    $("device-frame").src = frame.asset;
+    $("device-frame").alt = `${device} 的官方页面设置外壳图`;
+    $("mini-device-frame").src = frame.asset;
+    $("resolution-label").textContent =
+      `App 内容区 ${p.screen[0]}:${p.screen[1]} · 官方机型外壳`;
+    $("resolution-label").title =
+      "尺寸、位置与 FIT_CENTER 缩放取自 APK；外壳来自官方设备目录的 BACKGROUND_IN_PAGE_SETTING 图片，网页仅加载本地副本。";
+    $("sidebar-guidance").textContent = p.bluetooth
+      ? "先读取，再编辑、同步。草稿按机型和模式保存在当前浏览器。"
+      : "仅离线展示与编辑，不连接或写入设备。草稿按机型和模式独立保存。";
+  }
   function renderConnection() {
     const connected = bluetooth.connected;
     $("connection-status").replaceChildren(
@@ -678,11 +723,17 @@
       document.createTextNode(
         connected
           ? `已连接${bluetooth.version ? ` · ${bluetooth.version}` : ""}`
-          : "未连接",
+          : profile().bluetooth
+            ? "未连接"
+            : "仅离线预览",
       ),
     );
     $("connection-status").classList.toggle("connected", connected);
-    $("connect").title = connected ? "断开蓝牙连接" : "连接蓝牙码表";
+    $("connect").title = !profile().bluetooth
+      ? "此机型仅支持离线预览"
+      : connected
+        ? "断开蓝牙连接"
+        : "连接蓝牙码表";
     $("connect").setAttribute("aria-label", $("connect").title);
   }
   function render() {
@@ -691,6 +742,7 @@
       activeField,
       Math.max(0, current().fields.length - 1),
     );
+    renderDevice();
     renderPages();
     renderPreview();
     renderInspector();
@@ -707,6 +759,8 @@
       "open-sync",
     ])
       $(id).disabled = busy;
+    for (const id of ["read-device", "connect", "open-sync"])
+      $(id).disabled = busy || !profile().bluetooth;
     $("draft-badge").classList.toggle("live", Boolean(baseline));
     $("draft-badge").textContent = busy
       ? "正在与设备通信"
@@ -714,7 +768,9 @@
         ? changed()
           ? "设备草稿 · 待同步"
           : lastSynced || "已读取设备"
-        : "本地草稿 · 未读取";
+        : profile().bluetooth
+          ? "本地草稿 · 未读取"
+          : "离线预览 · 本地草稿";
   }
   function applyLayout(layout) {
     commit(() => {
@@ -781,6 +837,7 @@
     const choices = D.fields.filter(
       (f) =>
         (f.verified ||
+          !profile().bluetooth ||
           includeAll ||
           M.isGraphField(f.id) ||
           f.id === current().fields[activeField]) &&
@@ -819,13 +876,16 @@
         text,
         element(
           "span",
-          `field-evidence${field.verified ? "" : " unverified"}`,
-          field.verified ? "固件引用" : "待验证",
+          `field-evidence${profile().bluetooth && field.verified ? "" : " unverified"}`,
+          profile().bluetooth && field.verified
+            ? "BSC500 固件引用"
+            : "App 候选 · 未验证",
         ),
       );
       if (selected) button.append(icon("check"));
       button.addEventListener("click", () => {
         if (
+          profile().bluetooth &&
           !field.verified &&
           !selected &&
           !confirm(
@@ -867,9 +927,9 @@
   }
   function planFor(value, extras = {}) {
     return {
-      format: "bsc500-page-plan",
+      format: device === "BSC500" ? "bsc500-page-plan" : "igpsport-page-plan",
       version: 1,
-      device: "BSC500",
+      device,
       mode,
       exportedAt: new Date().toISOString(),
       pages: clone(value),
@@ -886,7 +946,7 @@
         page.lineWidth !== old.lineWidth;
       if (layoutChanged && !matchingLayout(page))
         throw new Error(
-          `「${M.title(page)}」的版式不在 BSC500 APK 目录中，未应用方案。`,
+          `「${M.title(page)}」的版式不在 ${device} APK 目录中，未应用方案。`,
         );
     }
   }
@@ -895,7 +955,7 @@
     try {
       if (file.size > 512 * 1024)
         throw new Error("方案文件过大（上限 512 KB）。");
-      const plan = M.validatePlan(JSON.parse(await file.text()));
+      const plan = M.validatePlan(JSON.parse(await file.text()), device);
       if (plan.mode !== mode)
         throw new Error(
           `此方案属于模式 ${plan.mode}，请先在左侧切换到该模式再导入。`,
@@ -918,7 +978,9 @@
           activeField = 0;
         });
         notice(
-          "已导入本地方案。要同步，请先读取设备，再重新导入此文件；这样不会覆盖设备未知参数。",
+          profile().bluetooth
+            ? "已导入本地方案。要同步，请先读取设备，再重新导入此文件；这样不会覆盖设备未知参数。"
+            : `已导入 ${device} 离线方案；不会连接或写入设备。`,
         );
       }
     } catch (error) {
@@ -930,7 +992,7 @@
     render();
   }
   async function connect() {
-    if (busy) return;
+    if (busy || !profile().bluetooth) return;
     if (bluetooth.connected) {
       bluetooth.disconnect();
       baseline = null;
@@ -956,7 +1018,7 @@
     }
   }
   async function readDevice() {
-    if (busy) return;
+    if (busy || !profile().bluetooth) return;
     if (
       (changed() || isDifferentBeforeRead()) &&
       !confirm(
@@ -1063,7 +1125,7 @@
     $("sync-confirm").disabled = !ready || !$("sync-consent").checked || busy;
   }
   function openSync() {
-    if (busy) return;
+    if (busy || !profile().bluetooth) return;
     syncPhase = "idle";
     $("sync-consent").checked = false;
     $("sync-result").hidden = true;
@@ -1092,6 +1154,7 @@
   async function sync() {
     if (
       busy ||
+      !profile().bluetooth ||
       !baseline ||
       !bluetooth.connected ||
       !changed() ||
@@ -1189,6 +1252,14 @@
     const p = current();
     $("protocol-details").textContent = JSON.stringify(
       {
+        device,
+        layoutSource: profile().layoutClass,
+        apkVersion: G.source.apkVersion,
+        frame: {
+          ...profile().frame,
+          source: { ...G.frameCatalog, ...G.frameSources[device] },
+        },
+        previewOnly: !profile().bluetooth,
         mode,
         page_index: p.index,
         page_type: p.type,
@@ -1200,7 +1271,9 @@
         line_width: p.lineWidth,
         graphic_display: p.graphic,
         forbidden_close: p.forbidden,
-        note: "保留原始未知字段；名称与预览配色不写入设备",
+        note: profile().bluetooth
+          ? "保留原始未知字段；名称与预览配色不写入设备"
+          : "APK 内置版式的离线示例；字段与图形未验证真机，不提供蓝牙读写",
       },
       null,
       2,
@@ -1215,7 +1288,7 @@
           label = element(
             "span",
             "",
-            `模式 ${backup.mode} · ${new Date(backup.exportedAt).toLocaleString("zh-CN")}`,
+            `BSC500 · 模式 ${backup.mode} · ${new Date(backup.exportedAt).toLocaleString("zh-CN")}`,
           );
         const button = element("button", "text-button accent", "下载备份");
         button.addEventListener("click", () =>
@@ -1313,7 +1386,7 @@
   $("field-search").addEventListener("input", renderLibrary);
   $("show-all-fields").addEventListener("change", renderLibrary);
   $("export-plan").addEventListener("click", () => {
-    download(`BSC500-mode-${mode}-layout.json`, planFor(pages));
+    download(`${device}-mode-${mode}-layout.json`, planFor(pages));
     notice("已导出页面方案。文件包含原厂协议参数；页面名称只用于本地管理。");
   });
   $("import-plan").addEventListener("click", () => $("import-file").click());
@@ -1338,7 +1411,9 @@
         element(
           "small",
           "",
-          `已有页面槽位 ${p.index} · ${p.fields.length} 项数据`,
+          profile().bluetooth
+            ? `已有页面槽位 ${p.index} · ${p.fields.length} 项数据`
+            : `离线示例页 · ${p.fields.length} 项数据`,
         ),
       );
       button.append(miniature(p), text, icon("plus"));
@@ -1362,6 +1437,39 @@
       );
     $("pages-dialog").showModal();
   });
+  function switchDevice(next) {
+    if (busy || next === device) return;
+    G.get(next);
+    persist();
+    if (bluetooth.connected) bluetooth.disconnect();
+    baseline = null;
+    device = next;
+    mode = 0;
+    savedModes = {};
+    pages = M.sample(device);
+    selectedKey = pages[0].key;
+    past = [];
+    future = [];
+    activeField = 0;
+    dragState = null;
+    lastSynced = "";
+    $("ride-mode").value = "0";
+    $("show-all-fields").checked = false;
+    notice(
+      `已切换到 ${device}。草稿独立保存；${profile().bluetooth ? "同步前请重新读取设备。" : "仅离线展示，不连接或写入设备。"}`,
+    );
+    restoreDraft();
+    try {
+      localStorage.setItem("igpsport-preview-device-v1", device);
+    } catch {
+      storageAvailable = false;
+    }
+    render();
+    persist();
+  }
+  $("device-model").addEventListener("change", () =>
+    switchDevice($("device-model").value),
+  );
   $("ride-mode").addEventListener("change", () => {
     persist();
     mode = Number($("ride-mode").value);
@@ -1372,15 +1480,17 @@
     lastSynced = "";
     try {
       pages = savedModes[mode]
-        ? M.validatePlan(savedModes[mode]).pages
-        : M.sample();
+        ? M.validatePlan(savedModes[mode], device).pages
+        : M.sample(device);
     } catch {
-      pages = M.sample();
+      pages = M.sample(device);
     }
     selectedKey = pages[0].key;
     render();
     notice(
-      `已切换到模式 ${mode} 的本地草稿。请读取该模式的设备配置，不能把其他模式的基线直接写入。`,
+      profile().bluetooth
+        ? `已切换到模式 ${mode} 的本地草稿。请读取该模式的设备配置，不能把其他模式的基线直接写入。`
+        : `已切换到 ${device} 模式 ${mode} 的离线草稿；不会操作设备。`,
     );
     persist();
   });
@@ -1434,6 +1544,15 @@
   recordDiagnosticLog(
     `诊断模块已加载 · ${window.BSCBluetooth.diagnosticsVersion} · 历史日志仅供参考，未自动连接或发送任何配置`,
   );
+  for (const p of G.all) $("device-model").add(new Option(p.id, p.id));
+  try {
+    const savedDevice = localStorage.getItem("igpsport-preview-device-v1");
+    if (G.all.some((p) => p.id === savedDevice)) device = savedDevice;
+  } catch {
+    storageAvailable = false;
+  }
+  pages = M.sample(device);
+  selectedKey = pages[0].key;
   restoreDraft();
   render();
 })();

@@ -333,10 +333,34 @@ p {
   gap: 12px;
   padding: 22px 17px 20px;
 }
-.device-summary strong {
-  font-size: 16px;
+.device-summary > div:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+.device-picker-label {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+#device-model {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 5px 0;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
   font-weight: 650;
-  letter-spacing: 0.2px;
+}
+.device-capability {
+  margin: -5px 17px 16px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.breadcrumb b {
+  font-weight: inherit;
 }
 .device-summary > .icon-button {
   margin-left: auto;
@@ -347,22 +371,13 @@ p {
   height: 32px;
 }
 .mini-device {
-  background: linear-gradient(120deg, #4c4c4c, #181818);
-  border: 2px solid #666;
-  outline: 1px solid #171717;
   width: 31px;
-  height: 47px;
-  border-radius: 10px 10px 12px 12px;
-  padding: 6px 3px 8px;
-  box-shadow: 0 3px 5px #0002;
-  transform: rotate(-7deg);
+  flex: none;
 }
-.mini-device span {
+.mini-device img {
   display: block;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(#f1f3f4 48%, #c1c5cb 49%, #fff 51%);
-  border-radius: 1px;
+  height: auto;
 }
 .connection-status {
   display: flex;
@@ -643,68 +658,26 @@ p {
 }
 .device-body {
   position: relative;
-  background: linear-gradient(112deg, #414141 0%, #262626 40%, #151515 90%);
-  width: 290px;
-  padding: 57px 18px 61px;
-  border-radius: 79px 79px 69px 69px/68px 68px 63px 63px;
-  border: 4px solid #292929;
-  box-shadow:
-    inset 3px 2px 2px #7c7c7c,
-    inset -4px -4px 2px #050505,
-    0 18px 23px -19px #0a0a0a8c;
+  width: min(100%, var(--device-width, 280px));
+  aspect-ratio: var(--device-ratio, 280 / 444);
+  flex-shrink: 0;
   isolation: isolate;
 }
-.device-body:before {
-  content: "";
+.device-frame {
   position: absolute;
-  inset: 5px;
-  border: 1px solid #ffffff16;
-  border-radius: 74px 74px 64px 64px/64px 64px 58px 58px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
-}
-.device-sensor {
-  position: absolute;
-  top: 27px;
-  left: 73px;
-  width: 9px;
-  height: 9px;
-  background: #ffffff04;
-  border-radius: 50%;
-}
-.device-side-key {
-  position: absolute;
-  left: -7px;
-  top: 115px;
-  width: 4px;
-  height: 62px;
-  border-radius: 3px;
-  background: #282828;
-}
-.device-logo {
-  position: absolute;
-  bottom: 22px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 850;
-  font-style: italic;
-  letter-spacing: -0.8px;
-  color: #8e8e8e;
-}
-.device-bottom-keys {
-  position: absolute;
-  bottom: -5px;
-  left: 79px;
-  right: 79px;
-  height: 7px;
-  border-left: 2px solid #5c5c5c;
-  border-right: 2px solid #5c5c5c;
+  z-index: 1;
 }
 .device-screen {
-  position: relative;
-  width: 246px;
-  aspect-ratio: 2/3;
+  position: absolute;
+  left: var(--screen-left);
+  top: var(--screen-top);
+  width: var(--screen-width);
+  height: var(--screen-height);
   background: #fff;
   color: #101113;
   display: flex;
@@ -1721,14 +1694,14 @@ dialog::backdrop {
   .workspace {
     grid-template-columns: 242px minmax(400px, 1fr) 380px;
     gap: 24px;
+    min-height: 840px;
   }
   .app-shell {
     padding-left: 40px;
     padding-right: 40px;
   }
   .device-body {
-    transform: scale(1.08);
-    margin: 25px 0;
+    width: min(100%, calc(var(--device-width, 280px) * 1.08));
   }
   .preview-stage {
     padding-top: 42px;
@@ -1825,17 +1798,6 @@ dialog::backdrop {
   .workspace {
     height: auto;
     min-height: 760px;
-  }
-  .device-body {
-    width: 264px;
-    padding: 52px 17px 55px;
-    border-radius: 70px 70px 60px 60px;
-  }
-  .device-screen {
-    width: 222px;
-  }
-  .device-logo {
-    font-size: 18px;
   }
   .device-summary {
     padding-left: 13px;

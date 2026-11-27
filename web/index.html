@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#ff4f23" />
-    <title>BSC500 数据页配置 · 骑行工作台</title>
+    <title>iGPSPORT 数据页配置 · 骑行工作台</title>
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4f23'/%3E%3Cpath d='M9 9h14v5H9zm0 9h6v5H9zm10 0h4v5h-4z' fill='white'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="editor.css?v=field-graphics-v1" />
+    <link rel="stylesheet" href="editor.css?v=official-frames-v2" />
     <script src="protocol.js" defer></script>
     <script src="bluetooth.js?v=ble-notify-init-v5" defer></script>
     <script src="editor-data.js" defer></script>
-    <script src="editor-model.js?v=field-graphics-v1" defer></script>
-    <script src="editor.js?v=field-graphics-v1" defer></script>
+    <script src="device-profiles.js?v=official-frames-v2" defer></script>
+    <script src="editor-model.js?v=official-frames-v2" defer></script>
+    <script src="editor.js?v=official-frames-v2" defer></script>
   </head>
   <body>
     <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -99,7 +100,7 @@
       </defs>
     </svg>
     <header class="site-header">
-      <a class="brand" href="./" aria-label="BSC500 骑行工作台首页"
+      <a class="brand" href="./" aria-label="iGPSPORT 骑行工作台首页"
         ><span class="brand-mark"
           ><svg><use href="#i-grid" /></svg></span
         ><span class="wordmark">iGPSPORT</span
@@ -120,7 +121,8 @@
       <div class="workspace-heading">
         <div>
           <div class="breadcrumb">
-            我的设备 <span>/</span> BSC500 <span>/</span> 数据页配置
+            我的设备 <span>/</span> <b id="breadcrumb-device">BSC500</b>
+            <span>/</span> 数据页配置
           </div>
           <div class="heading-line">
             <h1>数据页配置</h1>
@@ -166,10 +168,18 @@
       <div class="workspace">
         <aside class="page-sidebar surface" aria-label="码表与数据页">
           <div class="device-summary">
-            <div class="mini-device" aria-hidden="true"><span></span></div>
+            <div class="mini-device" aria-hidden="true">
+              <img id="mini-device-frame" alt="" />
+            </div>
             <div>
-              <strong>BSC500</strong
-              ><span id="connection-status" class="connection-status"
+              <label class="device-picker-label" for="device-model"
+                >预览机型</label
+              >
+              <select
+                id="device-model"
+                aria-describedby="device-capability"
+              ></select>
+              <span id="connection-status" class="connection-status"
                 ><i></i>未连接</span
               >
             </div>
@@ -182,6 +192,7 @@
               <svg class="icon"><use href="#i-bluetooth" /></svg>
             </button>
           </div>
+          <p id="device-capability" class="device-capability"></p>
           <div class="mode-picker">
             <label for="ride-mode">骑行模式</label
             ><select id="ride-mode">
@@ -209,7 +220,9 @@
           </button>
           <div class="sidebar-foot">
             <svg class="icon"><use href="#i-info" /></svg>
-            <p>先读取，再编辑、同步。<br />草稿自动保存在当前浏览器。</p>
+            <p id="sidebar-guidance">
+              先读取，再编辑、同步。<br />草稿自动保存在当前浏览器。
+            </p>
           </div>
         </aside>
         <section
@@ -244,19 +257,21 @@
             </div>
           </div>
           <div class="preview-stage">
-            <span class="resolution-label"
+            <span class="resolution-label" id="resolution-label"
               >320 × 480 <span>·</span> 等比预览</span
             >
-            <div class="device-body">
-              <span class="device-sensor" aria-hidden="true"></span
-              ><span class="device-side-key" aria-hidden="true"></span>
+            <div class="device-body" id="device-body">
               <div
                 id="device-screen"
                 class="device-screen"
                 aria-label="码表页面预览"
               ></div>
-              <span class="device-logo" aria-hidden="true">iGPSPORT</span
-              ><span class="device-bottom-keys" aria-hidden="true"></span>
+              <img
+                id="device-frame"
+                class="device-frame"
+                alt=""
+                draggable="false"
+              />
             </div>
             <div class="preview-caption">
               <i></i>读数与图形均为固定示例，非实时数据

@@ -5,6 +5,10 @@
     typeof module !== "undefined" && module.exports
       ? require("./protocol.js")
       : root.BSCProtocol;
+  const G =
+    typeof module !== "undefined" && module.exports
+      ? require("./device-profiles.js")
+      : root.BSCDeviceProfiles;
   const typeNames = {
     1: "数据页",
     2: "海拔",
@@ -188,7 +192,7 @@
     page.raw = P.hex(P.encodePage(page));
     return page;
   }
-  function sample() {
+  function sample(device = "BSC500") {
     const pages = [
       makePage(
         1,
@@ -213,12 +217,64 @@
       ),
     ];
     pages[0].main = 1;
+    if (device !== "BSC500") {
+      const adapted = pages.flatMap((page) => {
+        const layouts = G.layoutsFor(device, page.type, typeNames[page.type]);
+        const layout =
+          layouts.find(
+            (l) =>
+              l.pageMode === page.pageMode &&
+              l.lineWidth === page.lineWidth &&
+              l.count === page.fields.length,
+          ) ||
+          [...layouts].sort(
+            (a, b) =>
+              Math.abs(a.count - page.fields.length) -
+              Math.abs(b.count - page.fields.length),
+          )[0];
+        if (!layout) return [];
+        page.fields = page.fields.slice(0, layout.count);
+        while (page.fields.length < layout.count) page.fields.push(257);
+        page.pageMode = layout.pageMode;
+        page.lineWidth = layout.lineWidth;
+        page.raw = P.hex(P.encodePage(page));
+        return [page];
+      });
+      for (const [type, name] of Object.entries(typeNames)) {
+        if (Number(type) === 1 || adapted.some((p) => p.type === Number(type)))
+          continue;
+        const layout = G.layoutsFor(device, Number(type), name)[0];
+        if (!layout) continue;
+        adapted.push(
+          makePage(
+            20 + Number(type),
+            Number(type),
+            [layout.pageMode, layout.lineWidth],
+            Array(layout.count).fill(257),
+            name,
+            0,
+          ),
+        );
+      }
+      return withKeys(adapted);
+    }
     return withKeys(pages);
   }
-  function validatePlan(input) {
-    if (!input || input.format !== "bsc500-page-plan" || input.version !== 1)
+  function validatePlan(input, device = "BSC500") {
+    if (
+      !input ||
+      !["bsc500-page-plan", "igpsport-page-plan"].includes(input.format) ||
+      input.version !== 1
+    )
       throw new Error(
         "请选择本编辑器导出的页面方案或配置备份。旧版原创设计 JSON 请在研究工具中打开。",
+      );
+    const sourceDevice =
+      input.device ?? (input.format === "bsc500-page-plan" ? "BSC500" : null);
+    const profile = G.get(device);
+    if (sourceDevice !== device)
+      throw new Error(
+        `方案属于 ${sourceDevice || "未指定机型"}，不能导入 ${device}。请先切换到对应机型。`,
       );
     if (!Number.isInteger(input.mode) || input.mode < 0 || input.mode > 9)
       throw new Error("方案的骑行模式编号无效。");
@@ -253,10 +309,20 @@
           throw new Error(`页面状态 ${name} 无效。`);
       if (
         !Array.isArray(p.fields) ||
-        p.fields.length > 12 ||
+        p.fields.length > profile.maxFields ||
         p.fields.some((id) => !Number.isInteger(id) || id < 1 || id > 65535)
       )
         throw new Error("方案包含无效的数据字段。");
+      if (
+        device !== "BSC500" &&
+        !G.layoutsFor(device, p.type, typeNames[p.type]).some(
+          (l) =>
+            l.pageMode === p.pageMode &&
+            l.lineWidth === p.lineWidth &&
+            l.count === p.fields.length,
+        )
+      )
+        throw new Error(`页面版式不在 ${device} 的 APK 内置目录中。`);
       const title = typeof p.title === "string" ? p.title.slice(0, 30) : "";
       const name = typeof p.name === "string" ? p.name.slice(0, 80) : "";
       // 导入的 raw 只用于离线保存。应用到设备时使用刚读取的原始页，绝不信任文件中的未知字段。

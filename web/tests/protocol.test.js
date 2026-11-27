@@ -5,6 +5,7 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 const P = require("../protocol.js");
 const M = require("../editor-model.js");
+const G = require("../device-profiles.js");
 const fixture = require("./fixtures/page-messages.json");
 const message = (name) => new P.FrameStream().push(P.unhex(fixture[name]))[0];
 const capturePages = (name) =>
@@ -195,6 +196,139 @@ test("76 个 APK 原厂版式的字段数和行高均一致", () => {
     47,
   );
 });
+test("七款机型各自的版式、示例页与行数上限一致", () => {
+  assert.equal(G.all.length, 7);
+  for (const profile of G.all) {
+    assert.equal(
+      profile.layouts.length,
+      profile.id === "iGS630S" ? 15 : profile.id === "BSC200 Pro" ? 27 : 76,
+    );
+    for (const layout of profile.layouts) {
+      const rows = M.rows({ ...layout, fields: Array(layout.count).fill(257) });
+      assert.equal(
+        rows.reduce((n, r) => n + r.count, 0),
+        layout.count,
+      );
+      assert.ok(rows.reduce((n, r) => n + r.weight, 0) <= profile.rows);
+      assert.ok(layout.count <= profile.maxFields);
+    }
+    const plan = {
+      format: "igpsport-page-plan",
+      version: 1,
+      mode: 0,
+      device: profile.id,
+      pages: M.sample(profile.id),
+    };
+    assert.ok(M.validatePlan(plan, profile.id).pages.length);
+    for (const page of plan.pages) {
+      assert.ok(
+        G.layoutsFor(profile.id, page.type, M.typeNames[page.type]).some(
+          (l) =>
+            l.pageMode === page.pageMode &&
+            l.lineWidth === page.lineWidth &&
+            l.count === page.fields.length,
+        ),
+      );
+    }
+  }
+});
+test("官方机型外壳原图哈希、尺寸与 APK 内容区定位一致", () => {
+  const expected = {
+    BSC500: [280, 444, 198, 295, 74],
+    iGS800: [274, 453, 230, 346, 29],
+    BiNavi: [274, 453, 220, 346, 29],
+    "BiNavi Air": [280, 444, 186, 306, 66],
+    "BiNavi Ultra": [280, 453, 180, 315, 68],
+    iGS630S: [320, 450, 185, 286, 77],
+    "BSC200 Pro": [280, 444, 204, 272, 74],
+  };
+  for (const p of G.all) {
+    const frame = p.frame,
+      source = G.frameSources[p.id];
+    assert.deepEqual(
+      [frame.width, frame.height, ...p.screen, frame.top],
+      expected[p.id],
+    );
+    assert.equal(frame.left, (frame.width - p.screen[0]) / 2);
+    assert.ok(frame.top + p.screen[1] <= frame.height);
+    assert.ok(frame.asset.endsWith(source.filename));
+    assert.equal(
+      new URL(source.sourceURL).hostname,
+      "igp-zh.oss-cn-hangzhou.aliyuncs.com",
+    );
+    const bytes = fs.readFileSync(require.resolve(`../${frame.asset}`));
+    assert.equal(
+      require("node:crypto").createHash("sha256").update(bytes).digest("hex"),
+      source.sha256,
+    );
+    assert.deepEqual(
+      [bytes.readUInt32BE(16), bytes.readUInt32BE(20)],
+      source.imageSize,
+    );
+    assert.equal(G.frameCatalog.scaleType, "FIT_CENTER");
+  }
+  assert.equal(new Set(G.all.map((p) => p.frame.asset)).size, 7);
+  assert.equal(
+    new Set(Object.values(G.frameSources).map((s) => s.sha256)).size,
+    7,
+  );
+  assert.equal(G.frameCatalog.imageTypeValue, 3);
+  assert.equal(G.frameSources.BSC500.verifiedDevAppVer, "108005");
+});
+test("机型差异不被 BSC500 模板覆盖", () => {
+  const layout = (id, count, variant) =>
+    G.layoutsFor(id, 1).find((l) => l.count === count && l.variant === variant);
+  assert.deepEqual(
+    [layout("iGS800", 5, 2).pageMode, layout("iGS800", 5, 2).lineWidth],
+    [1097, 657],
+  );
+  assert.equal(layout("BiNavi", 5, 2).pageMode, 145);
+  assert.equal(G.layoutsFor("BiNavi", 10, "爬坡")[0].count, 1);
+  assert.equal(G.layoutsFor("BiNavi Air", 10, "爬坡")[0].count, 0);
+  assert.equal(
+    G.get("iGS630S").layouts.filter((l) => l.section === "专项页").length,
+    0,
+  );
+  assert.deepEqual(
+    [
+      ...new Set(
+        G.get("BSC200 Pro")
+          .layouts.filter((l) => l.section === "专项页")
+          .map((l) => l.name),
+      ),
+    ],
+    ["海拔", "地图", "骑行台", "训练课程"],
+  );
+  assert.deepEqual(
+    G.all.filter((p) => p.bluetooth).map((p) => p.id),
+    ["BSC500"],
+  );
+});
+test("导入按机型校验，旧 BSC500 文件不会被应用到新机型", () => {
+  const legacy = {
+    format: "bsc500-page-plan",
+    version: 1,
+    mode: 0,
+    pages: M.sample(),
+  };
+  assert.ok(M.validatePlan(legacy).pages.length);
+  assert.throws(() => M.validatePlan(legacy, "BiNavi"), /不能导入/);
+  const plan = {
+    format: "igpsport-page-plan",
+    device: "iGS630S",
+    version: 1,
+    mode: 0,
+    pages: M.sample("iGS630S"),
+  };
+  assert.throws(() => M.validatePlan(plan), /不能导入/);
+  assert.throws(
+    () => M.validatePlan({ ...plan, device: undefined }, "iGS630S"),
+    /未指定机型/,
+  );
+  plan.pages[0].lineWidth = 594;
+  assert.throws(() => M.validatePlan(plan, "iGS630S"), /内置目录/);
+});
+
 test("方案校验阻止损坏及不匹配的文件", () => {
   const plan = {
     format: "bsc500-page-plan",

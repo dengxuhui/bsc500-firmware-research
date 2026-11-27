@@ -268,6 +268,228 @@ async function mockBluetooth(page) {
     await page.locator("#sync-confirm").click();
   }
   try {
+    await scenario("多机型切换、独立草稿、模式隔离与刷新恢复", async (page) => {
+      await page.locator("#page-name").fill("BSC500 独立草稿");
+      for (const device of [
+        "iGS800",
+        "BiNavi",
+        "BiNavi Air",
+        "BiNavi Ultra",
+        "iGS630S",
+        "BSC200 Pro",
+      ]) {
+        await page.locator("#device-model").selectOption(device);
+        assert.equal(
+          await page.locator("#breadcrumb-device").textContent(),
+          device,
+        );
+        for (const id of ["connect", "read-device", "open-sync"])
+          assert.ok(await page.locator(`#${id}`).isDisabled());
+        assert.match(
+          await page.locator("#device-capability").textContent(),
+          /仅离线展示/,
+        );
+        const max = await page
+          .locator("#field-count option")
+          .evaluateAll((nodes) =>
+            Math.max(...nodes.map((n) => Number(n.value))),
+          );
+        assert.equal(max, ["iGS630S", "BSC200 Pro"].includes(device) ? 10 : 12);
+        await page.locator("#page-name").fill(`${device} 独立草稿`);
+        await page.locator("#field-count").selectOption(String(max));
+        assert.equal(await page.locator(".screen-tile").count(), max);
+        await page.locator("#undo").click();
+        await editFirst(page);
+        await page.locator("#ride-mode").selectOption("1");
+        assert.equal(await page.locator("#page-name").inputValue(), "骑行总览");
+        await page.locator("#ride-mode").selectOption("0");
+        assert.equal(
+          await page.locator("#page-name").inputValue(),
+          `${device} 独立草稿`,
+        );
+      }
+      await page.reload();
+      assert.equal(
+        await page.locator("#device-model").inputValue(),
+        "BSC200 Pro",
+      );
+      assert.equal(
+        await page.locator("#page-name").inputValue(),
+        "BSC200 Pro 独立草稿",
+      );
+      for (const device of [
+        "iGS800",
+        "BiNavi",
+        "BiNavi Air",
+        "BiNavi Ultra",
+        "iGS630S",
+        "BSC200 Pro",
+        "BSC500",
+      ]) {
+        await page.locator("#device-model").selectOption(device);
+        assert.equal(
+          await page.locator("#page-name").inputValue(),
+          `${device} 独立草稿`,
+        );
+      }
+      assert.ok(await page.locator("#connect").isEnabled());
+    });
+    await scenario("各机型屏幕比例与预览边界保持一致", async (page) => {
+      for (const device of [
+        "BSC500",
+        "iGS800",
+        "BiNavi",
+        "BiNavi Air",
+        "BiNavi Ultra",
+        "iGS630S",
+        "BSC200 Pro",
+      ]) {
+        await page.locator("#device-model").selectOption(device);
+        await page.waitForFunction(() => {
+          const frame = document.querySelector("#device-frame");
+          return frame.complete && frame.naturalWidth > 0;
+        });
+        assert.match(
+          await page.locator("#device-capability").textContent(),
+          /官方设备目录的机型专属图片/,
+        );
+        for (const width of [390, 768, 1024, 1440, 1920]) {
+          await page.setViewportSize({ width, height: 1000 });
+          const geometry = await page.evaluate(() => {
+            const screen = document
+              .querySelector("#device-screen")
+              .getBoundingClientRect();
+            const profile = window.BSCDeviceProfiles.get(
+              document.querySelector("#device-model").value,
+            );
+            const ratio = profile.screen;
+            const body = document
+              .querySelector("#device-body")
+              .getBoundingClientRect();
+            const frame = document.querySelector("#device-frame");
+            return {
+              frameSource: frame.getAttribute("src"),
+              expectedSource: profile.frame.asset,
+              left: (screen.left - body.left) / body.width,
+              expectedLeft: profile.frame.left / profile.frame.width,
+              top: (screen.top - body.top) / body.height,
+              expectedTop: profile.frame.top / profile.frame.height,
+              width: screen.width / body.width,
+              expectedWidth: profile.screen[0] / profile.frame.width,
+              height: screen.height / body.height,
+              expectedHeight: profile.screen[1] / profile.frame.height,
+              actual: screen.width / screen.height,
+              expected: ratio[0] / ratio[1],
+              labelBottom: document
+                .querySelector(".resolution-label")
+                .getBoundingClientRect().bottom,
+              bodyTop: document
+                .querySelector(".device-body")
+                .getBoundingClientRect().top,
+              captionBottom: document
+                .querySelector(".preview-caption")
+                .getBoundingClientRect().bottom,
+              paginationTop: document
+                .querySelector(".preview-pagination")
+                .getBoundingClientRect().top,
+              overflow: document.documentElement.scrollWidth > innerWidth,
+            };
+          });
+          assert.equal(
+            geometry.frameSource,
+            geometry.expectedSource,
+            `${device} 外壳素材`,
+          );
+          for (const key of ["left", "top", "width", "height"]) {
+            const expected = `expected${key[0].toUpperCase()}${key.slice(1)}`;
+            assert.ok(
+              Math.abs(geometry[key] - geometry[expected]) < 0.005,
+              `${device} ${width} 屏幕${key}`,
+            );
+          }
+          assert.ok(
+            Math.abs(geometry.actual - geometry.expected) < 0.005,
+            `${device} ${width} 屏幕比例`,
+          );
+          assert.ok(
+            geometry.labelBottom <= geometry.bodyTop,
+            `${device} ${width} 顶部说明重叠`,
+          );
+          assert.ok(
+            geometry.captionBottom <= geometry.paginationTop,
+            `${device} ${width} 分页重叠`,
+          );
+          assert.equal(geometry.overflow, false, `${device} ${width} 横向溢出`);
+        }
+      }
+    });
+    await scenario(
+      "新机型导入导出带机型信息，拒绝跨机型和缺少机型的文件",
+      async (page) => {
+        await page.locator("#device-model").selectOption("iGS630S");
+        const event = page.waitForEvent("download");
+        await page.locator("#export-plan").click();
+        const download = await event;
+        assert.equal(
+          download.suggestedFilename(),
+          "iGS630S-mode-0-layout.json",
+        );
+        const plan = JSON.parse(
+          await fs.readFile(await download.path(), "utf8"),
+        );
+        assert.equal(plan.device, "iGS630S");
+        assert.equal(plan.format, "igpsport-page-plan");
+        const upload = async (value) =>
+          page.locator("#import-file").setInputFiles({
+            name: "plan.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(JSON.stringify(value)),
+          });
+        plan.pages[0].title = "导入的 iGS630S 方案";
+        await upload(plan);
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#page-name").value ===
+            "导入的 iGS630S 方案",
+        );
+        await page.locator("#device-model").selectOption("BSC500");
+        await upload(plan);
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#notice")
+            .textContent.includes("不能导入 BSC500"),
+        );
+        assert.equal(await page.locator("#page-name").inputValue(), "骑行总览");
+        await page.locator("#device-model").selectOption("iGS630S");
+        delete plan.device;
+        await upload(plan);
+        await page.waitForFunction(() =>
+          document.querySelector("#notice").textContent.includes("未指定机型"),
+        );
+      },
+    );
+    await scenario(
+      "切换机型断开 BSC500 并清除设备基线，新机型不触发蓝牙",
+      async (page) => {
+        await read(page);
+        const reads = await page.evaluate(() => window.__bleTest.reads);
+        await page.locator("#device-model").selectOption("BiNavi");
+        assert.equal(await page.evaluate(() => window.__bleTest.writes), 0);
+        assert.equal(await page.evaluate(() => window.__bleTest.reads), reads);
+        await page.locator("#device-model").selectOption("BSC500");
+        assert.match(
+          await page.locator("#connection-status").textContent(),
+          /未连接/,
+        );
+        assert.match(
+          await page.locator("#draft-badge").textContent(),
+          /本地草稿/,
+        );
+        await page.locator("#open-sync").click();
+        assert.ok(await page.locator("#sync-confirm").isDisabled());
+      },
+      true,
+    );
     await scenario("桌面编辑、字段搜索、撤销重做与持久化", async (page) => {
       assert.equal(await page.locator(".screen-tile").count(), 6);
       await editFirst(page);
